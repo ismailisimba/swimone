@@ -71,3 +71,24 @@ html button:hover {
     height: 800px;
     background-color: transparent;
 }
+
+.featuredone:first-child img, .featuredone:nth-child(2) img, .featuredone:nth-child(3) img {
+
+    width: 300px;
+    height: 300px;
+}
+
+.featuredone:first-child img {
+
+    content:url("https://ismailisimba.github.io/swimone/resources/images/1.jpg");
+}
+
+.featuredone:nth-child(2) img {
+
+    content:url("https://ismailisimba.github.io/swimone/resources/images/2.jpg");
+}
+
+.featuredone:nth-child(3) img {
+
+    content:url("https://ismailisimba.github.io/swimone/resources/images/3.jpg");
+}
