@@ -1,0 +1,73 @@
+html{
+    font-family: "Quicksand";
+    color: #e8dab2;
+}
+
+html button {
+    font-family: inherit;
+    border: none;
+    padding: 3px 9px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 120px;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px 0.2px black;
+}
+
+html button:hover {
+    font-weight: bold;
+    box-shadow: none}
+
+/*Colors
+
+
+--dark-moss-green: #3f612d;
+--dutch-white: #e8dab2;
+--honolulu-blue: #0471a6;
+--rich-black-fogra-29: #061826;
+--electric-blue: #53f4ff;
+
+*/
+.mycolumns:first-child{
+
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 25%;
+    min-height: 1000px;
+    background-color: #061826;
+
+    
+}
+
+.mycolumns:nth-child(2){
+
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 75%;
+    padding: 24px 36px;
+    box-sizing: border-box;
+    min-height: 1000px;
+    background-color: #0471a6;
+
+
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.mycolumnchildren:first-child{
+
+    width: 85%;
+    height: 800px;
+    background-color: transparent;
+}
