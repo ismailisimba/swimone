@@ -178,7 +178,7 @@ html button:hover {
     position: relative;
 
     width: 48%;
-    min-width: 250px;
+    min-width: 300px;
     margin: 2px 2px;
     padding: 6px 12px;
     box-sizing: border-box;
@@ -214,7 +214,58 @@ html button:hover {
     letter-spacing: 1.69px;
 
     width: 85%;
+    
     background-color: transparent;
     color: #e8dab2;
 }
 
+.descricon{
+
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    margin-right: 0px;
+    background-color: transparent;
+    width: 42px;
+    height: 42px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.aboutdescrboxes:nth-child(1) .descricon{
+
+    background-image: url("https://ismailisimba.github.io/swimone/resources/icons/swim-icon1.png");
+  
+}
+
+.aboutdescrboxes:nth-child(2) .descricon{
+
+    background-image: url("https://ismailisimba.github.io/swimone/resources/icons/competition-icon1.png");
+  
+}
+
+.aboutdescrboxes:nth-child(3) .descricon{
+
+    background-image: url("https://ismailisimba.github.io/swimone/resources/icons/swim-icon1.png");
+  
+}
+
+.aboutdescrboxes:nth-child(4) .descricon{
+
+    background-image: url("https://ismailisimba.github.io/swimone/resources/icons/lifeguard-icon1.png");
+  
+}
+
+.aboutdescrboxes:nth-child(5) .descricon{
+
+    background-image: url("https://ismailisimba.github.io/swimone/resources/icons/medals-icon1.png");
+  
+}
+
+.aboutdescrboxes:nth-child(6) .descricon{
+
+    background-image: url("https://ismailisimba.github.io/swimone/resources/icons/calendar-icon1.png");
+  
+}
