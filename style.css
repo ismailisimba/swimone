@@ -3,6 +3,13 @@ html{
     color: #e8dab2;
 }
 
+.momcontainer{
+
+    height: auto;
+}
+
+
+
 html button {
     font-family: inherit;
     border: none;
@@ -33,15 +40,17 @@ html button:hover {
 .mycolumns:first-child{
 
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 25%;
     min-height: 1000px;
+    height: inherit;
     background-color: #061826;
 
     
 }
+
 
 .mycolumns:nth-child(2){
 
@@ -50,7 +59,7 @@ html button:hover {
     top: 0px;
     right: 0px;
     width: 75%;
-    padding: 24px 36px;
+    padding: 24px 0px;
     box-sizing: border-box;
     min-height: 1000px;
     background-color: #0471a6;
@@ -68,8 +77,21 @@ html button:hover {
 .mycolumnchildren:first-child{
 
     width: 85%;
-    height: 800px;
+    height: 600px;
     background-color: transparent;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.mycolumnchildren:first-child h1{
+    font-size: 48px;
+}
+
+.mycolumnchildren:first-child p{
+    font-size: 24px;
 }
 
 .featuredone:first-child img, .featuredone:nth-child(2) img, .featuredone:nth-child(3) img {
@@ -78,17 +100,121 @@ html button:hover {
     height: 300px;
 }
 
-.featuredone:first-child img {
 
-    content:url("https://ismailisimba.github.io/swimone/resources/images/1.jpg");
+.mycolumnchildren:nth-child(2){ 
+
+    position: relative;
+
+    width: 100%;
+    min-height: 800px;
+    background-color: transparent;
+
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.featuredone:nth-child(2) img {
+.featuredone{
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #061826;
 
-    content:url("https://ismailisimba.github.io/swimone/resources/images/2.jpg");
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.featuredone:nth-child(3) img {
-
-    content:url("https://ismailisimba.github.io/swimone/resources/images/3.jpg");
+.featuredbox{
+    margin-left: 48px;
+    
 }
+
+.mylineone{
+    position: absolute;
+    bottom: 1px;
+    right: 0px;
+    width: 33%;
+    height: 1.69px;
+    background-color: #e8dab2;
+}
+
+.mycolumnchildren:nth-child(3){
+    position: relative;
+
+    width: 100%;
+    min-height: 800px;
+    background-color: #061826;
+    text-align: left;
+
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.abouttitdiv{
+    width: 85%;
+    background-color: transparent;
+}
+
+.aboutdescrdiv{
+    width: 88%;
+    background-color: transparent;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutdescrboxes{
+    position: relative;
+
+    width: 48%;
+    min-width: 250px;
+    margin: 2px 2px;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    background-color: transparent;
+
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+   
+}
+
+.aboutdescrboxes h2{
+    margin-block-start: 0px;
+    margin-block-end: 6px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+
+    width: 85%;
+    background-color: transparent;
+    color: #e8dab2;
+}
+
+.aboutdescrboxes p{
+    margin-block-start: 0px;
+    margin-block-end: 6px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 1.69px;
+
+    width: 85%;
+    background-color: transparent;
+    color: #e8dab2;
+}
+
