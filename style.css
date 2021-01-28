@@ -1,11 +1,12 @@
 html{
     font-family: "Quicksand";
-    color: #e8dab2;
+    color: #53f4ff;
 }
 
 .momcontainer{
 
     height: auto;
+    overflow: hidden;
 }
 
 
@@ -78,8 +79,8 @@ html button:hover {
     width: 75%;
     padding: 24px 0px;
     box-sizing: border-box;
-    min-height: 1000px;
-    background-color: #0471a6;
+    min-height: 600px;
+    background-color: #53f4ff;
 
 
     display: flex;
@@ -87,6 +88,8 @@ html button:hover {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+
+    overflow-y: hidden;
 
     
 }
@@ -105,10 +108,12 @@ html button:hover {
 
 .mycolumnchildren:first-child h1{
     font-size: 48px;
+    color: #061826;
 }
 
 .mycolumnchildren:first-child p{
     font-size: 24px;
+    color: #061826;
 }
 
 .featuredone:first-child img, .featuredone:nth-child(2) img, .featuredone:nth-child(3) img {
@@ -218,7 +223,7 @@ html button:hover {
 
     width: 85%;
     background-color: transparent;
-    color: #e8dab2;
+    color: #53f4ff;
 }
 
 .aboutdescrboxes p{
@@ -233,7 +238,7 @@ html button:hover {
     width: 85%;
     
     background-color: transparent;
-    color: #e8dab2;
+    color: #53f4ff;
 }
 
 .descricon{
@@ -379,4 +384,63 @@ html button:hover {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: normal;
+}
+
+.mysocials{
+
+    width: 100%;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items:center;
+}
+
+.socialitem{
+
+    width: 48px;
+    height: 24px;
+    margin: 6px 6px 0px 6px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.socialitem:nth-child(1){
+    background-image: url("https://ismailisimba.github.io/swimone/resources/icons/facebook-icon.png");
+}
+
+.socialitem:nth-child(2){
+    background-image: url("https://ismailisimba.github.io/swimone/resources/icons/twitter-icon.png");
+}
+
+.socialitem:nth-child(3){
+    background-image: url("https://ismailisimba.github.io/swimone/resources/icons/instagram.png");
+}
+
+.mycolumnchildren:nth-child(5){
+    position: relative;
+    height: 350px;
+    width: 100%;
+    margin-bottom: -69px;
+    background-color: #53f4ff;
+    color: #061826;
+    text-align: center;
+    font-weight: bold;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#ismizo{
+
+    position: absolute;
+    right: 69px;
+    bottom: 69px;
 }
