@@ -23,6 +23,23 @@ html button {
     box-shadow: 1px 1px 5px 0.2px black;
 }
 
+textarea {
+    
+    min-width: 250px;
+    height: 36px;
+    overflow: hidden;
+    resize: none;
+    padding: 8px 6px 0px 6px;
+    
+    margin-bottom: 3px;
+    box-sizing: border-box;
+
+    font-family: inherit;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    font-size: 14px;
+}
+
 html button:hover {
     font-weight: bold;
     box-shadow: none}
@@ -159,7 +176,7 @@ html button:hover {
 
 }
 
-.abouttitdiv{
+.abouttitdiv, .contacttitdiv{
     width: 85%;
     background-color: transparent;
 }
@@ -268,4 +285,98 @@ html button:hover {
 
     background-image: url("https://ismailisimba.github.io/swimone/resources/icons/calendar-icon1.png");
   
+}
+
+.mycolumnchildren:nth-child(4){
+
+    position: relative;
+
+    width: 100%;
+    min-height: 800px;
+    background-color: #061826;
+    text-align: left;
+
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contactdescrdiv{
+    position: relative;
+
+    width: 88%;
+    background-color: transparent;
+
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contactformdiv{
+
+    width: 56%;
+    height: auto;
+    background-color: transparent;
+    box-sizing: border-box;
+    margin: 3px 36px 3px 3px;
+    
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contactlistdiv{
+
+    width: 40%;
+}
+
+.formitemdiv p{
+
+    margin-block-start: 6px;
+    margin-block-end: 6px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1.3px;
+}
+
+.formitemdiv:nth-child(3){
+    width: 100%;
+}
+
+#contactmessage{
+
+    width: 100%;
+    height: 269px;
+}
+
+.contactlistdiv h2{
+    
+    font-size: 24px;
+    margin-block-start: 0px;
+    margin-block-end: 3px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.contactlistdiv p{
+
+    width: 100%;
+    
+    font-size: 16px;
+    margin-block-start: 6px;
+    margin-block-end: 18px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: normal;
 }
