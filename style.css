@@ -484,3 +484,27 @@ html button:hover {
   color: #061826;
   background-color: #53f4ff;
 }
+
+
+
+/*JS items styles go here*/
+
+
+/*Media Queries Go Here*/ 
+
+@media screen and (max-width: 1024px) {
+
+    .mycolumns:first-child{
+
+        display: block;
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 0px;
+        height: 0px;
+    
+        
+    }
+
+   
+  }
