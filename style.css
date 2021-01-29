@@ -410,6 +410,7 @@ html button:hover {
 }
 
 .socialitem{
+    position: relative;
 
     width: 48px;
     height: 24px;
@@ -562,7 +563,7 @@ html button:hover {
     }
 
 
-    .mycolumnchildren:nth-child(3){
+    .mycolumnchildren:nth-child(3), .mycolumnchildren:nth-child(4){
 
 
         
@@ -571,7 +572,7 @@ html button:hover {
     
     }
 
-    .aboutdescrboxes h2, .aboutdescrboxes p{
+    .aboutdescrboxes h2, .aboutdescrboxes p, .mycolumnchildren:nth-child(4) h1,.mycolumnchildren:nth-child(4) p, .contactlistdiv h2{
   
         color: #061826;
     }
@@ -613,6 +614,18 @@ html button:hover {
       
     }
 
+    .socialitem:nth-child(1){
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/facebook-icon.png");
+    }
+    
+    .socialitem:nth-child(2){
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/twitter-icon.png");
+    }
+    
+    .socialitem:nth-child(3){
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/instagram.png");
+    }
+
 
 
     .aboutdescrboxes{
@@ -628,6 +641,101 @@ html button:hover {
         top: 45%;
     
     }
+
+    .contactdescrdiv {
+        flex-flow: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .contactformdiv {
+        width: 100%;
+        margin: 0px 0px 48px 0px;
+    
+    }
+
+    .formitemdiv:nth-child(3){
+        margin-bottom: 24px;
+    }
+
+    .contactlistdiv{
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .addresslistitem{
+        width: 100%;
+        text-align: center;
+
+
+    }
+
+    .addresslistitem:nth-child(4){
+
+        background-color: transparent;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    .contactlistdiv h2{
+        width: 100%;
+    }
+
+    .mysocials{
+
+        width: 60%;
+        height: auto;
+        background-color: transparent;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    
+    
+    }
+
+    .socialitem{
+
+        margin: 6px 0px 6px 18px;
+    }
+
+
+
+    .mycolumnchildren:nth-child(5){
+        
+        height: 200px;
+        width: 100%;
+        padding: 18px 36px;
+        box-sizing: border-box;
+        margin-bottom: 36px;
+        background-color: #061826;
+        color: #53f4ff;
+        justify-content: flex-start;
+    
+    }
+
+    #ismizo{
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        padding-right: 18px;
+        position: relative;
+        right: -48%;
+        top: 40px;
+    }
+
+ 
+    
 
    
   }
