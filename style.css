@@ -563,8 +563,10 @@ html button:hover {
 
 
     .mycolumnchildren:nth-child(3){
+
+
         
-        background-color: #061826;
+        background-color: transparent;
         color: #061826;
     
     }
@@ -572,6 +574,59 @@ html button:hover {
     .aboutdescrboxes h2, .aboutdescrboxes p{
   
         color: #061826;
+    }
+
+
+    .aboutdescrboxes:nth-child(1) .descricon{
+
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/swim-icon1.png");
+      
+    }
+    
+    .aboutdescrboxes:nth-child(2) .descricon{
+    
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/competition-icon1.png");
+      
+    }
+    
+    .aboutdescrboxes:nth-child(3) .descricon{
+    
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/swim-icon1.png");
+      
+    }
+    
+    .aboutdescrboxes:nth-child(4) .descricon{
+    
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/lifeguard-icon1.png");
+      
+    }
+    
+    .aboutdescrboxes:nth-child(5) .descricon{
+    
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/medals-icon1.png");
+      
+    }
+    
+    .aboutdescrboxes:nth-child(6) .descricon{
+    
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/calendar-icon1.png");
+      
+    }
+
+
+
+    .aboutdescrboxes{
+
+        width: 100%;
+        margin: 14px 0px;
+       
+    }
+
+    .descricon{
+
+        left: 0px;
+        top: 45%;
+    
     }
 
    
