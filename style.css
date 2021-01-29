@@ -713,11 +713,11 @@ html button:hover {
 
     .mycolumnchildren:nth-child(5){
         
-        height: 200px;
+        height: 136px;
         width: 100%;
         padding: 18px 36px;
         box-sizing: border-box;
-        margin-bottom: 36px;
+        margin-bottom: -36px;
         background-color: #061826;
         color: #53f4ff;
         justify-content: flex-start;
@@ -731,7 +731,7 @@ html button:hover {
         padding-right: 18px;
         position: relative;
         right: -48%;
-        top: 40px;
+        top: 42px;
     }
 
  
