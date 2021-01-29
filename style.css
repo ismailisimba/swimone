@@ -66,6 +66,12 @@ html button:hover {
     height: inherit;
     background-color: #061826;
 
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
     
 }
 
@@ -443,4 +449,38 @@ html button:hover {
     position: absolute;
     right: 69px;
     bottom: 69px;
+}
+
+
+.logocontainer{
+
+    width: 200px;
+    height: 69px;
+    background-color: #53f4ff;
+    box-sizing: border-box;
+    margin: 64px 0px 64px 0px;
+}
+
+.sidemenucontainer ul {
+    list-style-type:none;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+
+.sidemenucontainer li {
+    width: 169px;
+    margin-block-start: 36px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2.69px;
+    box-sizing: border-box;
+    padding: 6px 12px;
+}
+
+.sidemenucontainer li:hover {
+  color: #061826;
+  background-color: #53f4ff;
 }
