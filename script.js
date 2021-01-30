@@ -1,5 +1,7 @@
 
 let dePage = document.querySelectorAll(".mygenericpage")[0];
+let reqString = "https://script.google.com/macros/s/AKfycbyeGCc2c34RY53aturHkod7EQfF2gOaY4vxUF-cN4HXaKgTlClRazol/exec";
+let paraTemplate = {"params":[{"initVal":"initKey"}]};
 
 window.onload = () => {
     myStartUpFunction();
@@ -93,13 +95,117 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   console.log('Token: ' + googleUser.getAuthResponse().id_token);
+
+  let token = googleUser.getAuthResponse().id_token;
+
+  hailTheServerOnAllChannels("login",token);
 }
 
 
-function verificaTiontest (){
-  certStr = "https://www.googleapis.com/oauth2/v1/certs";
-  var pubkey = KEYUTIL.getKey(certStr);
+
+
+
+async function fetchInfoWithFilter (data) {
+
+  data = JSON.stringify(data);
+    
+  const myInit = {
+      method: "POST",
+      mode: "cors",
+      credentials: "omit",
+      headers: {
+       // 'Content-Type': 'text/txt',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow',
+      body:data
+    };
+
+  var myRequest = new Request(reqString);
   
+
+       
+  const returnVal = await fetch(myRequest, myInit)
+        .then(function(response) {
+          if (!response.ok) {
+            
+            throw new Error("HTTP error, status = " + response.status);
+            
+          }
+          
+          return response.text();
+        })
+        .then(function(myBlob) {
+          
+          var cloudObject = JSON.parse(myBlob);
+          
+        
+          return cloudObject;
+          
+        })
+        .catch(function(error) {
+          var p = document.createElement('p');
+          p.appendChild(
+            document.createTextNode('Error: ' + error.message)
+          );
+          tempDiv = document.querySelectorAll(".mycolumns")[1];
+          tempDiv2 = document.querySelectorAll(".googlestuff")[0];
+          tempDiv.insertBefore(p, tempDiv2);
+        });
+
+      
+
+        return returnVal; 
+
+    // tempDiv.innerHTML = Object.entries(localVar.values)[0][1][3] ;   
+};
+
+
+
+
+
+function hailTheServerOnAllChannels(action,value) {
+
+  if(action==="login"){
+
+    let data = bundleMyData("login",token);
+
+    startHailing(data,genericPrintResponse);
+
+  }
+
+
+
+
+};
+
+
+async function startHailing(data,functionToRunAfter){
+  fetchInfoWithFilter(data).then(responseObj => {
+    functionToRunAfter(responseObj);
+  })
 }
 
 
+
+function bundleMyData(action,value) {
+
+  let data = "mydata";
+
+  if(action==="login"){
+    data = bundleLoginData(value);
+   
+  }
+return data;
+}
+
+
+
+function bundleLoginData(value) {
+  let contextObject = JSON.parse(JSON.stringify(paraTemplate));
+
+    contextObject.params[0]["action"] = "initfetch";
+    contextObject.params[0]["token"] = value.toString();
+
+    return contextObject;
+}
