@@ -111,10 +111,10 @@ async function fetchInfoWithFilter (data) {
     
   const myInit = {
       method: "POST",
-      mode: "no-cors",
+      mode: "cors",
       credentials: "omit",
       headers: {
-       // 'Content-Type': 'text/txt',
+       'Content-Type': 'text/txt',
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       redirect: 'follow',
