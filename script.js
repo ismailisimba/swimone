@@ -213,5 +213,5 @@ function bundleLoginData(token) {
 
 function genericPrintResponse (responseObj){
 
-  document.querySelectorAll(".mycolumns")[1].innerHTML = Object.entries(responseObj).length;
+  document.querySelectorAll(".mycolumns")[1].innerHTML = responseObj.length;
 }
