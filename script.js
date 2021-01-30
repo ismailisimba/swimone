@@ -111,7 +111,7 @@ async function fetchInfoWithFilter (data) {
     
   const myInit = {
       method: "POST",
-      mode: "cors",
+      mode: "no-cors",
       credentials: "same-origin",
       headers: {
        'Content-Type': 'text/txt',
