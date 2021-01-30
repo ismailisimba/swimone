@@ -462,9 +462,14 @@ html button:hover {
 
 .logocontainer{
 
-    width: 200px;
+    width: 230px;
     height: 69px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    padding: 3px 3px;
     background-color: #53f4ff;
+    color: #061826;
     box-sizing: border-box;
     margin: 64px 0px 64px 0px;
 }
@@ -493,11 +498,26 @@ html button:hover {
   background-color: #53f4ff;
 }
 
+.sidemenuitem li{
+
+    cursor: pointer;
+}
+
 
 
 /*JS items styles go here*/
 
+.loginbutt{
 
+    color: #061826;
+    background-color: transparent;
+}
+
+.loginbutt:hover{
+
+    color: #53f4ff;
+    background-color: #061826;
+}
 /*Media Queries Go Here*/ 
 
 @media screen and (max-width: 1024px) {

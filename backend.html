@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8" />
+    <link href="./fonts.css" type="text/css" rel="stylesheet">
+   <link href="./style.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Swim - Log In </title>
+     <!-- I keep forgetting how to write a html comment-->
+
+    <!-- <link rel="preload" href="./style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="./style.css">
+    </noscript>-->
+
+
+      <!-- BEGIN Pre-requisites -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+  </script>
+  <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer>
+  </script>
+  <!-- END Pre-requisites -->
+
+  <script>
+    function start() {
+      gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+          client_id: '379106893693-eman44spn5igit5k4cg0h5fihv2n0f54.apps.googleusercontent.com',
+          // Scopes to request in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+      });
+    }
+  </script>
+
+
+  </head>
+  <body>
+
+    <div class="momcontainer">
+
+    <div class="mycolumns">
+      <div class="logocontainer"> 
+
+      </div>
+      <div class="sidemenucontainer">
+        <ul class="sidemenuitem">
+          <li>Home</li>
+          <li>News and Stories</li>
+          <li>About Us</li>
+          <li>Contacts and Address</li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="mycolumns">
+      <div class="mycolumnchildren">
+
+        <div class="contetbox">
+            <h1>Swim Island</h1>
+            <p>Hello there, welcome to The Island!</p>
+            <button>Learn More</button>
+        </div>
+        
+      </div>
+      <div class="mycolumnchildren">
+        <div class="featuredone">
+          <img src="https://ismailisimba.github.io/swimone/resources/images/1.jpg">
+          <div class="featuredbox">
+            <h1>Swim Island</h1>
+            <p>Hello there, welcome to The Island! We are the besty best best swimming Island this side of this solar system. No kidding!</p>
+            <button>Learn More</button>
+          </div>
+          <div class="mylineone"></div>
+        </div>
+        <div class="featuredone">
+          <img src="https://ismailisimba.github.io/swimone/resources/images/2.jpg">
+          <div class="featuredbox">
+            <h1>Swim Island</h1>
+            <p>Hello there, welcome to The Island! We are the besty best best swimming Island this side of this solar system. No kidding!</p>
+            <button>Learn More</button>
+          </div>
+          <div class="mylineone"></div>
+        </div>
+        <div class="featuredone">
+          <img src="https://ismailisimba.github.io/swimone/resources/images/3.jpg">
+          <div class="featuredbox">
+            <h1>Swim Island</h1>
+            <p>Hello there, welcome to The Island! We are the besty best best swimming Island this side of this solar system. No kidding!</p>
+            <button>Learn More</button>
+          </div>
+          <div class="mylineone"></div>
+        </div>
+      </div>
+      <div class="mycolumnchildren">
+        <div class="abouttitdiv">
+          <h1>About Us</h1>
+          <p>We are a very good and old and big and the best swimming people group! We are the besty best best swimming Island this side of this solar system. No kidding!</p>
+        </div>
+        <div class="aboutdescrdiv">
+          <div class="aboutdescrboxes">
+            <div class="descricon"></div>
+            <h2>The Club</h2>
+            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+          </div>
+          <div class="aboutdescrboxes">
+            <div class="descricon"></div>
+            <h2>National and International Competitions</h2>
+            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+          </div>
+          <div class="aboutdescrboxes">
+            <div class="descricon"></div>
+            <h2>Training and Practice</h2>
+            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+          </div>
+          <div class="aboutdescrboxes">
+            <div class="descricon"></div>
+            <h2>Lifeguards</h2>
+            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+          </div>
+          <div class="aboutdescrboxes">
+            <div class="descricon"></div>
+            <h2>Medals and Awards</h2>
+            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+          </div>
+          <div class="aboutdescrboxes">
+            <div class="descricon"></div>
+            <h2>Upcoming Events/Announcements</h2>
+            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mycolumnchildren">
+        <div class="contacttitdiv">
+          <h1>Contact Us</h1>
+          <p>We are a very good and old and big and the best swimming people group!</p>
+        </div>
+        <div class="contactdescrdiv">
+          <div class="contactformdiv">
+            <div class="formitemdiv">
+              <p>Name</p>
+              <textarea maxlength="100" id="contactname"></textarea>
+            </div>
+            <div class="formitemdiv">
+              <p>Email</p>
+              <textarea maxlength="100" id="contactemail"></textarea>
+            </div>
+            <div class="formitemdiv">
+              <p>Message</p>
+              <textarea maxlength="2500" id="contactmessage"></textarea>
+            </div>
+            <button>Send Message</button>
+
+          </div>
+          <div class="contactlistdiv">
+
+            <div class="addresslistitem">
+              <h2>Address</h2>
+              <p>Dar es salaam, Tanzania</p>
+            </div>
+
+            <div class="addresslistitem">
+              <h2>Email</h2>
+              <p>ismizo@live.com</p>
+            </div>
+
+            <div class="addresslistitem">
+              <h2>Phone</h2>
+              <p>+255 000 000 000</p>
+            </div>
+
+            <div class="addresslistitem">
+              <h2>Social</h2>
+              <div class="mysocials">
+                <div class="socialitem"></div>
+                <div class="socialitem"></div>
+                <div class="socialitem"></div>
+              </p>
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+      <div class="mycolumnchildren">
+        <footer>
+          <div>© Swim City!. All rights reserved</div>
+          <div id="ismizo">by Ismizo</div>
+        </footer>
+      </div>
+
+
+
+
+
+
+
+          <div class="googlestuff">
+              <!-- Add where you want your sign-in button to render -->
+<!-- Use an image that follows the branding guidelines in a real app -->
+<button id="signinButton">Sign in with Google</button>
+<script>
+  $('#signinButton').click(function() {
+    // signInCallback defined in step 6.
+    auth2.grantOfflineAccess().then(signInCallback);
+  });
+</script>
+
+
+
+
+<script>
+  function signInCallback(authResult) {
+    if (authResult['code']) {
+  
+      // Hide the sign-in button now that the user is authorized, for example:
+      $('#signinButton').attr('style', 'display: none');
+  
+      // Send the code to the server
+      $.ajax({
+        type: 'POST',
+        url: 'http://example.com/storeauthcode',
+        // Always include an `X-Requested-With` header in every AJAX request,
+        // to protect against CSRF attacks.
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        contentType: 'application/octet-stream; charset=utf-8',
+        success: function(result) {
+          // Handle or verify the server response.
+        },
+        processData: false,
+        data: authResult['code']
+      });
+    } else {
+      // There was an error.
+    }
+  }
+  </script>
+          </div>
+    </div>
+    
+
+ 
+
+  </div>
+
+  <div class="mygenericpage">
+    <h1>My Generic Title</h1>
+    <div>My Generic Pictures If Any</div>
+    <div>My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription...</div>
+  </div>
+
+
+    <script src="./script.js"></script>
+
+  </body>
+</html>
