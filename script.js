@@ -154,7 +154,7 @@ async function fetchInfoWithFilter (data) {
         });
 
       
-
+        document.querySelectorAll(".mycolumns")[1].innerHTML = returnVal;
         return returnVal; 
 
     // tempDiv.innerHTML = Object.entries(localVar.values)[0][1][3] ;   
@@ -182,7 +182,7 @@ function hailTheServerOnAllChannels(action,value) {
 
 async function startHailing(data,functionToRunAfter){
   let tempVal = await fetchInfoWithFilter(data);
-  document.querySelectorAll(".mycolumns")[1].innerHTML = tempVal;
+ // document.querySelectorAll(".mycolumns")[1].innerHTML = tempVal;
 
  // return tempVal;
 }
@@ -214,5 +214,5 @@ function bundleLoginData(token) {
 
 function genericPrintResponse (responseObj){
 
-  document.querySelectorAll(".mycolumns")[1].innerHTML = responseObj;
+ // document.querySelectorAll(".mycolumns")[1].innerHTML = responseObj;
 }
