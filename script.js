@@ -181,11 +181,10 @@ function hailTheServerOnAllChannels(action,value) {
 
 
 async function startHailing(data,functionToRunAfter){
-  let tempVal = await fetchInfoWithFilter(data).then((responseObj) => {
-    functionToRunAfter(responseObj);
-  });
+  let tempVal = await fetchInfoWithFilter(data);
+  document.querySelectorAll(".mycolumns")[1].innerHTML = tempVal;
 
-  return tempVal;
+ // return tempVal;
 }
 
 
