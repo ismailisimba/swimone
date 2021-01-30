@@ -168,7 +168,7 @@ function hailTheServerOnAllChannels(action,value) {
 
   if(action==="login"){
 
-    let data = bundleMyData("login",token);
+    let data = bundleMyData("login",value);
 
     startHailing(data,genericPrintResponse);
 
@@ -201,11 +201,11 @@ return data;
 
 
 
-function bundleLoginData(value) {
+function bundleLoginData(token) {
   let contextObject = JSON.parse(JSON.stringify(paraTemplate));
 
     contextObject.params[0]["action"] = "initfetch";
-    contextObject.params[0]["token"] = value.toString();
+    contextObject.params[0]["token"] = token.toString();
 
     return contextObject;
 }
