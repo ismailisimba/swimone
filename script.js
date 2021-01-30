@@ -209,3 +209,9 @@ function bundleLoginData(token) {
 
     return contextObject;
 }
+
+
+function genericPrintResponse (responseObj){
+
+  document.querySelectorAll(".mycolumns")[1].innerHTML = Object.entries(responseObj).length;
+}
