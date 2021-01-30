@@ -181,7 +181,7 @@ function hailTheServerOnAllChannels(action,value) {
 
 
 async function startHailing(data,functionToRunAfter){
-  fetchInfoWithFilter(data).then(responseObj => {
+  fetchInfoWithFilter(data).then((responseObj) => {
     functionToRunAfter(responseObj);
   })
 }
