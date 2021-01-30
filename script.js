@@ -121,7 +121,7 @@ async function fetchInfoWithFilter (data) {
       body:data
     };
 
-  var myRequest = new Request(reqString);
+  var myRequest = new Request(reqString+"?paraOne="+data);
   
 
        
