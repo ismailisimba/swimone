@@ -233,7 +233,8 @@ myCanvas.style.letterSpacing = "2px";
 if(loginStatus==="captainHasTheCon"){
   initSetupBackend("captainHasTheCon");
 }else{
-  myCanvas.innerHTML = loginStatus;
+ // myCanvas.innerHTML = loginStatus;
+ signOut();
 }
 //myCanvas.innerHTML = Object.entries(responseObj.tokenObject);
 
