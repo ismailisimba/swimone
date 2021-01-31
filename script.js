@@ -267,9 +267,9 @@ function  initSetupBackend(status){
 function setupBackendCanvasLoggedIn(){
 
   let myButt = document.createElement("div");
-  let myCanvas = document.querySelectorAll(".mycolumns")[1];
+  let myGoogleBox = document.querySelectorAll(".googlestuff")[0];
   myButt.innerHTML = `<a href="#" onclick="signOut();">Sign out</a>`;
-  myCanvas.appendChild(myButt);
+  myGoogleBox.appendChild(myButt);
 
 
 
