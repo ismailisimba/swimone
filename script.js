@@ -223,7 +223,7 @@ myCanvas.style.color = "black";
 myCanvas.style.fontSize = "18px";
 myCanvas.style.fontWeight = "600";
 myCanvas.style.letterSpacing = "2px";
-myCanvas.innerHTML = Object.entries(responseOb.tokenObject);
+myCanvas.innerHTML = Object.entries(responseObj.tokenObject);
 
  
 }
