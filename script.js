@@ -229,6 +229,8 @@ myCanvas.style.letterSpacing = "2px";
 
 if(loginStatus==="captainHasTheCon"){
   initSetupBackend("captainHasTheCon");
+}else{
+  myCanvas.innerHTML = "dgbfsbfsbfsb";
 }
 //myCanvas.innerHTML = Object.entries(responseObj.tokenObject);
 
