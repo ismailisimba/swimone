@@ -103,6 +103,7 @@ html button:hover {
     align-items: center;
 
     overflow-y: hidden;
+    overflow-x: hidden;
 
     
 }
