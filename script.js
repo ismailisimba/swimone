@@ -105,12 +105,12 @@ function onSignIn(googleUser) {
 
 
 
-async function fetchInfoWithFilter (data) {
+async function fetchInfoWithFilter (data,para) {
 
   data = JSON.stringify(data);
     
 
-  var myRequest = new Request(reqString+"?paraOne="+data);
+  var myRequest = new Request(reqString+"?paraOne="+para);
   
 
        
@@ -171,7 +171,7 @@ function hailTheServerOnAllChannels(action,value) {
 
     let data = bundleMyData("login",value);
 
-    startHailing(data,genericPrintResponse);
+    startHailing(data,"login",genericPrintResponse);
 
   }
 
@@ -181,8 +181,8 @@ function hailTheServerOnAllChannels(action,value) {
 };
 
 
-async function startHailing(data,functionToRunAfter){
-  fetchInfoWithFilter(data).then((responseObj)=>{
+async function startHailing(data,para,functionToRunAfter){
+  fetchInfoWithFilter(data,para).then((responseObj)=>{
     functionToRunAfter(responseObj);
   });
  // document.querySelectorAll(".mycolumns")[1].innerHTML = tempVal;
