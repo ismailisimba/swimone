@@ -185,9 +185,8 @@ async function startHailing(data,para,functionToRunAfter){
   fetchInfoWithFilter(data,para).then((responseObj)=>{
     functionToRunAfter(responseObj);
   });
- // document.querySelectorAll(".mycolumns")[1].innerHTML = tempVal;
 
- // return tempVal;
+ // return tempVal; 
 }
 
 
