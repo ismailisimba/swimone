@@ -223,7 +223,14 @@ myCanvas.style.color = "black";
 myCanvas.style.fontSize = "18px";
 myCanvas.style.fontWeight = "600";
 myCanvas.style.letterSpacing = "2px";
-myCanvas.innerHTML = Object.entries(responseObj);
+myCanvas.innerHTML = Object.entries(responseOb.tokenObject);
 
  
+}
+
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+  });
 }
