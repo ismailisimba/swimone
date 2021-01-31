@@ -219,7 +219,7 @@ function bundleLoginData(token) {
 
 function genericPrintResponse (responseObj){
  localVar["cloudObj"] = responseObj;
-  let loginStatus = responseObj.tokenObject;
+  let loginStatus = responseObj.tokenObject.status;
 let myCanvas = document.querySelectorAll(".mycolumns")[1];
 myCanvas.innerHTML = "";
 myCanvas.style.color = "black";
