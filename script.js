@@ -264,7 +264,7 @@ function setupBackendCanvasLoggedIn(){
 
   let myButt = document.createElement("div");
   let myCanvas = document.querySelectorAll(".mycolumns")[1];
-  myButt.innerHTML = `<a href="#mysigoutbut" onclick="signOut();">Sign out</a>`;
+  myButt.innerHTML = `<a href="#" onclick="signOut();">Sign out</a>`;
   myCanvas.appendChild(myButt);
 
 
