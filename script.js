@@ -90,14 +90,17 @@ function checkTheURL () {
 
 
 function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
- /* console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+ /*  var profile = googleUser.getBasicProfile();
+ console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
  
   console.log('Token: ' + googleUser.getAuthResponse().id_token);
    */
+  let signInBut = document.querySelectorAll(".g-signin2")[0];
+  signInBut.style.visibility = "collapse";
+  signInBut.style.width = "0px";
 
   let token = googleUser.getAuthResponse().id_token;
 
@@ -221,7 +224,7 @@ function genericPrintResponse (responseObj){
  localVar["cloudObj"] = responseObj;
   let loginStatus = responseObj.tokenObject.status;
 let myCanvas = document.querySelectorAll(".mycolumns")[1];
-myCanvas.innerHTML = "";
+//myCanvas.innerHTML = "";
 myCanvas.style.color = "black";
 myCanvas.style.fontSize = "18px";
 myCanvas.style.fontWeight = "600";
