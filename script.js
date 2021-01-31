@@ -2,6 +2,7 @@
 let dePage = document.querySelectorAll(".mygenericpage")[0];
 let reqString = "https://script.google.com/macros/s/AKfycbyeGCc2c34RY53aturHkod7EQfF2gOaY4vxUF-cN4HXaKgTlClRazol/exec";
 let paraTemplate = {"params":[{"initVal":"initKey"}]};
+let localVar = {};
 
 window.onload = () => {
     myStartUpFunction();
@@ -217,13 +218,19 @@ function bundleLoginData(token) {
 
 
 function genericPrintResponse (responseObj){
+ localVar["cloudObj"] = responseObj;
+  let loginStatus = responseObj.tokenObject;
 let myCanvas = document.querySelectorAll(".mycolumns")[1];
 myCanvas.innerHTML = "";
 myCanvas.style.color = "black";
 myCanvas.style.fontSize = "18px";
 myCanvas.style.fontWeight = "600";
 myCanvas.style.letterSpacing = "2px";
-myCanvas.innerHTML = Object.entries(responseObj.tokenObject);
+
+if(loginStatus==="captainHasTheCon"){
+  initSetupBackend("captainHasTheCon");
+}
+//myCanvas.innerHTML = Object.entries(responseObj.tokenObject);
 
  
 }
@@ -233,4 +240,31 @@ function signOut() {
   auth2.signOut().then(function () {
     console.log('User signed out.');
   });
+}
+
+
+
+function  initSetupBackend(status){
+
+  if(status==="captainHasTheCon"){
+
+    setupBackendCanvasLoggedIn();
+
+  }else{
+
+
+  }
+
+
+};
+
+function setupBackendCanvasLoggedIn(){
+
+  let myButt = document.createElement("div");
+  let myCanvas = document.querySelectorAll(".mycolumns")[1];
+  myButt.innerHTML = `<a href="#mysigoutbut" onclick="signOut();">Sign out</a>`;
+  myCanvas.appendChild(myButt);
+
+
+
 }
