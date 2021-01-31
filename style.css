@@ -511,6 +511,7 @@ html button:hover {
 .mylogbutt{
 
     border: 3px dotted #061826;
+    padding: 9px 16px;
     border-radius: 6px;
 }
 

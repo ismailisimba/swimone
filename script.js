@@ -226,7 +226,7 @@ function genericPrintResponse (responseObj){
 let myCanvas = document.querySelectorAll(".mycolumns")[1];
 //myCanvas.innerHTML = "";
 myCanvas.style.color = "black";
-myCanvas.style.fontSize = "18px";
+myCanvas.style.fontSize = "14px";
 myCanvas.style.fontWeight = "600";
 myCanvas.style.letterSpacing = "2px";
 
