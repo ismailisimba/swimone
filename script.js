@@ -155,7 +155,7 @@ async function fetchInfoWithFilter (data) {
         });
 
       
-        document.querySelectorAll(".mycolumns")[1].innerHTML = returnVal;
+       // document.querySelectorAll(".mycolumns")[1].innerHTML = returnVal;
         return returnVal; 
 
     // tempDiv.innerHTML = Object.entries(localVar.values)[0][1][3] ;   
@@ -182,7 +182,9 @@ function hailTheServerOnAllChannels(action,value) {
 
 
 async function startHailing(data,functionToRunAfter){
-  let tempVal = await fetchInfoWithFilter(data);
+  fetchInfoWithFilter(data).then((responseObj)=>{
+    functionToRunAfter(responseObj);
+  });
  // document.querySelectorAll(".mycolumns")[1].innerHTML = tempVal;
 
  // return tempVal;
@@ -214,6 +216,13 @@ function bundleLoginData(token) {
 
 
 function genericPrintResponse (responseObj){
+let myCanvas = document.querySelectorAll(".mycolumns")[1];
+myCanvas.innerHTML = "";
+myCanvas.style.color = "black";
+myCanvas.style.fontSize = "18px";
+myCanvas.style.fontWeight = "600";
+myCanvas.style.letterSpacing = "2px";
+myCanvas.innerHTML = Object.entries(responseObj);
 
- // document.querySelectorAll(".mycolumns")[1].innerHTML = responseObj;
+ 
 }
