@@ -505,7 +505,7 @@ html button:hover {
 
 
 
-/*JS items styles go here*/
+/*JS javascript items styles go here*/
 
 .loginbutt{
 
@@ -517,6 +517,21 @@ html button:hover {
 
     color: #53f4ff;
     background-color: #061826;
+}
+
+.googlestuff{
+
+    color: #53f4ff;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+.googlestuff a{
+
+    color: #061826 !important;
+    text-decoration: none !important;
+
+
 }
 /*Media Queries Go Here*/ 
 
