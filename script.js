@@ -279,7 +279,9 @@ async function setupBackendCanvasLoggedIn(){
   tempdiv.style.right = "100px";
   tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
-  document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv).then(()=>{
+  
+  
+  inserteThenFuncRunTest(tempdiv).then(()=>{
     let tempTime = window.setTimeout(function(){
 
       mainFunc();
@@ -292,3 +294,8 @@ async function setupBackendCanvasLoggedIn(){
 
 
 }
+
+async function inserteThenFuncRunTest(tempdiv){
+  document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv)
+}
+
