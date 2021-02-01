@@ -277,6 +277,7 @@ function setupBackendCanvasLoggedIn(){
   tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
   document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv);
+  mainFunc();
 
 
 
