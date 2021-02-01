@@ -29,7 +29,7 @@ html button {
 
 textarea {
     
-    min-width: 250px;
+    min-width: 99px;
     height: 36px;
     overflow: hidden;
     resize: none;
