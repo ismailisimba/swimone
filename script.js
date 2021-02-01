@@ -57,7 +57,7 @@ function addHomeClicFunc (){
 
 function reloadHomePage () {
   window.location = "./index.html";
-  document.querySelectorAll(".mycolumns")[1].style.overflowY="hidden"
+  document.querySelectorAll(".mycolumns")[1].style.overflowY="hidden";
 }
 
 function initiateLogInSetup (backendMatch){

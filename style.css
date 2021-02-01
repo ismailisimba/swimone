@@ -102,7 +102,7 @@ html button:hover {
     justify-content: center;
     align-items: center;
 
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
 
     
