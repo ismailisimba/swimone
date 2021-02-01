@@ -234,7 +234,7 @@ myCanvas.style.letterSpacing = "2px";
 if(loginStatus==="captainHasTheCon"){
   initSetupBackend("captainHasTheCon");
 }else{
- // myCanvas.innerHTML = loginStatus;
+ alert("There seems to be an error. Please use the correct email. <br> If the error persists please email: ismaili.a.simba@gmail.com");
  signOut();
 }
 //myCanvas.innerHTML = Object.entries(responseObj.tokenObject);
