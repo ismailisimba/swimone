@@ -265,7 +265,7 @@ function  initSetupBackend(status){
 
 };
 
-function setupBackendCanvasLoggedIn(){
+async function setupBackendCanvasLoggedIn(){
 
   let myButt = document.createElement("div");
   myButt.className = "mylogbutt";
@@ -279,8 +279,15 @@ function setupBackendCanvasLoggedIn(){
   tempdiv.style.right = "100px";
   tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
-  document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv);
-  mainFunc();
+  document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv).then(()=>{
+    let tempTime = window.setTimeout(function(){
+
+      mainFunc();
+      window.clearTimeout(tempTime);
+
+    },250);
+  });
+ 
 
 
 
