@@ -274,6 +274,9 @@ function setupBackendCanvasLoggedIn(){
   myGoogleBox.appendChild(myButt);
 
   let tempdiv = document.createElement("div");
+  tempdiv.style.position = "absolute";
+  tempdiv.style.top = "120px";
+  tempdiv.style.right = "100px";
   tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
   document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv);
