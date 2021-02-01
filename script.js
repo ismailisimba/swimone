@@ -281,6 +281,9 @@ async function setupBackendCanvasLoggedIn(){
 
   setInnerHTML(tempdiv,localVar.cloudObj.backendHTML);
 
+
+  
+
   
 
  
@@ -294,6 +297,7 @@ async function setupBackendCanvasLoggedIn(){
 
  function setInnerHTML(elm, html) {
   elm.innerHTML = html;
+  document.querySelectorAll(".mycolumns")[1].appendChild(elm);
   Array.from(elm.querySelectorAll("script")).forEach( oldScript => {
     const newScript = document.createElement("script");
     Array.from(oldScript.attributes)
@@ -301,4 +305,5 @@ async function setupBackendCanvasLoggedIn(){
     newScript.appendChild(document.createTextNode(oldScript.innerHTML));
     oldScript.parentNode.replaceChild(newScript, oldScript);
   });
+  
 }
