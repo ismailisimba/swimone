@@ -273,6 +273,11 @@ function setupBackendCanvasLoggedIn(){
   myButt.innerHTML = `<a href="#" onclick="signOut();">Sign out</a>`;
   myGoogleBox.appendChild(myButt);
 
+  let tempdiv = document.createElement("div");
+  tempdiv.innerHTML = localVar.cloudObj.backendHTML;
+
+  document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv);
+
 
 
 }
