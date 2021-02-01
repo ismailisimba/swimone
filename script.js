@@ -276,26 +276,29 @@ async function setupBackendCanvasLoggedIn(){
   let tempdiv = document.createElement("div");
   tempdiv.style.position = "absolute";
   tempdiv.style.top = "120px";
-  tempdiv.style.right = "100px";
-  tempdiv.innerHTML = localVar.cloudObj.backendHTML;
+  tempdiv.style.right = "169px";
+  //tempdiv.innerHTML = localVar.cloudObj.backendHTML;
+
+  setInnerHTML(tempdiv,localVar.cloudObj.backendHTML);
 
   
-  
-  inserteThenFuncRunTest(tempdiv).then(()=>{
-    let tempTime = window.setTimeout(function(){
 
-      mainFunc();
-      window.clearTimeout(tempTime);
-
-    },250);
-  });
  
 
 
 
 }
 
-async function inserteThenFuncRunTest(tempdiv){
-  document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv)
-}
 
+
+
+ function setInnerHTML(elm, html) {
+  elm.innerHTML = html;
+  Array.from(elm.querySelectorAll("script")).forEach( oldScript => {
+    const newScript = document.createElement("script");
+    Array.from(oldScript.attributes)
+      .forEach( attr => newScript.setAttribute(attr.name, attr.value) );
+    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+    oldScript.parentNode.replaceChild(newScript, oldScript);
+  });
+}
