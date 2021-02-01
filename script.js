@@ -274,12 +274,14 @@ async function setupBackendCanvasLoggedIn(){
   myGoogleBox.appendChild(myButt);
 
   let tempdiv = document.createElement("div");
+  tempdiv.id = "temporarydiv";
   tempdiv.style.position = "absolute";
   tempdiv.style.top = "120px";
   tempdiv.style.right = "169px";
+  document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv);
   //tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
-  setInnerHTML(tempdiv,localVar.cloudObj.backendHTML);
+  insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML);
 
 
   
@@ -295,15 +297,17 @@ async function setupBackendCanvasLoggedIn(){
 
 
 
- function setInnerHTML(elm, html) {
-  elm.innerHTML = html;
-  document.querySelectorAll(".mycolumns")[1].appendChild(elm);
-  Array.from(elm.querySelectorAll("script")).forEach( oldScript => {
-    const newScript = document.createElement("script");
-    Array.from(oldScript.attributes)
-      .forEach( attr => newScript.setAttribute(attr.name, attr.value) );
-    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-    oldScript.parentNode.replaceChild(newScript, oldScript);
-  });
-  
+function insertAndExecute(id, text) {
+  document.getElementById(id).innerHTML = text;
+  var scripts = Array.prototype.slice.call(document.getElementById(id).getElementsByTagName("script"));
+  for (var i = 0; i < scripts.length; i++) {
+      if (scripts[i].src != "") {
+          var tag = document.createElement("script");
+          tag.src = scripts[i].src;
+          document.getElementsByTagName("head")[0].appendChild(tag);
+      }
+      else {
+          eval(scripts[i].innerHTML);
+      }
+  }
 }
