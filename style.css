@@ -509,6 +509,12 @@ html button:hover {
 
 /*JS javascript items styles go here*/
 
+#temporarydiv{
+    position: absolute;
+    top: 79px;
+    margin: 6px auto;
+}
+
 .mylogbutt{
 
     border: 3px dotted #061826;
