@@ -71,7 +71,7 @@ function initiateLogInSetup (backendMatch){
 
   contentBox.innerHTML = "";
   contentBox.appendChild(googleStuff);
-  contentBox.style.height ="auto";
+  contentBox.style.minHeight ="1000px";
 
 }
 
