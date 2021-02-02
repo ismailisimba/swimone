@@ -280,7 +280,7 @@ async function setupBackendCanvasLoggedIn(){
   tempdiv.style.top = "120px";
   tempdiv.style.right = "190px";
   document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv)
-  document.querySelectorAll(".mycolumns")[1].style.overflowY="scroll";
+  //document.querySelectorAll(".mycolumns")[1].style.overflowY="scroll";
   //tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
   insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML);
