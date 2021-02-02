@@ -100,7 +100,7 @@ html button:hover {
     display: flex;
     flex-flow: column;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     overflow-y: hidden;
