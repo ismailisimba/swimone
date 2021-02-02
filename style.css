@@ -550,8 +550,18 @@ html button:hover {
 }
 /*Media Queries Go Here*/ 
 
+
 @media screen and (max-width: 1024px) {
 
+
+    /*JS mediad items*/
+    .backendmom{
+
+
+        width:85%;
+
+    }
+ /*JS mediad items*/
     .mycolumns:first-child{
 
         display: block;
