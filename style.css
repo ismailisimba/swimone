@@ -66,13 +66,17 @@ html button:hover {
 .settcont{
     display: block;
     position: absolute;
-    top: 48px;
+    top: 61px;
+    border-radius: 6px;
     left: 69px;
+
+    border: 3px dotted transparent;
+    padding: 9px 16px;
 
     width: 200px;
     height: 48px;
 
-    background-color: red;
+    background-color: transparent;
 }
 .mycolumns:first-child{
 

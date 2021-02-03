@@ -85,6 +85,7 @@ function checkTheURL () {
   
   if(backendMatch!==null){
     cPan.remove();
+    
     initiateLogInSetup (backendMatch);
   }
   
@@ -282,6 +283,9 @@ async function setupBackendCanvasLoggedIn(){
   tempdiv.id = "temporarydiv";
   document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv)
   document.querySelectorAll(".mycolumns")[1].style.overflowY="scroll";
+
+  cPan.style.backgroundColor = "#061826";
+  cPan.style.borderColor = "#061826";
   document.querySelectorAll(".mycolumns")[1].appendChild(cPan);
   //tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
