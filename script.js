@@ -424,13 +424,13 @@ function fillContentMom(contentMom,context,numberOfBoxes){
 function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
 
   let sumOfHeight = 0;
+  contentMom.innerHTML = "";
 
   for(let i = 0; i<numberOfBoxes;i++){
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = myTextArr[i];
     tempDiv.style.height = boxHeight+"px";
     sumOfHeight = sumOfHeight + boxHeight;
-    contentMom.innerHTML = "";
     contentMom.appendChild(tempDiv);
 
   }
