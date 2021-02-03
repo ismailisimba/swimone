@@ -358,12 +358,19 @@ function displayYourCPanOptions(){
     
   }else{
 
-    let tempDiv = document.querySelectorAll(".logocontainer")[0];
+  
 
     
 
-    displayCpanOptions();
-    tempDiv.innerHTML = this.id;
+    displayCpanOptions(this.id);
+   
 
   }
+}
+
+function displayCpanOptions(eleid){
+
+  let theNum = eleid.slice(13);
+  let tempDiv = document.querySelectorAll(".logocontainer")[0];
+  tempDiv.innerHTML = theNum;
 }
