@@ -359,10 +359,14 @@ function displayYourCPanOptions(){
   }else{
 
   
-
+    let theNum = eleid.slice(14);
+    theNum = parseInt(theNum,10);
+  
+    let tempDiv = document.querySelectorAll(".logocontainer")[0];
+    tempDiv.innerHTML = theNum;
     
 
-    displayCpanOptions(this.id);
+  //  displayCpanOptions(this.id);
    
 
   }
@@ -370,9 +374,5 @@ function displayYourCPanOptions(){
 
 function displayCpanOptions(eleid){
 
-  let theNum = eleid.slice(14);
-  theNum = parseInt(theNum,10);
-  
-  let tempDiv = document.querySelectorAll(".logocontainer")[0];
-  tempDiv.innerHTML = theNum;
+ 
 }
