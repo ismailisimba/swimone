@@ -366,13 +366,79 @@ function displayYourCPanOptions(){
     tempDiv.innerHTML = theNum;
     
 
-  //  displayCpanOptions(this.id);
+  displayCpanOptions(theNum);
    
 
   }
 }
 
-function displayCpanOptions(eleid){
+function displayCpanOptions(eleIndex){
+
+  if(eleIndex==0){
+
+    displayImageCpanOptions();
+
+  }else if(eleIndex==1){
+
+  }else if(eleIndex==2){
+
+  }else if(eleIndex==3){
+
+  }else if(eleIndex==4){
+
+  }
 
  
+}
+
+function  displayImageCpanOptions(){
+
+  let container = document.querySelectorAll(".setinset")[0];
+  let contentMom = document.querySelectorAll(".cpancontentcont")[0];
+  let context = "menuIm";
+  let numberOfBoxes = 2 //delete and upload
+
+  let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
+  expandTheCpan(sumOfHeight);
+    
+
+
+}
+
+
+function fillContentMom(contentMom,context,numberOfBoxes){
+
+  let sumOfHeight
+
+  if(context==="menuIm"){
+    let boxHeight = 42;
+    let myTextArr = ["Delete Pictures", "Upload Pictures"]
+
+  sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
+  }
+
+  return sumOfHeight;
+};
+
+
+function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
+
+  let sumOfHeight = 0;
+
+  for(let i = 0; i<numberOfBoxes;i++){
+    let tempDiv = document.createElement("div");
+    tempDiv.innerHTML = myTextArr[i];
+    tempDiv.style.height = boxHeight+"px";
+    sumOfHeight = sumOfHeight + boxHeight;
+    contentMom.appendChild(tempDiv);
+
+  }
+
+  return sumOfHeight;
+};
+
+
+function expandTheCpan(sumOfHeight){
+
+  cPan.style.height = sumOfHeight+"px";
 }
