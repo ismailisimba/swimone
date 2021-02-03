@@ -79,6 +79,15 @@ html button:hover {
     background-color: transparent;
 }
 
+.settcont img{
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 45%;
+    width: 24px;
+    height: auto;
+}
+
 .setinset{
 
     visibility: hidden;
@@ -86,6 +95,7 @@ html button:hover {
     width: 100%;
     height: 100%;
     position: relative;
+    bottom: -12px;
 
     background-color: #53f4ff;
 
