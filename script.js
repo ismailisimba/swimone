@@ -4,7 +4,7 @@ let reqString = "https://script.google.com/macros/s/AKfycbyeGCc2c34RY53aturHkod7
 let paraTemplate = {"params":[{"initVal":"initKey"}]};
 let localVar = {};
 let cPan = document.querySelectorAll(".settcont")[0];
-cPan.remove();
+
 
 window.onload = () => {
     myStartUpFunction();
@@ -84,6 +84,7 @@ function checkTheURL () {
   let backendMatch = location.match(/\b(\w*backend\w*)\b/g)
   
   if(backendMatch!==null){
+    cPan.remove();
     initiateLogInSetup (backendMatch);
   }
   
