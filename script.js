@@ -430,6 +430,7 @@ function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
     tempDiv.innerHTML = myTextArr[i];
     tempDiv.style.height = boxHeight+"px";
     sumOfHeight = sumOfHeight + boxHeight;
+    contentMom.innerHTML = "";
     contentMom.appendChild(tempDiv);
 
   }
@@ -439,6 +440,8 @@ function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
 
 
 function expandTheCpan(sumOfHeight){
+
+  sumOfHeight = sumOfHeight + 28;
 
   cPan.style.height = sumOfHeight+"px";
 }
