@@ -236,6 +236,7 @@ if(loginStatus==="captainHasTheCon"){
 }else{
  alert("There seems to be an error. Please use the correct email. <br> If the error persists please email: ismaili.a.simba@gmail.com");
  signOut();
+ document.querySelectorAll("title")[0].innerHTML= "Swim - Log In";
 }
 //myCanvas.innerHTML = Object.entries(responseObj.tokenObject);
 
@@ -280,6 +281,7 @@ async function setupBackendCanvasLoggedIn(){
   document.querySelectorAll(".mycolumns")[1].style.overflowY="scroll";
   //tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
+  document.querySelectorAll("title")[0].innerHTML= "Swim - You're In!";
   insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML);
 
 
