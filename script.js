@@ -359,7 +359,7 @@ function displayYourCPanOptions(){
   }else{
 
   
-    let theNum = eleid.slice(14);
+    let theNum = this.id.slice(14);
     theNum = parseInt(theNum,10);
   
     let tempDiv = document.querySelectorAll(".logocontainer")[0];
