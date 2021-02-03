@@ -86,6 +86,7 @@ html button:hover {
     left: 47%;
     width: 16px;
     height: auto;
+    overflow-y: scroll;
 }
 
 .setinset{
@@ -100,7 +101,13 @@ html button:hover {
     background-color: #53f4ff;
 
     box-shadow: inset 1.69px 1.69px 1.69px 1px black;
+
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    overflow-y: scroll;
 }
+
+.setinset::-webkit-scrollbar { display: none; }
 .mycolumns:first-child{
 
     display: block;
