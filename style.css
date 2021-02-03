@@ -98,13 +98,25 @@ html button:hover {
     position: relative;
     bottom: -12px;
 
+    transition: all 3s ease-out;
+
     background-color: #53f4ff;
 
     box-shadow: inset 1.69px 1.69px 1.69px 1px black;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
 
     scrollbar-width: none; 
     -ms-overflow-style: none;
     overflow-y: scroll;
+}
+
+.cpancontentcont{
+    width: 100%;
+    height: 600px;
+    padding: 12px 4px;
 }
 
 .setinset::-webkit-scrollbar { display: none; }
