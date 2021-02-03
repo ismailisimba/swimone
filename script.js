@@ -344,13 +344,17 @@ function addCPanActionClicks(){
 function addCPanActionClicksforImages(){
   let myClickables = document.querySelectorAll(".backendoxtitle");
   myClickables.forEach(element=>{
-    let parent = element.parentNode;
-    
-    if(parent.classList.contains("bigcontcollapse")){
-      let tempDiv = document.querySelectorAll(".logocontainer")[0];
-      tempDiv.innerHTML = element.innerHTML;
-    }else{
-
-    }
+      element.addEventListener("click",displayYourCPanOptions)
   })
 };
+
+function displayYourCPanOptions(){
+  let parent = this.parentNode;
+    
+  if(parent.classList.contains("bigcontcollapse")){
+    let tempDiv = document.querySelectorAll(".logocontainer")[0];
+    tempDiv.innerHTML = this.innerHTML;
+  }else{
+
+  }
+}
