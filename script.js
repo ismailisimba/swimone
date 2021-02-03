@@ -355,6 +355,8 @@ function displayYourCPanOptions(){
   let parent = this.parentNode;
     
   if(parent.classList.contains("bigcontcollapse")){
+
+    collapseCpan();
     
   }else{
 
@@ -379,6 +381,8 @@ function displayCpanOptions(eleIndex){
     displayImageCpanOptions();
 
   }else if(eleIndex==1){
+
+    displayDocuCpanOptions();
 
   }else if(eleIndex==2){
 
@@ -405,6 +409,20 @@ function  displayImageCpanOptions(){
 
 }
 
+function  displayDocuCpanOptions(){
+
+  let container = document.querySelectorAll(".setinset")[0];
+  let contentMom = document.querySelectorAll(".cpancontentcont")[0];
+  let context = "menuDoc";
+  let numberOfBoxes = 2 //delete and upload
+
+  let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
+  expandTheCpan(sumOfHeight);
+    
+
+
+}
+
 
 function fillContentMom(contentMom,context,numberOfBoxes){
 
@@ -415,6 +433,13 @@ function fillContentMom(contentMom,context,numberOfBoxes){
     let myTextArr = ["Delete Pictures", "Upload Pictures"]
 
   sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
+  }else if(context==="menuDoc"){
+    let boxHeight = 42;
+    let myTextArr = ["Delete Documents", "Upload Documents"]
+
+  sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
+
+
   }
 
   return sumOfHeight;
@@ -441,7 +466,13 @@ function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
 
 function expandTheCpan(sumOfHeight){
 
-  sumOfHeight = sumOfHeight + 28;
+  sumOfHeight = sumOfHeight + 36;
 
   cPan.style.height = sumOfHeight+"px";
+}
+
+function collapseCpan (){
+
+  cPan.style.height = "48px";
+  document.querySelectorAll(".cpancontentcont")[0].innerHTML = "";
 }
