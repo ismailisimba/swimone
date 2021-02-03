@@ -78,6 +78,15 @@ html button:hover {
 
     background-color: transparent;
 }
+
+.setinset{
+    
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    box-shadow: inset 1.69px 1.69px 1.69px 1px black;
+}
 .mycolumns:first-child{
 
     display: block;
