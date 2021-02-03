@@ -466,13 +466,17 @@ function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
 
 function expandTheCpan(sumOfHeight){
 
+  let cPanInside = document.querySelectorAll(".setinset")[0]
+
   sumOfHeight = sumOfHeight + 36;
 
-  cPan.style.height = sumOfHeight+"px";
+  cPanInside.style.height = sumOfHeight+"px";
 }
 
 function collapseCpan (){
 
-  cPan.style.height = "48px";
+  let cPanInside = document.querySelectorAll(".setinset")[0]
+
+  cPanInside.style.height = "100%";
   document.querySelectorAll(".cpancontentcont")[0].innerHTML = "";
 }
