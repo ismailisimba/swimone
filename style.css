@@ -117,8 +117,25 @@ html button:hover {
     width: 100%;
     height: 600px;
     padding: 12px 12px;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
+.cpancontentcont p, .cpancontentcont div {
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+    border-radius: 6px;
+    width: 85%;
+    background-color: #061826;
+    color: #53f4ff;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
 .setinset::-webkit-scrollbar { display: none; }
 .mycolumns:first-child{
 
