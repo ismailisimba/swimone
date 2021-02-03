@@ -3,6 +3,8 @@ let dePage = document.querySelectorAll(".mygenericpage")[0];
 let reqString = "https://script.google.com/macros/s/AKfycbyeGCc2c34RY53aturHkod7EQfF2gOaY4vxUF-cN4HXaKgTlClRazol/exec";
 let paraTemplate = {"params":[{"initVal":"initKey"}]};
 let localVar = {};
+let cPan = document.querySelectorAll(".settcont")[0];
+cPan.remove();
 
 window.onload = () => {
     myStartUpFunction();
@@ -279,9 +281,11 @@ async function setupBackendCanvasLoggedIn(){
   tempdiv.id = "temporarydiv";
   document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv)
   document.querySelectorAll(".mycolumns")[1].style.overflowY="scroll";
+  document.querySelectorAll(".mycolumns")[1].appendChild(cPan);
   //tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
   document.querySelectorAll("title")[0].innerHTML= "Swim - You're In!";
+  
   insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML);
 
 
