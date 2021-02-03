@@ -352,9 +352,11 @@ function displayYourCPanOptions(){
   let parent = this.parentNode;
     
   if(parent.classList.contains("bigcontcollapse")){
+    
+  }else{
+
     let tempDiv = document.querySelectorAll(".logocontainer")[0];
     tempDiv.innerHTML = this.innerHTML;
-  }else{
 
   }
 }
