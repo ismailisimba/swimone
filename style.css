@@ -127,6 +127,8 @@ html button:hover {
 .cpancontentcont p, .cpancontentcont div {
     margin-top: 6px;
     margin-bottom: 6px;
+    box-sizing: border-box;
+    padding: 12px 12px;
 
     border-radius: 6px;
     width: 85%;
@@ -134,7 +136,7 @@ html button:hover {
     color: #53f4ff;
     font-size: 12px;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 1.3px;
 }
 .setinset::-webkit-scrollbar { display: none; }
 .mycolumns:first-child{
