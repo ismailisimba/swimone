@@ -293,6 +293,8 @@ async function setupBackendCanvasLoggedIn(){
   
   insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML);
 
+  addBackendEventListeners();
+
 
   
 
@@ -320,4 +322,13 @@ function insertAndExecute(id, text) {
           eval(scripts[i].innerHTML);
       }
   }
+}
+
+
+function addBackendEventListeners(){
+
+  let cPanCont = document.querySelectorAll(".setinset")[0];
+  cPanCont.style.visibility = "visible";
+
+  
 }
