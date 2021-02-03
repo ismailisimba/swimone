@@ -343,8 +343,11 @@ function addCPanActionClicks(){
 
 function addCPanActionClicksforImages(){
   let myClickables = document.querySelectorAll(".backendoxtitle");
+  let thisTempCounter = 0;
   myClickables.forEach(element=>{
+    element.id = element.className+thisTempCounter;
       element.addEventListener("click",displayYourCPanOptions)
+      thisTempCounter++;
   })
 };
 
@@ -356,7 +359,11 @@ function displayYourCPanOptions(){
   }else{
 
     let tempDiv = document.querySelectorAll(".logocontainer")[0];
-    tempDiv.innerHTML = this.innerHTML;
+
+    
+
+    displayCpanOptions();
+    tempDiv.innerHTML = this.id;
 
   }
 }
