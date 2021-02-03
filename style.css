@@ -62,6 +62,18 @@ html button:hover {
 --electric-blue: #53f4ff;
 
 */
+
+.settcont{
+    display: block;
+    position: absolute;
+    top: 48px;
+    left: 69px;
+
+    width: 200px;
+    height: 48px;
+
+    background-color: red;
+}
 .mycolumns:first-child{
 
     display: block;
