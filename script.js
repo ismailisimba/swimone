@@ -330,5 +330,27 @@ function addBackendEventListeners(){
   let cPanCont = document.querySelectorAll(".setinset")[0];
   cPanCont.style.visibility = "visible";
 
+  addCPanActionClicks();
+
   
 }
+
+function addCPanActionClicks(){
+
+  addCPanActionClicksforImages();
+};
+
+
+function addCPanActionClicksforImages(){
+  let myClickables = document.querySelectorAll(".backendoxtitle");
+  myClickables.forEach(element=>{
+    let parent = element.parentNode;
+    
+    if(parent.classList.contains("bigcontcollapse")){
+      let tempDiv = document.querySelectorAll(".logocontainer")[0];
+      tempDiv.innerHTML = element.innerHTML;
+    }else{
+
+    }
+  })
+};
