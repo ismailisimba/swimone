@@ -65,10 +65,10 @@ html button:hover {
 
 .settcont{
     display: block;
-    position: absolute;
+    position: fixed;
     top: 61px;
     border-radius: 6px;
-    left: 69px;
+    left: 33%;
 
     border: 3px dotted transparent;
     padding: 9px 16px;

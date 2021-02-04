@@ -608,7 +608,7 @@ function readDeFilesToCpan(){
 
   let tempDiv = document.querySelectorAll(".logocontainer")[0];
   let filesArr = this.files;
-  tempDiv.innerHTML= filesArr.length;
+  tempDiv.innerHTML= filesArr[0].name;
 
 
 }
