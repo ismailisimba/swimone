@@ -1,5 +1,6 @@
 
 let dePage = document.querySelectorAll(".mygenericpage")[0];
+let cPanGenericCont = document.querySelectorAll(".genericCpanCont")[0];
 let reqString = "https://script.google.com/macros/s/AKfycbyeGCc2c34RY53aturHkod7EQfF2gOaY4vxUF-cN4HXaKgTlClRazol/exec";
 let paraTemplate = {"params":[{"initVal":"initKey"}]};
 let localVar = {};
@@ -87,6 +88,7 @@ function checkTheURL () {
   
   if(backendMatch!==null){
     cPan.remove();
+    cPanGenericCont.remove();
     
     initiateLogInSetup (backendMatch);
   }
@@ -620,32 +622,47 @@ function readDeFilesToCpan(){
   let logoCont = document.querySelectorAll(".logocontainer")[0];
   let contentBox = document.querySelectorAll(".cpancontentcont")[0];
   let filesArr = this.files;
-  let testFileName = filesArr[0].name;
-  let testFileSize = filesArr[0].size;
-  let testFileType = filesArr[0].type;
-
-
-  let tempDiv = document.createElement("div");
-  tempDiv.style.height = "24px";
-  tempDiv.style.fontSize = "11px";
-  tempDiv.fontWeight = "bold";
   
-  let sumOfHeight = 72;
-  let tempDiv2 = tempDiv.cloneNode(true);
-  let tempDiv3 = tempDiv.cloneNode(true); 
-
-  tempDiv.innerHTML = testFileName;
-  tempDiv2.innerHTML = testFileSize;
-  tempDiv3.innerHTML = testFileType;
 
 
-  contentBox.appendChild(tempDiv);
-  contentBox.appendChild(tempDiv2);
-  contentBox.appendChild(tempDiv3);
+
+ let sumOfHeight = writeFilesToCpan(filesArr,contentBox);
+ 
 
   expandTheCpan(sumOfHeight)
 
-  logoCont.innerHTML= filesArr[0].name;
+ // logoCont.innerHTML= filesArr[0].name;
 
+
+}
+
+function writeFilesToCpan(filesArr,contentBox) {
+  let numOfFilesCont = cPanGenericCont.querySelectorAll("span")[0];
+  let fileDeetsCont = cPanGenericCont.querySelectorAll(".imageListItemCont")[0];
+  let sumOfHeight = 0;
+  fileDeetsCont.remove();
+
+  numOfFilesCont.innerHTML = filesArr.length;
+
+
+  filesArr.forEach(fileObj =>{
+
+    sumOfHeight = sumOfHeight + 36;
+
+    let tempdiv = fileDeetsCont.cloneNode(true);
+    let fileNameCont = tempdiv.querySelector(".filename")[0];
+    let fileTypeCont = tempdiv.querySelector(".filetype")[0];
+    let fileSizeCont = tempdiv.querySelector(".filesize")[0];
+
+    fileNameCont.innerHTML = fileObj.name;
+    fileSizeCont.innerHTML = fileObj.size;
+    fileTypeCont.innerHTML = fileObj.type;
+
+    contentBox.appendChild(fileNameCont);
+    contentBox.appendChild(fileTypeCont);
+    contentBox.appendChild(fileSizeCont);
+  })
+
+  return sumOfHeight;
 
 }

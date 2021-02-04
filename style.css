@@ -588,6 +588,52 @@ html button:hover {
 
 
 /*JS javascript items styles go here*/
+.genericCpanCont{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 36px;
+  }
+
+  .cPanContTit{
+    position: absolute;
+    top: 6px;
+    width: 85%;
+    min-height: 48px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    background-color: transparent;
+    text-align: center;
+
+  }
+
+  .imageListItemCont{
+
+    width:85%;
+    min-height: 36px;
+    padding: 6px 0px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border: 0.69px dotted #53f4ff;
+  }
+
+
+
+  .imageListItemCont .filename,  .imageListItemCont .filetype, .imageListItemCont .filesize{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 12px;
+    letter-spacing: 1.69px;
+
+    background-color: transparent;
+  }
 
 #temporarydiv{
     position: absolute;
