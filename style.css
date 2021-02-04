@@ -98,7 +98,7 @@ html button:hover {
     position: relative;
     bottom: -12px;
 
-    transition: all 3s ease-out;
+    transition: all 1.3s ease-out;
 
     background-color: #53f4ff;
 

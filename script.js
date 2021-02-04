@@ -385,10 +385,15 @@ function displayCpanOptions(eleIndex){
     displayDocuCpanOptions();
 
   }else if(eleIndex==2){
+    displaySiteMapCpanOptions();
 
   }else if(eleIndex==3){
 
+    displayPostsCpanOptions();
+
   }else if(eleIndex==4){
+
+    //displayPostAddEdCpanOptions();
 
   }
 
@@ -397,7 +402,7 @@ function displayCpanOptions(eleIndex){
 
 function  displayImageCpanOptions(){
 
-  let container = document.querySelectorAll(".setinset")[0];
+  //let container = document.querySelectorAll(".setinset")[0];
   let contentMom = document.querySelectorAll(".cpancontentcont")[0];
   let context = "menuIm";
   let numberOfBoxes = 2 //delete and upload
@@ -411,7 +416,7 @@ function  displayImageCpanOptions(){
 
 function  displayDocuCpanOptions(){
 
-  let container = document.querySelectorAll(".setinset")[0];
+  //let container = document.querySelectorAll(".setinset")[0];
   let contentMom = document.querySelectorAll(".cpancontentcont")[0];
   let context = "menuDoc";
   let numberOfBoxes = 2 //delete and upload
@@ -420,6 +425,43 @@ function  displayDocuCpanOptions(){
   expandTheCpan(sumOfHeight);
     
 
+
+}
+
+
+function  displaySiteMapCpanOptions(){
+
+  //let container = document.querySelectorAll(".setinset")[0];
+  let contentMom = document.querySelectorAll(".cpancontentcont")[0];
+  let context = "menuSite";
+  let numberOfBoxes = 2 //update and edit
+
+  let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
+  expandTheCpan(sumOfHeight);
+
+}
+
+function  displayPostsCpanOptions(){
+
+  //let container = document.querySelectorAll(".setinset")[0];
+  let contentMom = document.querySelectorAll(".cpancontentcont")[0];
+  let context = "menuPosts";
+  let numberOfBoxes = 3 //edit and delete and publish
+
+  let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
+  expandTheCpan(sumOfHeight);
+
+}
+
+function  displayPostAddEdCpanOptions(){
+
+  //let container = document.querySelectorAll(".setinset")[0];
+  let contentMom = document.querySelectorAll(".cpancontentcont")[0];
+  let context = "menuPosts";
+  let numberOfBoxes = 3 //edit and delete and publish
+
+  let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
+  expandTheCpan(sumOfHeight);
 
 }
 
@@ -436,6 +478,18 @@ function fillContentMom(contentMom,context,numberOfBoxes){
   }else if(context==="menuDoc"){
     let boxHeight = 42;
     let myTextArr = ["Delete Documents", "Upload Documents"]
+
+  sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
+  }else if(context==="menuSite"){
+    let boxHeight = 42;
+    let myTextArr = ["Update", "Edit"];
+
+  sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
+
+
+  }else if(context==="menuPosts"){
+    let boxHeight = 42;
+    let myTextArr = ["Delete", "Edit","Publish"];
 
   sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
 
