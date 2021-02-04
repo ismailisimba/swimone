@@ -595,6 +595,14 @@ html button:hover {
     justify-content: flex-start;
     align-items: center;
     padding-top: 36px;
+
+    width: 85%;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    padding-bottom: 12px;
+    min-height: 18px;
+    height: auto;
   }
 
   .cPanContTit{
