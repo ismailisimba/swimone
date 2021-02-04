@@ -607,7 +607,30 @@ function addInputFileReading(){
 function readDeFilesToCpan(){
 
   let tempDiv = document.querySelectorAll(".logocontainer")[0];
+  let contentBox = document.querySelectorAll(".cpancontentcont")[0];
   let filesArr = this.files;
+  let testFileName = filesArr[0].name;
+  let testFileSize = filesArr[0].size;
+  let testFileType = filesArr[0].type;
+
+
+  let tempDiv = document.createElement("div");
+  tempDiv.style.height = "36px";
+  tempDiv.style.fontSize = "11px";
+  tempDiv.fontWeight = "bold";
+   
+  let tempDiv2 = tempDiv.cloneNode(true);
+  let tempDiv3 = tempDiv.cloneNode(true); 
+
+  tempDiv.innerHTML = testFileName;
+  tempDiv2.innerHTML = testFileSize;
+  tempDiv3.innerHTML = testFileType;
+
+
+  contentBox.appendChild(tempDiv);
+  contentBox.appendChild(tempDiv2);
+  contentBox.appendChild(tempDiv3);
+  
   tempDiv.innerHTML= filesArr[0].name;
 
 
