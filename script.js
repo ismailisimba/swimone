@@ -535,7 +535,7 @@ function expandTheCpan(sumOfHeight){
   alert(height);
   height = parseInt(height,10);
 
-  if(sumOfHeight>48){
+  if(height>60){
     sumOfHeight = sumOfHeight + height;
   }
 
