@@ -529,6 +529,13 @@ function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
 function expandTheCpan(sumOfHeight){
 
   let cPanInside = document.querySelectorAll(".setinset")[0]
+  let compStyles = window.getComputedStyle(cPanInside);
+  let height = compStyles.getPropertyValue('height');
+  height = height.slice(0, height.length-2);
+  alert(height);
+  height = parseInt(height,10);
+
+  sumOfHeight = sumOfHeight + height;
 
   sumOfHeight = sumOfHeight + 36;
 
