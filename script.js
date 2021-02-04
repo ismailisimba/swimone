@@ -647,7 +647,7 @@ function writeFilesToCpan(filesArr,contentBox) {
 
   for(let i=0;i<filesArr.length;i++){
 
-    sumOfHeight = sumOfHeight + 36;
+    sumOfHeight = sumOfHeight + 72;
 
     let tempdiv = fileDeetsCont.cloneNode(true);
     let fileNameCont = tempdiv.querySelectorAll(".filename")[0];
@@ -663,9 +663,10 @@ function writeFilesToCpan(filesArr,contentBox) {
     tempdiv.appendChild(fileTypeCont);
     tempdiv.appendChild(fileSizeCont);
 
-    contentBox.appendChild(tempdiv);
-  }
+    fileDeetsCont.appendChild(tempdiv);
 
+  }
+  contentBox.appendChild(fileDeetsCont);
   return sumOfHeight;
 
 }
