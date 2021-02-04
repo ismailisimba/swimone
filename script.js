@@ -11,7 +11,9 @@ window.onload = () => {
     checkTheURL()
 }
 
-
+//initiate local counters, indexes, e.t.c here
+localVar["counters"] = {};
+localVar.counters["currentAtCpan"] = 0
 
 
 function myStartUpFunction () {
@@ -376,9 +378,12 @@ function displayYourCPanOptions(){
 
 function displayCpanOptions(eleIndex){
 
+  localVar.counters.currentAtCpan = eleIndex;
+
   if(eleIndex==0){
 
     displayImageCpanOptions();
+   
 
   }else if(eleIndex==1){
 
@@ -458,7 +463,7 @@ function  displayPostAddEdCpanOptions(){
   //let container = document.querySelectorAll(".setinset")[0];
   let contentMom = document.querySelectorAll(".cpancontentcont")[0];
   let context = "menuPosts";
-  let numberOfBoxes = 4 //edit and delete and publish
+  let numberOfBoxes = 4 //edit and delete and publish and unpublish
 
   let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
   expandTheCpan(sumOfHeight);
@@ -509,6 +514,7 @@ function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = myTextArr[i];
     tempDiv.style.height = boxHeight+"px";
+    tempDiv.addEventListener("click",addCpanOptsClickFuncs);
     sumOfHeight = sumOfHeight + boxHeight;
     contentMom.appendChild(tempDiv);
 
@@ -533,4 +539,12 @@ function collapseCpan (){
 
   cPanInside.style.height = "100%";
   document.querySelectorAll(".cpancontentcont")[0].innerHTML = "";
+}
+
+function addCpanOptsClickFuncs(){
+
+  let cPanItem = this; 
+  let tempDiv = document.querySelectorAll(".logocontainer")[0];
+  tempDiv.innerText = localVar.counters.currentAtCpan;
+
 }
