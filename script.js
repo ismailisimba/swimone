@@ -606,7 +606,7 @@ function addInputFileReading(){
 
 function readDeFilesToCpan(){
 
-  let tempDiv = document.querySelectorAll(".logocontainer")[0];
+  let logoCont = document.querySelectorAll(".logocontainer")[0];
   let contentBox = document.querySelectorAll(".cpancontentcont")[0];
   let filesArr = this.files;
   let testFileName = filesArr[0].name;
@@ -630,8 +630,8 @@ function readDeFilesToCpan(){
   contentBox.appendChild(tempDiv);
   contentBox.appendChild(tempDiv2);
   contentBox.appendChild(tempDiv3);
-  
-  tempDiv.innerHTML= filesArr[0].name;
+
+  logoCont.innerHTML= filesArr[0].name;
 
 
 }
