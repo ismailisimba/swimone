@@ -543,8 +543,42 @@ function collapseCpan (){
 
 function addCpanOptsClickFuncs(){
 
-  let cPanItem = this; 
+  let cPanItem = this;
+  let menuBoxIndex = localVar.counters.currentAtCpan;
+  let menuBox = document.querySelectorAll(".backendchildcontainer")[menuBoxIndex]; 
   let tempDiv = document.querySelectorAll(".logocontainer")[0];
-  tempDiv.innerText = localVar.counters.currentAtCpan+"worked?";
+
+  if(menuBoxIndex==0){
+
+    addFileUploadFuncs("images",cPanItem,menuBox);
+
+  }else if(menuBoxIndex==1){
+
+  }else if(menuBoxIndex==2){
+
+  }else if(menuBoxIndex==3){
+
+  }
+  
+
+}
+
+
+function addFileUploadFuncs(context,cPanItem,menuBox){
+
+  let thisButtText = cPanItem.innerText;
+
+  if(context==="images"){
+
+    if(thisButtText==="Upload Pictures"){
+      cPanItem.addEventListener("click", function(){
+        menuBox.querySelectorAll("input")[0].click();
+      })
+    }
+
+    
+
+
+  }
 
 }
