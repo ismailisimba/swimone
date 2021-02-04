@@ -621,7 +621,7 @@ function readDeFilesToCpan(){
 
   let logoCont = document.querySelectorAll(".logocontainer")[0];
   let contentBox = document.querySelectorAll(".cpancontentcont")[0];
-  let filesArr = this.files;
+  let filesArr = Array.from(this.files);
   
 
 
