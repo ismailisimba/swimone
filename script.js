@@ -622,10 +622,11 @@ function readDeFilesToCpan(){
 
 
   let tempDiv = document.createElement("div");
-  tempDiv.style.height = "36px";
+  tempDiv.style.height = "24px";
   tempDiv.style.fontSize = "11px";
   tempDiv.fontWeight = "bold";
-   
+  
+  let sumOfHeight = 72;
   let tempDiv2 = tempDiv.cloneNode(true);
   let tempDiv3 = tempDiv.cloneNode(true); 
 
@@ -637,6 +638,8 @@ function readDeFilesToCpan(){
   contentBox.appendChild(tempDiv);
   contentBox.appendChild(tempDiv2);
   contentBox.appendChild(tempDiv3);
+
+  expandTheCpan(sumOfHeight)
 
   logoCont.innerHTML= filesArr[0].name;
 
