@@ -621,7 +621,7 @@ function readDeFilesToCpan(){
 
   let logoCont = document.querySelectorAll(".logocontainer")[0];
   let contentBox = document.querySelectorAll(".cpancontentcont")[0];
-  let filesArr = Array.from(this.files);
+  let filesArr = this.files;
   
 
 
@@ -645,7 +645,7 @@ function writeFilesToCpan(filesArr,contentBox) {
   numOfFilesCont.innerHTML = filesArr.length;
 
 
-  filesArr.forEach(fileObj =>{
+  for(let i=0;i<filesArr.length;i++){
 
     sumOfHeight = sumOfHeight + 36;
 
@@ -654,14 +654,14 @@ function writeFilesToCpan(filesArr,contentBox) {
     let fileTypeCont = tempdiv.querySelector(".filetype")[0];
     let fileSizeCont = tempdiv.querySelector(".filesize")[0];
 
-    fileNameCont.innerHTML = fileObj.name;
-    fileSizeCont.innerHTML = fileObj.size;
-    fileTypeCont.innerHTML = fileObj.type;
+    fileNameCont.innerHTML = filesArr[i].name;
+    fileSizeCont.innerHTML = filesArr[i].size;
+    fileTypeCont.innerHTML = filesArr[i].type;
 
     contentBox.appendChild(fileNameCont);
     contentBox.appendChild(fileTypeCont);
     contentBox.appendChild(fileSizeCont);
-  })
+  }
 
   return sumOfHeight;
 
