@@ -545,6 +545,6 @@ function addCpanOptsClickFuncs(){
 
   let cPanItem = this; 
   let tempDiv = document.querySelectorAll(".logocontainer")[0];
-  tempDiv.innerText = localVar.counters.currentAtCpan;
+  tempDiv.innerText = localVar.counters.currentAtCpan+"worked?";
 
 }
