@@ -518,6 +518,7 @@ function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
     let tempDiv = document.createElement("div");
     tempDiv.innerHTML = myTextArr[i];
     tempDiv.style.height = boxHeight+"px";
+    tempDiv.className = "butts";
     tempDiv.addEventListener("click",addCpanOptsClickFuncs);
     sumOfHeight = sumOfHeight + boxHeight;
     contentMom.appendChild(tempDiv);

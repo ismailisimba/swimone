@@ -124,7 +124,7 @@ html button:hover {
     align-items: center;
 }
 
-.cpancontentcont p, .cpancontentcont div {
+.cpancontentcont .butts {
     margin-top: 6px;
     margin-bottom: 6px;
     box-sizing: border-box;
