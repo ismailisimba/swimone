@@ -573,7 +573,7 @@ function addFileUploadFuncs(context,cPanItem,menuBox){
   if(context==="images"){
 
     if(thisButtText==="Upload Pictures"){
-      cPanItem.removeEventListener("click",genericInputClick,false)
+     
       cPanItem.addEventListener("click", genericInputClick);
     }
 
