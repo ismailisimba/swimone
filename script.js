@@ -334,6 +334,7 @@ function addBackendEventListeners(){
   cPanCont.style.visibility = "visible";
 
   addCPanActionClicks();
+  addInputFileReading();
 
   
 }
@@ -572,14 +573,42 @@ function addFileUploadFuncs(context,cPanItem,menuBox){
   if(context==="images"){
 
     if(thisButtText==="Upload Pictures"){
-      cPanItem.addEventListener("click", function(){
-        menuBox.querySelectorAll("input")[0].click();
-      })
+      cPanItem.removeEventListener("click",genericInputClick,false)
+      cPanItem.addEventListener("click", genericInputClick);
     }
 
     
 
 
   }
+
+}
+
+function genericInputClick(){
+  let menuBoxIndex = localVar.counters.currentAtCpan;
+  let menuBox = document.querySelectorAll(".backendchildcontainer")[menuBoxIndex]; 
+  let thisInput = menuBox.querySelectorAll("input")[0];
+  thisInput.click();
+}
+
+function addInputFileReading(){
+
+  let inputs = document.querySelectorAll("input");
+
+  inputs.forEach(element=>{
+    element.addEventListener("input",readDeFilesToCpan)
+  })
+
+
+}
+
+
+
+function readDeFilesToCpan(){
+
+  let tempDiv = document.querySelectorAll(".logocontainer")[0];
+  let filesArr = this.files;
+  tempDiv.innerHTML= filesArr.length;
+
 
 }
