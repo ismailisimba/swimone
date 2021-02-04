@@ -451,7 +451,7 @@ function  displayPostsCpanOptions(){
   //let container = document.querySelectorAll(".setinset")[0];
   let contentMom = document.querySelectorAll(".cpancontentcont")[0];
   let context = "menuPosts";
-  let numberOfBoxes = 3 //edit and delete and publish
+  let numberOfBoxes = 4 //edit and delete and publish and unpublish
 
   let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
   expandTheCpan(sumOfHeight);
@@ -462,7 +462,7 @@ function  displayPostAddEdCpanOptions(){
 
   //let container = document.querySelectorAll(".setinset")[0];
   let contentMom = document.querySelectorAll(".cpancontentcont")[0];
-  let context = "menuPosts";
+  let context = "menuPostsss";
   let numberOfBoxes = 4 //edit and delete and publish and unpublish
 
   let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
