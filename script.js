@@ -658,9 +658,12 @@ function writeFilesToCpan(filesArr,contentBox) {
     fileSizeCont.innerHTML = filesArr[i].size;
     fileTypeCont.innerHTML = filesArr[i].type;
 
-    contentBox.appendChild(fileNameCont);
-    contentBox.appendChild(fileTypeCont);
-    contentBox.appendChild(fileSizeCont);
+    tempdiv.innerHTML = "";
+    tempdiv.appendChild(fileNameCont);
+    tempdiv.appendChild(fileTypeCont);
+    tempdiv.appendChild(fileSizeCont);
+
+    contentBox.appendChild(tempdiv);
   }
 
   return sumOfHeight;
