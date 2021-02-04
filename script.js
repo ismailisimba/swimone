@@ -458,7 +458,7 @@ function  displayPostAddEdCpanOptions(){
   //let container = document.querySelectorAll(".setinset")[0];
   let contentMom = document.querySelectorAll(".cpancontentcont")[0];
   let context = "menuPosts";
-  let numberOfBoxes = 3 //edit and delete and publish
+  let numberOfBoxes = 4 //edit and delete and publish
 
   let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
   expandTheCpan(sumOfHeight);
@@ -489,7 +489,7 @@ function fillContentMom(contentMom,context,numberOfBoxes){
 
   }else if(context==="menuPosts"){
     let boxHeight = 42;
-    let myTextArr = ["Delete", "Edit","Publish"];
+    let myTextArr = ["Delete", "Edit","Publish","Unpublish"];
 
   sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
 
