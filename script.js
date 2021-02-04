@@ -663,10 +663,11 @@ function writeFilesToCpan(filesArr,contentBox) {
     tempdiv.appendChild(fileTypeCont);
     tempdiv.appendChild(fileSizeCont);
 
-    fileDeetsCont.appendChild(tempdiv);
+    
+    cPanGenericCont.appendChild(tempdiv);
 
   }
-  contentBox.appendChild(fileDeetsCont);
+  contentBox.appendChild(cPanGenericCont);
   return sumOfHeight;
 
 }
