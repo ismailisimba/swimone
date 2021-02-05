@@ -523,6 +523,10 @@ function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
 
 function expandTheCpan(sumOfHeight){
 
+  if(sumOfHeight>569){
+    sumOfHeight = 569;
+  }
+
   let cPanInside = document.querySelectorAll(".setinset")[0]
   let compStyles = window.getComputedStyle(cPanInside);
   let height = compStyles.getPropertyValue('height');
@@ -530,10 +534,8 @@ function expandTheCpan(sumOfHeight){
   alert(height);
   height = parseInt(height,10);
 
-  if(height>50&&height<200){
+  if(height>50&&sumOfHeight<569){
     sumOfHeight = sumOfHeight + height;
-  }else{
-    sumOfHeight = 569;
   }
 
   
@@ -646,7 +648,7 @@ function writeFilesToCpan(filesArr,contentBox) {
 
   for(let i=0;i<filesArr.length;i++){
 
-    sumOfHeight = sumOfHeight + 72;
+    sumOfHeight = sumOfHeight + 18;
 
     let tempdiv = cloneFD.cloneNode(true);
     let fileNameCont = tempdiv.querySelectorAll(".filename")[0];
