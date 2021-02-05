@@ -324,7 +324,7 @@ async function insertAndExecute(id, text) {
           document.getElementsByTagName("head")[0].appendChild(tag);
       }
       else {
-          eval(scripts[i].innerHTML).then(function(){
+         await eval(scripts[i].innerHTML).then(function(){
             addBackendEventListeners();
           });
       }
