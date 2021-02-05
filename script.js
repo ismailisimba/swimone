@@ -533,7 +533,7 @@ function expandTheCpan(sumOfHeight){
   if(height>50&&height<200){
     sumOfHeight = sumOfHeight + height;
   }else{
-    sumOfHeight = sumOfHeight + 36;
+    sumOfHeight = 569;
   }
 
   
