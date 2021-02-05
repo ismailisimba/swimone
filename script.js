@@ -298,7 +298,7 @@ async function setupBackendCanvasLoggedIn(){
   
   insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML);
 
-  addBackendEventListeners();
+  
 
 
   
@@ -314,7 +314,7 @@ async function setupBackendCanvasLoggedIn(){
 
 
 
-function insertAndExecute(id, text) {
+async function insertAndExecute(id, text) {
   document.getElementById(id).innerHTML = text;
   var scripts = Array.prototype.slice.call(document.getElementById(id).getElementsByTagName("script"));
   for (var i = 0; i < scripts.length; i++) {
@@ -324,7 +324,9 @@ function insertAndExecute(id, text) {
           document.getElementsByTagName("head")[0].appendChild(tag);
       }
       else {
-          eval(scripts[i].innerHTML);
+          eval(scripts[i].innerHTML).then(function(){
+            addBackendEventListeners();
+          });
       }
   }
 }
@@ -611,7 +613,7 @@ function addInputFileReading(){
 
   inputs.forEach(element=>{
     element.addEventListener("input",readDeFilesToCpan);
-    element.addEventListener("click",readDeFilesToCpan)
+   
   })
 
 
