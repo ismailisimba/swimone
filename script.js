@@ -610,7 +610,8 @@ function addInputFileReading(){
   let inputs = document.querySelectorAll("input");
 
   inputs.forEach(element=>{
-    element.addEventListener("input",readDeFilesToCpan)
+    element.addEventListener("input",readDeFilesToCpan);
+    element.addEventListener("click",readDeFilesToCpan)
   })
 
 
