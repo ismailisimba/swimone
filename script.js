@@ -632,9 +632,12 @@ function readDeFilesToCpan(){
 
 function writeFilesToCpan(filesArr,contentBox) {
   let numOfFilesCont = cPanGenericCont.querySelectorAll("span")[0];
-  let fileDeetsCont = cPanGenericCont.querySelectorAll(".imageListItemCont")[0];
+  let fileDeetsCont = cPanGenericCont.querySelectorAll(".imageListItemCont");
+  let cloneFD = fileDeetsCont[0].cloneNode(true);
   let sumOfHeight = 0;
-  fileDeetsCont.remove();
+  fileDeetsCont.forEach(element=>{
+    element.remove();
+  })
 
   numOfFilesCont.innerHTML = filesArr.length;
 
@@ -643,7 +646,7 @@ function writeFilesToCpan(filesArr,contentBox) {
 
     sumOfHeight = sumOfHeight + 72;
 
-    let tempdiv = fileDeetsCont.cloneNode(true);
+    let tempdiv = cloneFD.cloneNode(true);
     let fileNameCont = tempdiv.querySelectorAll(".filename")[0];
     let fileTypeCont = tempdiv.querySelectorAll(".filetype")[0];
     let fileSizeCont = tempdiv.querySelectorAll(".filesize")[0];
