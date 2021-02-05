@@ -316,7 +316,7 @@ async function setupBackendCanvasLoggedIn(){
           document.getElementsByTagName("head")[0].appendChild(tag);
       }
       else {
-         await eval(scripts[i].innerHTML);
+         eval(scripts[i].innerHTML);
       }
   }
 }
