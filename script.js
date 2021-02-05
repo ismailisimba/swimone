@@ -306,7 +306,7 @@ async function setupBackendCanvasLoggedIn(){
 
 
 
- function insertAndExecute(id, text) {
+ async function insertAndExecute(id, text) {
   document.getElementById(id).innerHTML = text;
   var scripts = Array.prototype.slice.call(document.getElementById(id).getElementsByTagName("script"));
   for (var i = 0; i < scripts.length; i++) {
