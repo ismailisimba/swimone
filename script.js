@@ -296,17 +296,9 @@ async function setupBackendCanvasLoggedIn(){
 
   document.querySelectorAll("title")[0].innerHTML= "Swim - You're In!";
   
-  insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML);
-
-  
-
-
-  
-
-  
-
- 
-
+  insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML).then(function(){
+    addBackendEventListeners();
+  });
 
 
 }
@@ -314,7 +306,7 @@ async function setupBackendCanvasLoggedIn(){
 
 
 
-async function insertAndExecute(id, text) {
+ function insertAndExecute(id, text) {
   document.getElementById(id).innerHTML = text;
   var scripts = Array.prototype.slice.call(document.getElementById(id).getElementsByTagName("script"));
   for (var i = 0; i < scripts.length; i++) {
@@ -324,9 +316,7 @@ async function insertAndExecute(id, text) {
           document.getElementsByTagName("head")[0].appendChild(tag);
       }
       else {
-         await eval(scripts[i].innerHTML).then(function(){
-            addBackendEventListeners();
-          });
+         await eval(scripts[i].innerHTML);
       }
   }
 }
