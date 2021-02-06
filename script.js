@@ -275,6 +275,26 @@ function signOut() {
   });
 }
 
+function getToken() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  let status = auth2.isSignedIn.get();
+  let tokentemp = "";
+
+  if(status){
+
+    let user = GoogleAuth.currentUser.get()
+    tokentemp = user.getAuthResponse().id_token;
+
+  }else{
+
+    alert("Please reload the page and log in");
+
+  }
+
+  return tokentemp;
+
+}
+
 
 
 function  initSetupBackend(status){
@@ -728,7 +748,7 @@ function addImageUpoadFuncs(){
     collapseCpan();
     document.getElementById("backendoxtitle0").click();
   }else{
-    let token = googleUser.getAuthResponse().id_token;
+    let token = getToken();
     hailTheServerOnAllChannels("uploadFiles",token);
   }
   
