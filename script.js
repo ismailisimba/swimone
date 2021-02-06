@@ -674,6 +674,7 @@ function writeFilesToCpan(filesArr,contentBox) {
     cPanGenericCont.appendChild(tempdiv);
 
   }
+  contentBox.innerHTML = "";
   contentBox.appendChild(cPanGenericCont);
   return sumOfHeight;
 
