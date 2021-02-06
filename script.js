@@ -771,12 +771,12 @@ async function bundleFilesForUpload(){
       filesDataObj[i].fileInfo["ogname"] = file.name;
       filesDataObj[i].fileInfo["meme"] = file.type;
       filesDataObj[i].fileData = await readFile(file).then((file)=>{
-        console.log("base64-rec"+file);
+        //console.log("base64-rec"+file);
         file =  btoa(file);
-        console.log("base64-pro1"+file);
+        //console.log("base64-pro1"+file);
         return file;
       }).then((file)=>{
-        console.log("base64-pro2"+file);
+        //console.log("base64-pro2"+file);
         return file;
       })
 
@@ -787,12 +787,9 @@ async function bundleFilesForUpload(){
       filesDataObj[i].fileInfo["ogname"] = file.name;
       filesDataObj[i].fileInfo["meme"] = file.type;
       filesDataObj[i].fileData = await readFile(file).then((file)=>{
-        console.log("base64-rec"+file);
         file =  btoa(file);
-        console.log("base64-pro1"+file);
         return file;
       }).then((file)=>{
-        console.log("base64-pro2"+file);
         return file;
       })
 
