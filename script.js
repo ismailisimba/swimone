@@ -814,7 +814,7 @@ if(context==="images"){
   //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
   let copy =  localVar.cloudObj.contentObj.contentObj.draft.images[0];
   localVar.cloudObj.contentObj.contentObj.draft.images = [];
-  let [month, myDate, myYear]    = new Date().toLocaleDateString("en-US").split("-");
+  let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
   let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
 
   for(let i = 0 ; i < data.length ; i++){
@@ -824,7 +824,7 @@ if(context==="images"){
     tempObj.data = data[i].fileData;
     tempObj.name =  data[i].fileInfo.ogname;
     tempObj.info.push({"mime":data[i].fileInfo.meme});
-    tempObj.info.push({"timeObj":[{"year":myYear},{"month":month},{"date":myDate},{"hour":hour},{"minute":minute},{"second":second}]});
+    tempObj.info.push({"timeObj":[{"myDate":myDate},{"hour":hour},{"minute":minute},{"second":second}]});
 
  //   console.log(data.length);
 
