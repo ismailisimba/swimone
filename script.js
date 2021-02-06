@@ -180,14 +180,16 @@ async function fetchInfoWithFilter (data,para) {
 
 
 
-function hailTheServerOnAllChannels(action,value) {
+async function hailTheServerOnAllChannels(action,value) {
 
   if(action==="login"){
 
-    let data = bundleMyData("login",value);
+    let data = await bundleMyData(action,value);
 
     startHailing(data,"login",genericPrintResponse);
 
+  }else if(action==="uploadFiles"){
+    let data = await bundleMyData(action,value);
   }
 
 
@@ -206,7 +208,7 @@ async function startHailing(data,para,functionToRunAfter){
 
 
 
-function bundleMyData(action,value) {
+async function bundleMyData(action,value) {
 
   let data = "mydata";
 
@@ -214,8 +216,9 @@ function bundleMyData(action,value) {
     data = bundleLoginData(value);
    
   }else if(action==="uploadFiles"){
-    console.log("I will bundle files for upload...");
-    console.log(localVar.counters.filesForUploadArr[0].name);
+
+    let data =  await bundleFilesForUpload();
+    console.log(data);
   }
 return data;
 }
@@ -226,6 +229,16 @@ function bundleLoginData(token) {
   let contextObject = JSON.parse(JSON.stringify(paraTemplate));
 
     contextObject.params[0]["action"] = "initfetch";
+    contextObject.params[0]["token"] = token.toString();
+
+    return contextObject;
+}
+
+
+function bundleTokenAfter(token) {
+  let contextObject = JSON.parse(JSON.stringify(paraTemplate));
+
+    contextObject.params[0]["action"] = "later...";
     contextObject.params[0]["token"] = token.toString();
 
     return contextObject;
@@ -715,8 +728,47 @@ function addImageUpoadFuncs(){
     collapseCpan();
     document.getElementById("backendoxtitle0").click();
   }else{
-    bundleMyData("uploadFiles",);
+    let token = googleUser.getAuthResponse().id_token;
+    hailTheServerOnAllChannels("uploadFiles",token);
   }
   
   console.log(myText);
 }
+
+async function bundleFilesForUpload(){
+
+  let filesDataObj = [{fileInfo:{},fileData:""}];
+  
+
+  for(let i = 0 ; i < localVar.counters.filesForUploadArr.length ; i++){
+
+    let file = localVar.counters.filesForUploadArr[i];
+
+    filesDataObj[i].fileInfo["ogname"] = file.name;
+    filesDataObj[i].fileInfo["meme"] = file.type;
+    filesDataObj[i].fileData = await readFile(file).then((file)=>{
+      file =  btoa(file);
+      return file;
+    })
+   
+   
+  }
+
+  return filesDataObj;
+
+}
+
+async function readFile (file){
+  const reader = new FileReader();
+  reader.onload = () =>{
+    return reader.result;
+  }
+  reader.onerror = () =>{
+    console.log("file reading error 69240");
+  }
+
+  reader.readAsBinaryString(file);
+}
+
+
+
