@@ -218,7 +218,7 @@ async function bundleMyData(action,value) {
   }else if(action==="uploadFiles"){
 
     let data =  await bundleFilesForUpload();
-    console.log(data);
+    console.log(data[0].fileData);
   }
 return data;
 }
@@ -752,7 +752,7 @@ function addImageUpoadFuncs(){
     hailTheServerOnAllChannels("uploadFiles",token);
   }
   
-  console.log(myText);
+ // console.log(myText);
 }
 
 async function bundleFilesForUpload(){
@@ -784,7 +784,7 @@ async function readFile (file){
     return reader.result;
   }
   reader.onerror = () =>{
-    console.log("file reading error 69240");
+    alert("file reading error 69240");
   }
 
   reader.readAsBinaryString(file);
