@@ -706,5 +706,7 @@ function fillBoxes2(contentMom,boxHeight,numberOfBoxes,myTextArr){
 };
 
 function addImageUpoadFuncs(){
-  console.log("Iran");
+  let myText = this.innerText;
+  
+  console.log(myText);
 }
