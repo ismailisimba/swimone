@@ -239,7 +239,7 @@ return data;
 function bundleLoginData(token) {
   let contextObject = JSON.parse(JSON.stringify(paraTemplate));
 
-    contextObject.params[0]["action"] = "initfetch";
+    contextObject.params[0]["action"] = "login";
     contextObject.params[0]["token"] = token.toString();
 
     return contextObject;
