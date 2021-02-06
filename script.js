@@ -761,7 +761,7 @@ function addImageUpoadFuncs(){
 
 async function bundleFilesForUpload(){
 
-  let filesDataObj = [{fileInfo:{"ogname":"","meme":""},fileData:""}];
+  let filesDataObj = [];
   let copy = {fileInfo:{"ogname":"","meme":""},fileData:""};
   
 
@@ -771,9 +771,9 @@ async function bundleFilesForUpload(){
 
       let file = localVar.counters.filesForUploadArr[i];
 
-      filesDataObj[i].fileInfo["ogname"] = file.name;
-      filesDataObj[i].fileInfo["meme"] = file.type;
-      filesDataObj[i].fileData = await readFile(file).then((file)=>{
+      copy.fileInfo.ogname = file.name;
+      copy.fileInfo.meme = file.type;
+      copy.fileData = await readFile(file).then((file)=>{
         file =  btoa(file);
         return file;
       }).then((file)=>{
