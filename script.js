@@ -811,7 +811,12 @@ parsedFile =  await toBinaryString(file);
 
 function updateCloudObj(context,data){
 if(context==="images"){
-  console.log(data)
+  console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
+  for(let i = 0 ; i < data.length ; i++){
+
+ //   console.log(data.length);
+
+  }
 }
 return data;
 }
