@@ -823,6 +823,7 @@ if(context==="images"){
 
     tempObj.data = data[i].fileData;
     tempObj.name =  data[i].fileInfo.ogname;
+    tempObj.id =  myDate+"---"+hour+minute+second+"---"+ogname;
     tempObj.info.push({"mime":data[i].fileInfo.meme});
     tempObj.info.push({"timeObj":[{"myDate":myDate},{"hour":hour},{"minute":minute},{"second":second}]});
 
