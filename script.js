@@ -218,7 +218,7 @@ async function bundleMyData(action,value) {
   }else if(action==="uploadFiles"){
 
     data =  await bundleFilesForUpload();
-    console.log(localVar.cloudObj.contentObj);
+    console.log(localVar.cloudObj.contentObj.contentObj);
     
   }
 return data;
