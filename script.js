@@ -218,7 +218,7 @@ async function bundleMyData(action,value) {
   }else if(action==="uploadFiles"){
 
     let data =  await bundleFilesForUpload();
-    console.log(data[0].fileData);
+    console.log(localVar.cloudObj.contentObj);
     document.querySelectorAll(".backendmom")[0].innerHTML = data[0].fileData;
   }
 return data;
