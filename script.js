@@ -764,23 +764,7 @@ async function bundleFilesForUpload(){
 
   for(let i = 0 ; i < localVar.counters.filesForUploadArr.length ; i++){
 
-    if(i==localVar.counters.filesForUploadArr.length-1){
 
-      let file = localVar.counters.filesForUploadArr[i];
-
-      filesDataObj[i].fileInfo["ogname"] = file.name;
-      filesDataObj[i].fileInfo["meme"] = file.type;
-      filesDataObj[i].fileData = await readFile(file).then((file)=>{
-        //console.log("base64-rec"+file);
-        file =  btoa(file);
-        //console.log("base64-pro1"+file);
-        return file;
-      }).then((file)=>{
-        //console.log("base64-pro2"+file);
-        return file;
-      })
-
-    }else{
 
       let file = localVar.counters.filesForUploadArr[i];
 
@@ -795,11 +779,10 @@ async function bundleFilesForUpload(){
 
       filesDataObj.push(copy);
 
-    }
   
+    }
    
-   
-  }
+  
 
   return filesDataObj;
 
