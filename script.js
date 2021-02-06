@@ -758,8 +758,8 @@ function addImageUpoadFuncs(){
 
 async function bundleFilesForUpload(){
 
-  let filesDataObj = [{fileInfo:{},fileData:""}];
-  let copy = [{fileInfo:{},fileData:""}];
+  let filesDataObj = [{fileInfo:{"ogname":"","meme":""},fileData:""}];
+  let copy = [{fileInfo:{"ogname":"","meme":""},fileData:""}];
   
 
   for(let i = 0 ; i < localVar.counters.filesForUploadArr.length ; i++){
