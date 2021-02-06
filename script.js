@@ -794,7 +794,7 @@ async function readFile (file){
 });
 
 let parsedFile = null;
-parsedFile =  await toBinaryString(fileToBeam);
+parsedFile =  await toBinaryString(file);
 
   return parsedFile;
 }
