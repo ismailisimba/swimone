@@ -782,7 +782,7 @@ async function bundleFilesForUpload(){
         return file;
       })
 
-      filesDataObj.push(copy);
+      filesDataObj.push(tempObj);
 
   
     }
