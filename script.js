@@ -184,12 +184,18 @@ async function hailTheServerOnAllChannels(action,value) {
 
   if(action==="login"){
 
-    let data = await bundleMyData(action,value);
+    let data = await bundleMyData(action,value).then((data)=>{
+      startHailing(data,"login",genericPrintResponse);
+      return data;
+    });
 
-    startHailing(data,"login",genericPrintResponse);
+    
 
   }else if(action==="uploadFiles"){
-    let data = await bundleMyData(action,value);
+    let data = await bundleMyData(action,value).then(()=>{
+      let myObj = localVar.cloudObj.contentObj.contentObj.draft;
+      startHailing(myObj,"uploadImages",collapseCpan);
+    });
   }
 
 
@@ -829,7 +835,7 @@ if(context==="images"){
 
  //   console.log(data.length);
 
- localVar.cloudObj.contentObj.contentObj.draft.images.push(tempObj)
+ localVar.cloudObj.contentObj.contentObj.draft.images.push(tempObj);
 
   }
 
