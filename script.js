@@ -219,6 +219,7 @@ async function bundleMyData(action,value) {
 
     let data =  await bundleFilesForUpload();
     console.log(data[0].fileData);
+    document.querySelectorAll(".backendmom")[0].innerHTML = data[0].fileData;
   }
 return data;
 }
