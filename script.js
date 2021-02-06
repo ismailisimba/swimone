@@ -217,8 +217,11 @@ async function bundleMyData(action,value) {
    
   }else if(action==="uploadFiles"){
 
-    data =  await bundleFilesForUpload();
-    console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
+    data =  await bundleFilesForUpload().then((data)=>{
+      data = updateCloudObj("images",data);
+      return data;
+    });
+    //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
     
   }
 return data;
@@ -801,6 +804,14 @@ let parsedFile = null;
 parsedFile =  await toBinaryString(file);
 
   return parsedFile;
+}
+
+
+function updateCloudObj(context,data){
+if(context==="images"){
+  console.log(data)
+}
+return data;
 }
 
 
