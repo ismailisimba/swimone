@@ -193,7 +193,8 @@ async function hailTheServerOnAllChannels(action,value) {
 
   }else if(action==="uploadFiles"){
     let data = await bundleMyData(action,value).then(()=>{
-      let myObj = localVar.cloudObj.contentObj.contentObj.draft;
+      let myObj = bundleTokenAfter(value);
+      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft;
       startHailing(myObj,"uploadImages",collapseCpan);
     });
   }
@@ -250,6 +251,7 @@ function bundleTokenAfter(token) {
 
     contextObject.params[0]["action"] = "later...";
     contextObject.params[0]["token"] = token.toString();
+    contextObject.params[0]["dataObj"] = {};
 
     return contextObject;
 }
