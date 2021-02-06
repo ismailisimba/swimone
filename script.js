@@ -812,11 +812,27 @@ parsedFile =  await toBinaryString(file);
 function updateCloudObj(context,data){
 if(context==="images"){
   console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
+  let copy =  localVar.cloudObj.contentObj.contentObj.draft.images[0];
+  localVar.cloudObj.contentObj.contentObj.draft.images = [];
+  let [month, date, year]    = new Date().toLocaleDateString("en-US").split("-");
+  let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
+
   for(let i = 0 ; i < data.length ; i++){
+
+    let tempObj = JSON.parse(JSON.stringify(copy));
+
+    tempObj.data = data[i].fileData;
+    tempObj.name =  data[i].ogname;
+    tempObj.info.push({"mime":data[i].meme});
+    tempObj.info.push({"timeObj":[{"year":year},{"month":month},{"date":date},{"hour":hour},{"minute":minute},{"second":second}]});
 
  //   console.log(data.length);
 
+ localVar.cloudObj.contentObj.contentObj.draft.images.push(tempObj)
+
   }
+
+  console.log(localVar.cloudObj.contentObj.contentObj.draft.images)
 }
 return data;
 }
