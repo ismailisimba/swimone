@@ -713,6 +713,7 @@ function addImageUpoadFuncs(){
 
   if(myText==="Cancel"){
     collapseCpan();
+    document.getElementById("backendoxtitle0").click();
   }else{
     bundleMyData("uploadFiles",);
   }
