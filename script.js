@@ -785,6 +785,7 @@ async function bundleFilesForUpload(){
 }
 
 async function readFile (file){
+  let parsedFile = null;
   const reader = new FileReader();
   reader.onload = (evt) =>{
     //console.log(evt.target.result);
@@ -795,7 +796,9 @@ async function readFile (file){
     alert("file reading error 69240");
   }
 
-  reader.readAsBinaryString(file);
+  parsedFile = reader.readAsBinaryString(file);
+
+  return parsedFile;
 }
 
 
