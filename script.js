@@ -767,13 +767,15 @@ async function bundleFilesForUpload(){
 
   for(let i = 0 ; i < localVar.counters.filesForUploadArr.length ; i++){
 
+    let tempObj = JSON.parse(JSON.stringify(copy));
+
 
 
       let file = localVar.counters.filesForUploadArr[i];
 
-      copy.fileInfo.ogname = file.name;
-      copy.fileInfo.meme = file.type;
-      copy.fileData = await readFile(file).then((file)=>{
+      tempObj.fileInfo.ogname = file.name;
+      tempObj.fileInfo.meme = file.type;
+      tempObj.fileData = await readFile(file).then((file)=>{
         file =  btoa(file);
         return file;
       }).then((file)=>{
