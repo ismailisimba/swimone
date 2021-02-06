@@ -759,23 +759,47 @@ function addImageUpoadFuncs(){
 async function bundleFilesForUpload(){
 
   let filesDataObj = [{fileInfo:{},fileData:""}];
+  let copy = [{fileInfo:{},fileData:""}];
   
 
   for(let i = 0 ; i < localVar.counters.filesForUploadArr.length ; i++){
 
-    let file = localVar.counters.filesForUploadArr[i];
+    if(i==localVar.counters.filesForUploadArr.length-1){
 
-    filesDataObj[i].fileInfo["ogname"] = file.name;
-    filesDataObj[i].fileInfo["meme"] = file.type;
-    filesDataObj[i].fileData = await readFile(file).then((file)=>{
-      console.log("base64-rec"+file);
-      file =  btoa(file);
-      console.log("base64-pro1"+file);
-      return file;
-    }).then((file)=>{
-      console.log("base64-pro2"+file);
-      return file;
-    })
+      let file = localVar.counters.filesForUploadArr[i];
+
+      filesDataObj[i].fileInfo["ogname"] = file.name;
+      filesDataObj[i].fileInfo["meme"] = file.type;
+      filesDataObj[i].fileData = await readFile(file).then((file)=>{
+        console.log("base64-rec"+file);
+        file =  btoa(file);
+        console.log("base64-pro1"+file);
+        return file;
+      }).then((file)=>{
+        console.log("base64-pro2"+file);
+        return file;
+      })
+
+    }else{
+
+      let file = localVar.counters.filesForUploadArr[i];
+
+      filesDataObj[i].fileInfo["ogname"] = file.name;
+      filesDataObj[i].fileInfo["meme"] = file.type;
+      filesDataObj[i].fileData = await readFile(file).then((file)=>{
+        console.log("base64-rec"+file);
+        file =  btoa(file);
+        console.log("base64-pro1"+file);
+        return file;
+      }).then((file)=>{
+        console.log("base64-pro2"+file);
+        return file;
+      })
+
+      filesDataObj.push(copy);
+
+    }
+  
    
    
   }
