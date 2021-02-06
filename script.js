@@ -768,7 +768,12 @@ async function bundleFilesForUpload(){
     filesDataObj[i].fileInfo["ogname"] = file.name;
     filesDataObj[i].fileInfo["meme"] = file.type;
     filesDataObj[i].fileData = await readFile(file).then((file)=>{
+      console.log("base64-rec"+file);
       file =  btoa(file);
+      console.log("base64-pro1"+file);
+      return file;
+    }).then((file)=>{
+      console.log("base64-pro2"+file);
       return file;
     })
    
@@ -782,7 +787,7 @@ async function bundleFilesForUpload(){
 async function readFile (file){
   const reader = new FileReader();
   reader.onload = (evt) =>{
-    console.log(evt.target.result);
+    //console.log(evt.target.result);
     return evt.target.result;
     
   }
