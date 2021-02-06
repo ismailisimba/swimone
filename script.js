@@ -531,7 +531,7 @@ function expandTheCpan(sumOfHeight){
   let compStyles = window.getComputedStyle(cPanInside);
   let height = compStyles.getPropertyValue('height');
   height = height.slice(0, height.length-2);
-  alert(height);
+ // alert(height);
   height = parseInt(height,10);
 
   if(height>569){
@@ -674,8 +674,37 @@ function writeFilesToCpan(filesArr,contentBox) {
     cPanGenericCont.appendChild(tempdiv);
 
   }
-  contentBox.innerHTML = "";
-  contentBox.appendChild(cPanGenericCont);
-  return sumOfHeight;
+  //contentBox.innerHTML = "";
+  collapseCpan();
 
+  let sumOfH = fillBoxes2(contentMom,42,2,["Cancel","Upload"]);
+
+  sumOfH = sumOfH + sumOfHeight;
+  contentBox.appendChild(cPanGenericCont);
+  return sumOfH;
+
+}
+
+
+function fillBoxes2(contentMom,boxHeight,numberOfBoxes,myTextArr){
+
+  let sumOfHeight = 0;
+  contentMom.innerHTML = "";
+
+  for(let i = 0; i<numberOfBoxes;i++){
+    let tempDiv = document.createElement("div");
+    tempDiv.innerHTML = myTextArr[i];
+    tempDiv.style.height = boxHeight+"px";
+    tempDiv.className = "butts";
+    tempDiv.addEventListener("click",addImageUpoadFuncs);
+    sumOfHeight = sumOfHeight + boxHeight;
+    contentMom.appendChild(tempDiv);
+
+  }
+
+  return sumOfHeight;
+};
+
+function addImageUpoadFuncs(){
+  console.log("Iran");
 }
