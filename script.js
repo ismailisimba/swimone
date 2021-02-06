@@ -213,6 +213,9 @@ function bundleMyData(action,value) {
   if(action==="login"){
     data = bundleLoginData(value);
    
+  }else if(action==="uploadFiles"){
+    console.log("I will bundle files for upload...");
+    console.log(localVar.counters.filesForUploadArr[0].name);
   }
 return data;
 }
@@ -651,7 +654,7 @@ function writeFilesToCpan(filesArr,contentBox) {
 
   numOfFilesCont.innerHTML = filesArr.length;
 
-
+  localVar.counters["filesForUploadArr"] = filesArr;
   for(let i=0;i<filesArr.length;i++){
 
     sumOfHeight = sumOfHeight + 18;
@@ -707,6 +710,12 @@ function fillBoxes2(contentMom,boxHeight,numberOfBoxes,myTextArr){
 
 function addImageUpoadFuncs(){
   let myText = this.innerText;
+
+  if(myText==="Cancel"){
+    collapseCpan();
+  }else{
+    bundleMyData("uploadFiles",);
+  }
   
   console.log(myText);
 }
