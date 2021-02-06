@@ -781,8 +781,10 @@ async function bundleFilesForUpload(){
 
 async function readFile (file){
   const reader = new FileReader();
-  reader.onload = () =>{
-    return reader.result;
+  reader.onload = (evt) =>{
+    console.log(evt.target.result);
+    return evt.target.result;
+    
   }
   reader.onerror = () =>{
     alert("file reading error 69240");
