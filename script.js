@@ -282,7 +282,7 @@ function getToken() {
 
   if(status){
 
-    let user = GoogleAuth.currentUser.get()
+    let user = auth2.currentUser.get()
     tokentemp = user.getAuthResponse().id_token;
 
   }else{
