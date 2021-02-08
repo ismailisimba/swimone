@@ -589,7 +589,7 @@ html button:hover {
 
 /*JS javascript items styles go here*/
 
-#inputone{
+#inputone, #inputtwo{
     display: none;
 }
 .genericCpanCont{
