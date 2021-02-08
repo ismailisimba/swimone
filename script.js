@@ -430,17 +430,13 @@ function displayCpanOptions(eleIndex){
    
 
   }else if(eleIndex==1){
-
-    displayDocuCpanOptions();
-
-  }else if(eleIndex==2){
     displaySiteMapCpanOptions();
 
-  }else if(eleIndex==3){
+  }else if(eleIndex==2){
 
     displayPostsCpanOptions();
 
-  }else if(eleIndex==4){
+  }else if(eleIndex==3){
 
     //displayPostAddEdCpanOptions();
 
@@ -463,19 +459,6 @@ function  displayImageCpanOptions(){
 
 }
 
-function  displayDocuCpanOptions(){
-
-  //let container = document.querySelectorAll(".setinset")[0];
-  let contentMom = document.querySelectorAll(".cpancontentcont")[0];
-  let context = "menuDoc";
-  let numberOfBoxes = 2 //delete and upload
-
-  let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
-  expandTheCpan(sumOfHeight);
-    
-
-
-}
 
 
 function  displaySiteMapCpanOptions(){
@@ -521,12 +504,7 @@ function fillContentMom(contentMom,context,numberOfBoxes){
 
   if(context==="menuIm"){
     let boxHeight = 42;
-    let myTextArr = ["Delete Pictures", "Upload Pictures"]
-
-  sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
-  }else if(context==="menuDoc"){
-    let boxHeight = 42;
-    let myTextArr = ["Delete Documents", "Upload Documents"]
+    let myTextArr = ["Delete Files", "Upload Files"]
 
   sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
   }else if(context==="menuSite"){
@@ -636,10 +614,10 @@ function addFileUploadFuncs(context,cPanItem,menuBox){
 
   if(context==="images"){
 
-    if(thisButtText==="Upload Pictures"){
+    if(thisButtText==="Upload Files"){
      
       cPanItem.addEventListener("click", genericInputClick);
-    }else if(thisButtText==="Delete Pictures"){
+    }else if(thisButtText==="Delete Files"){
       collapseCpan();
       
     }
