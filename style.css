@@ -75,6 +75,7 @@ html button:hover {
 
     width: 200px;
     height: 48px;
+    visibility: hidden;
 
     background-color: transparent;
 }
