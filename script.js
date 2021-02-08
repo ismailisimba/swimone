@@ -639,6 +639,9 @@ function addFileUploadFuncs(context,cPanItem,menuBox){
     if(thisButtText==="Upload Pictures"){
      
       cPanItem.addEventListener("click", genericInputClick);
+    }else if(thisButtText==="Delete Pictures"){
+      collapseCpan();
+      
     }
 
     
