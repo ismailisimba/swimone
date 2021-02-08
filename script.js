@@ -266,6 +266,7 @@ myCanvas.style.color = "black";
 myCanvas.style.fontSize = "14px";
 myCanvas.style.fontWeight = "600";
 myCanvas.style.letterSpacing = "2px";
+myCanvas.style.display = "flex";
 
 if(loginStatus==="captainHasTheCon"){
   initSetupBackend("captainHasTheCon");
