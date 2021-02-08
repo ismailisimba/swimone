@@ -191,7 +191,7 @@ html button:hover {
 
     
 }
-.mycolumns:nth-child(2):-webkit-scrollbar { display: none; }
+.mycolumns::-webkit-scrollbar { display: none; }
 
 .mycolumnchildren:first-child{
 
