@@ -187,9 +187,11 @@ html button:hover {
 
     overflow-y: hidden;
     overflow-x: hidden;
+    scrollbar-width: none; -ms-overflow-style: none;
 
     
 }
+.mycolumns:nth-child(2):-webkit-scrollbar { display: none; }
 
 .mycolumnchildren:first-child{
 
