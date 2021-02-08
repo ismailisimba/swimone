@@ -588,6 +588,10 @@ html button:hover {
 
 
 /*JS javascript items styles go here*/
+
+#inputone{
+    display: none;
+}
 .genericCpanCont{
     position: relative;
     display: flex;
