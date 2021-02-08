@@ -66,14 +66,16 @@ html button:hover {
 .settcont{
     display: block;
     position: fixed;
-    top: 61px;
+    top: 140px;
     border-radius: 6px;
-    left: 33%;
+    left: 48px;
 
     border: 3px dotted transparent;
     padding: 9px 16px;
 
-    width: 200px;
+    width: 20%;
+    min-width: 169px;
+    max-width: 300px;
     height: 48px;
 
     background-color: transparent;
