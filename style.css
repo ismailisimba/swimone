@@ -650,6 +650,8 @@ html button:hover {
 
 #temporarydiv{
     position: relative;
+    width: 65%;
+    min-width: 240px;
     align-self: flex-end;
     top: 120px;
     margin-top: 6px;
