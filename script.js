@@ -709,6 +709,7 @@ function writeFilesToCpan(filesArr,contentBox) {
   let sumOfH = fillBoxes2(contentBox,42,2,["Cancel","Upload"]);
 
   sumOfH = sumOfH + sumOfHeight;
+  cPanGenericCont.style.visibility = "visible";
   contentBox.appendChild(cPanGenericCont);
   return sumOfH;
 

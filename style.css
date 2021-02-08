@@ -75,7 +75,6 @@ html button:hover {
 
     width: 200px;
     height: 48px;
-    visibility: hidden;
 
     background-color: transparent;
 }
@@ -608,6 +607,7 @@ html button:hover {
     padding-bottom: 12px;
     min-height: 18px;
     height: auto;
+    visibility: hidden;
   }
 
   .cPanContTit{
