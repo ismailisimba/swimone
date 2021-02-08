@@ -549,6 +549,8 @@ function fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr){
 
 
 function expandTheCpan(sumOfHeight){
+sumOfHeight = 369;
+  /*
 
   if(sumOfHeight>569){
     sumOfHeight = 569;
@@ -574,7 +576,7 @@ function expandTheCpan(sumOfHeight){
   
 
   sumOfHeight = sumOfHeight + 36;
-
+*/
   cPanInside.style.height = sumOfHeight+"px";
 }
 
