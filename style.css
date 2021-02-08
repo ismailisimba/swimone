@@ -702,6 +702,11 @@ html button:hover {
         left: 36px;
     }
 
+    #temporarydiv{
+
+        margin-right: -9px;
+    }
+
 
     .mycolumns:first-child{
 
