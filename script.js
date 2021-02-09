@@ -867,6 +867,9 @@ function fillUpFiles(responseObj) {
 
 function createFilePageContObj(numOfPages,pageLim,remainder){
 
+  let myNav = document.querySelectorAll(".inputcontainer")[0];
+  myNav.remove();
+
   let obj = {};
   let bigArr = [];
 
@@ -879,3 +882,4 @@ function createFilePageContObj(numOfPages,pageLim,remainder){
 
  return bigArr;
 }
+
