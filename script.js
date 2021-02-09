@@ -864,6 +864,9 @@ function fillUpFiles(responseObj) {
         element.remove();
       })
 
+      for(let i=0 ; i <numOfFiles ; i++){
+        parent.appendChild(fileCont);
+      }
     
 
 
@@ -873,6 +876,12 @@ function fillUpFiles(responseObj) {
   
 
 }
+
+
+
+
+
+
 
 
 function createFilePageContObj(numOfPages,pageLim,remainder){
