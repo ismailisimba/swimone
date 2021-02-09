@@ -838,6 +838,43 @@ return data;
 function fillUpFiles() {
   let filesArr = localVar.cloudObj.contentObj.contentObj.published.images;
   filesArr.splice(0,1);
-  console.log(filesArr);
 
+  let pageLim = 5;
+  let numOfFiles =  filesArr.length;
+  let numOfPages = Math.floor(numOfFiles/pageLim);
+  let remainder = Math.floor(numOfFiles%pageLim);
+
+  if(numOfPages<=1){
+    numOfPages = 1;
+  }else if(numOfPages>1){
+    numOfPages = numOfPages + 1;
+
+  }
+
+  
+  let myPage = createFilePageContObj(numOfPages,pageLim,remainder);
+
+
+
+
+ 
+  console.log(numOfPages);
+  console.log(myPage);
+
+}
+
+
+function createFilePageContObj(numOfPages,pageLim,remainder){
+
+  let obj = {};
+  let bigArr = [];
+
+  for(let i=0 ; i < numOfPages ; i++){
+    let tempObj = JSON.parse(JSON.stringify(obj));
+    tempObj["I am"] = "Page "+i;
+    bigArr.push(tempObj);
+    tempObj = null;
+  }
+
+ return bigArr;
 }
