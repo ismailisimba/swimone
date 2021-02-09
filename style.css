@@ -593,6 +593,10 @@ html button:hover {
 
 /*JS javascript items styles go here*/
 
+.inputcontainer{
+    display: none;
+}
+
 #inputone, #inputtwo{
     display: none;
 }
