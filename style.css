@@ -595,7 +595,7 @@ html button:hover {
 
 .inputcontainer{
     visibility: hidden;
-    width: 0px !important;
+    width: 100% !important;
     height: 0px !important;
 }
 
