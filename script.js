@@ -347,6 +347,7 @@ async function setupBackendCanvasLoggedIn(){
   
   insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML).then(function(){
     addBackendEventListeners();
+    fillUpFiles();
   });
 
 
@@ -827,10 +828,16 @@ if(context==="images"){
 
   }
 
-  console.log(localVar.cloudObj.contentObj.contentObj.draft.images)
+//  console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
 }
 return data;
 }
 
 
 
+function fillUpFiles() {
+  let filesArr = localVar.cloudObj.contentObj.contentObj.draft.images;
+  filesArr.splice(0,1);
+  console.log(filesArr);
+
+}
