@@ -853,14 +853,24 @@ function fillUpFiles(responseObj) {
   }
 
   
-  let myPage = createFilePageContObj(numOfPages,pageLim,remainder);
+  //let myPage = createFilePageContObj(numOfPages,pageLim,remainder);
 
+      
+      let fileConts = document.querySelectorAll(".fileListItemCont");
+      let fileCont = fileConts[0];
+      let parent = fileCont.parentNode;
+
+      fileConts.forEach(element=>{
+        element.remove();
+      })
+
+      myNav.remove();
 
 
 
  
-  console.log(numOfPages);
-  console.log(myPage);
+//  console.log(numOfPages);
+  
 
 }
 
@@ -874,7 +884,7 @@ function createFilePageContObj(numOfPages,pageLim,remainder){
   fileConts.forEach(element=>{
     element.remove();
   })
-  
+
   myNav.remove();
 
   let obj = {};
