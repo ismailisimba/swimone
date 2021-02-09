@@ -866,6 +866,7 @@ function fillUpFiles(responseObj) {
 
       for(let i=0 ; i <numOfFiles ; i++){
         let tempDiv = fileCont.cloneNode(true);
+        tempDiv = fillTempFileDiv(tempDiv,filesArr[i]);
         parent.appendChild(tempDiv);
       }
     
@@ -875,6 +876,16 @@ function fillUpFiles(responseObj) {
  
 //  console.log(numOfPages);
   
+
+}
+
+function fillTempFileDiv(tempDiv,fileObj) {
+
+  tempDiv.querySelectorAll(".filename")[0].innerHTML = fileObj.realName;
+  tempDiv.querySelectorAll(".filetype")[0].innerHTML = "";
+  tempDiv.querySelectorAll(".filesize")[0].innerHTML = fileObj.size;
+
+  return tempDiv;
 
 }
 
