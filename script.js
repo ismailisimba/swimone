@@ -864,7 +864,7 @@ function fillUpFiles(responseObj) {
         element.remove();
       })
 
-      myNav.remove();
+    
 
 
 
