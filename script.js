@@ -844,9 +844,9 @@ function fillUpFiles() {
   let numOfPages = Math.floor(numOfFiles/pageLim);
   let remainder = Math.floor(numOfFiles%pageLim);
 
-  if(numOfPages<=1){
+  if(numOfPages<1||numOfPages==1&&remainder<1){
     numOfPages = 1;
-  }else if(numOfPages>1){
+  }else if(numOfPages>=1){
     numOfPages = numOfPages + 1;
 
   }
