@@ -868,6 +868,13 @@ function fillUpFiles(responseObj) {
 function createFilePageContObj(numOfPages,pageLim,remainder){
 
   let myNav = document.querySelectorAll(".inputcontainer")[0];
+  let fileConts = document.querySelectorAll(".fileListItemCont");
+  let fileCont = fileConts[0];
+
+  fileConts.forEach(element=>{
+    element.remove();
+  })
+  
   myNav.remove();
 
   let obj = {};
