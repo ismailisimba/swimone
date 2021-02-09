@@ -865,7 +865,8 @@ function fillUpFiles(responseObj) {
       })
 
       for(let i=0 ; i <numOfFiles ; i++){
-        parent.appendChild(fileCont);
+        let tempDiv = fileCont.cloneNode(true);
+        parent.appendChild(tempDiv);
       }
     
 
