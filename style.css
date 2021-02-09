@@ -594,7 +594,7 @@ html button:hover {
 /*JS javascript items styles go here*/
 
 .inputcontainer{
-    display: none;
+    visibility: hidden;
 }
 
 #inputone, #inputtwo{
