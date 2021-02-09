@@ -595,6 +595,8 @@ html button:hover {
 
 .inputcontainer{
     visibility: hidden;
+    width: 0px !important;
+    height: 0px !important;
 }
 
 #inputone, #inputtwo{
