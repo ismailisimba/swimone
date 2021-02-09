@@ -836,7 +836,7 @@ return data;
 
 
 function fillUpFiles() {
-  let filesArr = localVar.cloudObj.contentObj.contentObj.draft.images;
+  let filesArr = localVar.cloudObj.contentObj.contentObj.published.images;
   filesArr.splice(0,1);
   console.log(filesArr);
 
