@@ -195,7 +195,7 @@ async function hailTheServerOnAllChannels(action,value) {
     let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft;
-      startHailing(myObj,"uploadImages",collapseCpan);
+      startHailing(myObj,"uploadImages",fillUpFiles);
     });
   }
 
