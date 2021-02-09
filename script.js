@@ -347,7 +347,7 @@ async function setupBackendCanvasLoggedIn(){
   
   insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML).then(function(){
     addBackendEventListeners();
-    fillUpFiles();
+    fillUpFiles(localVar.cloudObj);
   });
 
 
@@ -835,7 +835,8 @@ return data;
 
 
 
-function fillUpFiles() {
+function fillUpFiles(responseObj) {
+  localVar["cloudObj"] = responseObj;
   let filesArr = localVar.cloudObj.contentObj.contentObj.published.images;
   filesArr.splice(0,1);
 
