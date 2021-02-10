@@ -882,22 +882,13 @@ function fillUpFiles(responseObj) {
 function fillTempFileDiv(tempDiv,fileObj) {
 
   let myHref1 = document.createElement("a");
+  myHref1.innerHTML = "X";
   let myHref2 = document.createElement("a");
   myHref2.className = "idhref";
   myHref1.className = "testhref1";
   let myStyle = document.createElement("style");
   myStyle.innerHTML = `
-      .testhref1{
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-color: green;
-        z-index: 100;
-      }
-
+    
       .testhref1{
         position: absolute;
         top: 0px;
@@ -906,7 +897,12 @@ function fillTempFileDiv(tempDiv,fileObj) {
         width: 100%;
         height: 100%;
         background-color: #3f612d;
+        color: #061826;
+        font-size: 36px;
+        text-align: center;
+        font-weight: bold;
         opacity: 0.69;
+        z-index: 100;
       }
 
       .idhref{
