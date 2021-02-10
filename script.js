@@ -974,8 +974,10 @@ function setupForFileDeletion(){
 
   parent.innerHTML = "";
 
-  butClone.innerHTML = `Please click the files you want to delete. <br> To unselect, click again.`;
+  butClone.innerHTML = `Please click the files you want to delete. <br> To unselect, click again. <br> When done, click here to confirm deletion`;
   butClone.style.height = "auto";
+
+  butClone.addEventListener("click",collapseCpan);
 
   addFileClicks(fileContClone,parent,butClone);
 
