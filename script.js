@@ -1,5 +1,6 @@
 
 let dePage = document.querySelectorAll(".mygenericpage")[0];
+let popUp = document.querySelectorAll(".custompopup")[0];
 let cPanGenericCont = document.querySelectorAll(".genericCpanCont")[0];
 let reqString = "https://script.google.com/macros/s/AKfycbyeGCc2c34RY53aturHkod7EQfF2gOaY4vxUF-cN4HXaKgTlClRazol/exec";
 let paraTemplate = {"params":[{"initVal":"initKey"}]};
@@ -89,6 +90,7 @@ function checkTheURL () {
   if(backendMatch!==null){
     cPan.remove();
     cPanGenericCont.remove();
+    popUp.remove();
     
     initiateLogInSetup (backendMatch);
   }
@@ -114,6 +116,7 @@ function onSignIn(googleUser) {
   let token = googleUser.getAuthResponse().id_token;
 
   hailTheServerOnAllChannels("login",token);
+  customPopUpFunc(popUp);
 }
 
 
@@ -1079,4 +1082,11 @@ function sendDeletionsToServer () {
   let token = getToken();
   hailTheServerOnAllChannels("delete",token);
 
+}
+
+
+
+function customPopUpFunc(popupEle) {
+
+  document.querySelectorAll(".mycolumns")[1].appendChild(popupEle);
 }
