@@ -286,6 +286,7 @@ myCanvas.style.fontSize = "14px";
 myCanvas.style.fontWeight = "600";
 myCanvas.style.letterSpacing = "2px";
 myCanvas.style.display = "flex";
+popUp.remove();
 
 if(loginStatus==="captainHasTheCon"){
   initSetupBackend("captainHasTheCon");
