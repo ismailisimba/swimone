@@ -1088,5 +1088,7 @@ function sendDeletionsToServer () {
 
 function customPopUpFunc(popupEle) {
 
+  popupEle.style.visibility = "visible";
+
   document.querySelectorAll(".mycolumns")[1].appendChild(popupEle);
 }
