@@ -240,7 +240,7 @@ async function bundleMyData(action,value) {
     
   }else if(action==="delete"){
     
-   data = await updateCloudObj("deleteFiles",{});
+   data = updateCloudObj("deleteFiles",{});
       
   
     //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
@@ -821,7 +821,7 @@ parsedFile =  await toBinaryString(file);
 }
 
 
-async function updateCloudObj(context,data){
+function updateCloudObj(context,data){
 if(context==="images"){
   //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
   let copy =  localVar.cloudObj.contentObj.contentObj.draft.images[0];
