@@ -197,6 +197,13 @@ async function hailTheServerOnAllChannels(action,value) {
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft;
       startHailing(myObj,"uploadImages",fillUpFiles);
     });
+  }else if(action==="delete"){
+    let data = await bundleMyData("deleteFiles",value).then(()=>{
+      let myObj = bundleTokenAfter(value);
+      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
+      startHailing(myObj,action,fillUpFiles);
+    });
+
   }
 
 
@@ -230,6 +237,13 @@ async function bundleMyData(action,value) {
     });
     //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
     
+  }else if(action==="delete"){
+    
+    updateCloudObj("deleteFiles",{});
+      
+  
+    //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
+
   }
 return data;
 }
@@ -831,6 +845,24 @@ if(context==="images"){
   }
 
 //  console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
+}else if(context==="deleteFiles"){
+  let copy = localVar.cloudObj.contentObj.contentObj.delete[0];
+  let itemsToDel = document.querySelectorAll(".cpancontentcont")[0];
+  itemsToDel = itemsToDel.querySelectorAll(".fileListItemCont");
+  localVar.cloudObj.contentObj.contentObj.delete = [];
+
+  for(let i = 0 ; i < itemsToDel.length ; i++){
+
+    let tempObj = JSON.parse(JSON.stringify(copy));
+
+    tempObj.type =  "file";
+    tempObj.id =  itemsToDel[i].querySelectorAll(".idhref")[0].innerText;
+
+ //   console.log(data.length);
+
+ localVar.cloudObj.contentObj.contentObj.delete.push(tempObj);
+
+  }
 }
 return data;
 }
@@ -977,7 +1009,7 @@ function setupForFileDeletion(){
   butClone.innerHTML = `Please click the files you want to delete. <br> To unselect, click again. <br> When done, click here to confirm deletion`;
   butClone.style.height = "auto";
 
-  butClone.addEventListener("click",collapseCpan);
+  butClone.addEventListener("click",sendDeletionsToServer);
 
   addFileClicks(fileContClone,parent,butClone);
 
@@ -1032,3 +1064,10 @@ function removeSelectedFileFromCpan(parent,fileParentNode){
   deNode.remove();
 
 };
+
+
+function sendDeletionsToServer () {
+  let token = getToken();
+  hailTheServerOnAllChannels("delete",token);
+
+}
