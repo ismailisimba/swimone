@@ -882,15 +882,43 @@ function fillUpFiles(responseObj) {
 function fillTempFileDiv(tempDiv,fileObj) {
 
   let myHref1 = document.createElement("a");
+  let myHref2 = document.createElement("a");
+  myHref2.className = "idhref";
   myHref1.className = "testhref1";
   let myStyle = document.createElement("style");
   myStyle.innerHTML = `
       .testhref1{
         position: absolute;
+        top: 0px;
+        left: 0px;
         display: block;
         width: 100%;
         height: 100%;
-        background-color: red;
+        background-color: green;
+        z-index: 100;
+      }
+
+      .testhref1{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #3f612d;
+        opacity: 0.69;
+      }
+
+      .idhref{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: block;
+        width: 0px;
+        height: 0px;
+        background-color: transparent;
+        z-index: 50;
+
       }
   `;
 
@@ -898,6 +926,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
   tempDiv.querySelectorAll(".filetype")[0].innerHTML = "";
   tempDiv.querySelectorAll(".filesize")[0].innerHTML = fileObj.size;
   tempDiv.appendChild(myHref1);
+  tempDiv.appendChild(myHref2);
   tempDiv.appendChild(myStyle);
 
   return tempDiv;
