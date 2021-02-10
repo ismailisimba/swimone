@@ -10,7 +10,7 @@ let cPan = document.querySelectorAll(".settcont")[0];
 
 window.onload = () => {
     myStartUpFunction();
-    checkTheURL()
+    checkTheURL();
 }
 
 //initiate local counters, indexes, e.t.c here
@@ -69,8 +69,8 @@ function reloadHomePage () {
 function initiateLogInSetup (backendMatch){
 
   let contentBox = document.querySelectorAll(".mycolumns")[1];
-  let tempDiv = document.querySelectorAll(".logocontainer")[0];
-  tempDiv.innerText = backendMatch;
+  //let tempDiv = document.querySelectorAll(".logocontainer")[0];
+ // tempDiv.innerText = backendMatch;
  
   let googleStuff = document.querySelectorAll(".googlestuff")[0];
 
@@ -92,7 +92,7 @@ function checkTheURL () {
     cPanGenericCont.remove();
     popUp.remove();
     
-    initiateLogInSetup (backendMatch);
+    initiateLogInSetup(backendMatch);
   }
   
  
