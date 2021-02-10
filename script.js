@@ -901,7 +901,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
         font-size: 24px;
         text-align: center;
         font-weight: bold;
-        opacity: 0.69;
+        opacity: 0;
         z-index: 100;
       }
 
