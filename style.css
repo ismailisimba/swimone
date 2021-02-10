@@ -593,6 +593,11 @@ html button:hover {
 
 /*JS javascript items styles go here*/
 
+.testhref1selected {
+
+    opacity: 0.69 !important;
+}
+
 .inputcontainer{
     visibility: hidden;
     width: 100% !important;

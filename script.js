@@ -966,6 +966,7 @@ function createFilePageContObj(numOfPages,pageLim,remainder){
 function setupForFileDeletion(){
 
   let butClone = this.cloneNode(true);
+  let fileContClone = document.querySelectorAll(".imageListItemCont")[0].cloneNode(true);
   let parent = this.parentNode;
 
   parent.innerHTML = "";
@@ -973,6 +974,20 @@ function setupForFileDeletion(){
   butClone.innerHTML = `Please click the files you want to delete. <br> To unselect, click again.`;
   butClone.style.height = "auto";
 
+  addFileClicks(fileContClone,parent,butClone);
+
   parent.appendChild(butClone);
+
+}
+
+
+function addFileClicks(fileContClone,parent,butClone){
+
+  let myClickableFileHrefs = document.querySelectorAll(".testhref1");
+
+  myClickableFileHrefs.forEach(element => {
+    element.classList.toggle("testhref1selected");
+  })
+
 
 }
