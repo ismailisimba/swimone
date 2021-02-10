@@ -590,6 +590,77 @@ html button:hover {
 }
 
 
+.spanCont{
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    width: 85%;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    justify-content: space-evenly;
+
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 3px;
+  }
+
+  .spanCont span {
+      color: #53f4ff;
+  }
+
+  .dots{
+    position: relative;
+    margin-top: 6px;
+    top: -6px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #53f4ff;
+
+    animation: wobbleMeDots 1.9s linear 0s infinite forwards ;
+    transition: all linear 1s;
+  }
+
+  #spOne {
+    animation-delay: 0.9s;
+  }
+
+  #spTwo {
+    animation-delay: 1.8s;
+  }
+
+  #spThree {
+    animation-delay: 2.7s;
+  }
+
+  #spFour {
+    animation-delay: 3.6s;
+  }
+
+  #spFive {
+    animation-delay: 4.5s;
+  }
+
+  @keyframes wobbleMeDots {
+
+    0%{
+        top: -6px;
+    }
+
+    50%{
+
+      top: 12px;
+      
+    }
+
+    100%{
+
+      top: -6px;
+
+    }
+    
+  }
 
 /*JS javascript items styles go here*/
 
@@ -598,7 +669,7 @@ html button:hover {
     position: fixed;
 
     width: 50%;
-    left: 25%;
+    left: 50%;
     top: 25%;
     height: 50%;
 
