@@ -965,7 +965,7 @@ function createFilePageContObj(numOfPages,pageLim,remainder){
 
 function setupForFileDeletion(){
 
-  this.innerHTML = `<p style="font-size=10px">Please click the files you want to delete. To unselect, click again.</p>`;
+  this.innerHTML = `<p> style="font-size=10px">Please click the files you want to delete. To unselect, click again.</p>`;
 
 
 }
