@@ -912,6 +912,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
         top: 0px;
         left: 0px;
         display: block;
+        font-size:0px;
         width: 0px;
         height: 0px;
         background-color: transparent;
