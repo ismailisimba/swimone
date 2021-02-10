@@ -198,11 +198,11 @@ async function hailTheServerOnAllChannels(action,value) {
       startHailing(myObj,"uploadImages",fillUpFiles);
     });
   }else if(action==="delete"){
-    console.log("we are checkinh here...vavhd");
+    
     let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
-      console.log(myObj);
+     console.log(myObj);
       startHailing(myObj,action,fillUpFiles);
     });
 
@@ -240,7 +240,7 @@ async function bundleMyData(action,value) {
     //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
     
   }else if(action==="delete"){
-    console.log("we are checkinh here...ddd");
+    
    data = updateCloudObj("deleteFiles",{});
       
   
@@ -824,7 +824,7 @@ parsedFile =  await toBinaryString(file);
 
 function updateCloudObj(context,data){
 
-  console.log("we are checkinh here...ytuu");
+  
 
 if(context==="images"){
   //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
@@ -870,8 +870,8 @@ if(context==="images"){
   }
 
   data = localVar.cloudObj.contentObj.contentObj.delete;
-  console.log(data)
-  console.log("we are checkinh here...");
+  //console.log(data)
+  
 }
 return data;
 }
