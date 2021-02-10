@@ -966,7 +966,7 @@ function createFilePageContObj(numOfPages,pageLim,remainder){
 function setupForFileDeletion(){
 
   let butClone = this.cloneNode(true);
-  let fileContClone = document.querySelectorAll(".imageListItemCont")[0].cloneNode(true);
+  let fileContClone = cPanGenericCont.querySelectorAll(".imageListItemCont")[0].cloneNode(true);
   let parent = this.parentNode;
 
   parent.innerHTML = "";
