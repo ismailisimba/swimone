@@ -997,12 +997,13 @@ function addFileClicks(fileContClone,parent,butClone){
 
 function toggleFileSelectStyle() {
   let fileContClone = this.parentNode.cloneNode(true);
+  fileContClone.id = this.parentNode.querySelectorAll(".idhref")[0].href;
   let parent = document.querySelectorAll(".cpancontentcont")[0];
   
 
   if(this.classList.contains("testhref1selected")){
 
-    parent.removeChild(this.parentNode);
+    removeSelectedFileFromCpan(parent,this.parentNode);
     this.classList.toggle("testhref1selected");
 
 
@@ -1020,3 +1021,11 @@ function removeFileSelectClicks () {
     element.removeEventListener("click",toggleFileSelectStyle,false)
   })
 }
+
+function removeSelectedFileFromCpan(parent,fileParentNode){
+
+  let idtoCheck = fileParentNode.querySelectorAll(".idhref")[0].href;
+  let deNode = parent.getElementById(idtoCheck);
+  deNode.remove();
+
+};
