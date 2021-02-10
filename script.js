@@ -1025,7 +1025,7 @@ function removeFileSelectClicks () {
 function removeSelectedFileFromCpan(parent,fileParentNode){
 
   let idtoCheck = fileParentNode.querySelectorAll(".idhref")[0].href;
-  let deNode = parent.getElementById(idtoCheck);
+  let deNode = document.getElementById(idtoCheck);
   deNode.remove();
 
 };
