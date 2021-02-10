@@ -921,6 +921,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
   tempDiv.querySelectorAll(".filename")[0].innerHTML = fileObj.realName;
   tempDiv.querySelectorAll(".filetype")[0].innerHTML = "";
   tempDiv.querySelectorAll(".filesize")[0].innerHTML = fileObj.size;
+  myHref2.href = fileObj.id;
   tempDiv.appendChild(myHref1);
   tempDiv.appendChild(myHref2);
   tempDiv.appendChild(myStyle);
