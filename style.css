@@ -666,6 +666,7 @@ html button:hover {
 
 .custompopup{
     display: block;
+    visibility: hidden;
     position: fixed;
 
     width: 50%;
