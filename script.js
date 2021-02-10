@@ -195,13 +195,13 @@ async function hailTheServerOnAllChannels(action,value) {
     let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft;
-      console.log(myObj);
       startHailing(myObj,"uploadImages",fillUpFiles);
     });
   }else if(action==="delete"){
     let data = await bundleMyData("deleteFiles",value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
+      console.log(myObj);
       startHailing(myObj,action,fillUpFiles);
     });
 
