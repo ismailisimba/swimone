@@ -897,8 +897,8 @@ function fillTempFileDiv(tempDiv,fileObj) {
         width: 100%;
         height: 100%;
         background-color: #3f612d;
-        color: #061826;
-        font-size: 36px;
+        color: #e8dab2;
+        font-size: 28px;
         text-align: center;
         font-weight: bold;
         opacity: 0.69;
