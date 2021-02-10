@@ -199,7 +199,7 @@ async function hailTheServerOnAllChannels(action,value) {
     });
   }else if(action==="delete"){
     console.log("we are checkinh here...vavhd");
-    let data = await bundleMyData("deleteFiles",value).then(()=>{
+    let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
       console.log(myObj);
