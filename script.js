@@ -995,7 +995,7 @@ function addFileClicks(fileContClone,parent,butClone){
 }
 
 
-function toggleFileSelectStyle {
+function toggleFileSelectStyle() {
   this.classList.toggle("testhref1selected");
 }
 
