@@ -965,7 +965,14 @@ function createFilePageContObj(numOfPages,pageLim,remainder){
 
 function setupForFileDeletion(){
 
-  this.innerHTML = `<p> style="font-size=10px">Please click the files you want to delete. To unselect, click again.</p>`;
+  let butClone = this.cloneNode(true);
+  let parent = this.parentNode;
 
+  parent.innerHTML = "";
+
+  butClone.innerHTML = `Please click the files you want to delete. <br> To unselect, click again.`;
+  butClone.style.height = "auto";
+
+  parent.appendChild(butClone);
 
 }
