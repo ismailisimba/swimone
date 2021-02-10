@@ -881,9 +881,24 @@ function fillUpFiles(responseObj) {
 
 function fillTempFileDiv(tempDiv,fileObj) {
 
+  let myHref1 = document.createElement("a");
+  myHref1.className = "testhref1";
+  let myStyle = document.createElement("style");
+  myStyle.innerHTML = `
+      .testhref1{
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+      }
+  `;
+
   tempDiv.querySelectorAll(".filename")[0].innerHTML = fileObj.realName;
   tempDiv.querySelectorAll(".filetype")[0].innerHTML = "";
   tempDiv.querySelectorAll(".filesize")[0].innerHTML = fileObj.size;
+  tempDiv.appendChild(myHref1);
+  tempDiv.appendChild(myStyle);
 
   return tempDiv;
 
