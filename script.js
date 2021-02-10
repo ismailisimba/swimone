@@ -1000,7 +1000,7 @@ function toggleFileSelectStyle() {
   let parent = document.querySelectorAll(".cpancontentcont")[0];
   
 
-  if(this.classList.contains()){
+  if(this.classList.contains("testhref1selected")){
 
     parent.removeChild(fileContClone);
     this.classList.toggle("testhref1selected");
