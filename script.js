@@ -589,7 +589,7 @@ function collapseCpan (){
   cPanInside.style.height = "100%";
   document.querySelectorAll(".cpancontentcont")[0].innerHTML = "";
 
-  removeFileSelectClicks ();
+  removeFileSelectClicks();
 }
 
 function addCpanOptsClickFuncs(){
