@@ -588,6 +588,8 @@ function collapseCpan (){
 
   cPanInside.style.height = "100%";
   document.querySelectorAll(".cpancontentcont")[0].innerHTML = "";
+
+  removeFileSelectClicks ();
 }
 
 function addCpanOptsClickFuncs(){
@@ -986,8 +988,21 @@ function addFileClicks(fileContClone,parent,butClone){
   let myClickableFileHrefs = document.querySelectorAll(".testhref1");
 
   myClickableFileHrefs.forEach(element => {
-    element.classList.toggle("testhref1selected");
+    element.addEventListener("click",toggleFileSelectStyle)
   })
 
 
+}
+
+
+function toggleFileSelectStyle {
+  this.classList.toggle("testhref1selected");
+}
+
+function removeFileSelectClicks () {
+  let myClickableFileHrefs = document.querySelectorAll(".testhref1");
+
+  myClickableFileHrefs.forEach(element => {
+    element.removeEventListener("click",toggleFileSelectStyle,false)
+  })
 }
