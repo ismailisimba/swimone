@@ -996,7 +996,21 @@ function addFileClicks(fileContClone,parent,butClone){
 
 
 function toggleFileSelectStyle() {
-  this.classList.toggle("testhref1selected");
+  let fileContClone = this.cloneNode(true);
+  let parent = document.querySelectorAll(".cpancontentcont")[0];
+  
+
+  if(this.classList.contains()){
+
+    parent.removeChild(fileContClone);
+    this.classList.toggle("testhref1selected");
+
+
+  }else{
+    parent.appendChild(fileContClone);
+    this.classList.toggle("testhref1selected");
+
+  }
 }
 
 function removeFileSelectClicks () {
