@@ -593,6 +593,19 @@ html button:hover {
 
 /*JS javascript items styles go here*/
 
+.custompopup{
+    display: block;
+    position: fixed;
+
+    width: 50%;
+    left: 25%;
+    top: 25%;
+    height: 50%;
+
+    background-color: #061826;
+    z-index: 1000;
+}
+
 .testhref1selected {
 
     opacity: 0.69 !important;
