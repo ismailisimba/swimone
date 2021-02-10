@@ -923,7 +923,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
   tempDiv.querySelectorAll(".filename")[0].innerHTML = fileObj.realName;
   tempDiv.querySelectorAll(".filetype")[0].innerHTML = "";
   tempDiv.querySelectorAll(".filesize")[0].innerHTML = fileObj.size;
-  myHref2.id = fileObj.name;
+  myHref2.innerText = fileObj.name;
   tempDiv.appendChild(myHref1);
   tempDiv.appendChild(myHref2);
   tempDiv.appendChild(myStyle);
@@ -997,7 +997,7 @@ function addFileClicks(fileContClone,parent,butClone){
 
 function toggleFileSelectStyle() {
   let fileContClone = this.parentNode.cloneNode(true);
-  fileContClone.id = this.parentNode.querySelectorAll(".idhref")[0].id;
+  fileContClone.id = this.parentNode.querySelectorAll(".idhref")[0].innerText;
   let parent = document.querySelectorAll(".cpancontentcont")[0];
   
 
@@ -1024,7 +1024,7 @@ function removeFileSelectClicks () {
 
 function removeSelectedFileFromCpan(parent,fileParentNode){
 
-  let idtoCheck = fileParentNode.querySelectorAll(".idhref")[0].id;
+  let idtoCheck = fileParentNode.querySelectorAll(".idhref")[0].innerText;
   let deNode = document.getElementById(idtoCheck);
   deNode.remove();
 
