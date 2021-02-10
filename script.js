@@ -623,7 +623,7 @@ function addFileUploadFuncs(context,cPanItem,menuBox){
      
       cPanItem.addEventListener("click", genericInputClick);
     }else if(thisButtText==="Delete Files"){
-      collapseCpan();
+      cPanItem.addEventListener("click",setupForFileDeletion);
       
     }
 
@@ -936,7 +936,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
 
 
 
-
+/*
 function createFilePageContObj(numOfPages,pageLim,remainder){
 
   let myNav = document.querySelectorAll(".inputcontainer")[0];
@@ -961,4 +961,11 @@ function createFilePageContObj(numOfPages,pageLim,remainder){
 
  return bigArr;
 }
+*/
 
+function setupForFileDeletion(){
+
+  this.innerHTML = `<p style="font-size=10px">Please click the files you want to delete. To unselect, click again.</p>`;
+
+
+}
