@@ -1140,8 +1140,11 @@ function toggleFileSelectStyleOff() {
 function fillUpSiteMapInfo(responseObj){
 
   let newSettings = {};
+  let cloudSettings = responseObj.settingsObj;
 
   newSettings["title"] = document.getElementById("posttit");
+  newSettings["titleDisp"] = document.querySelectorAll(".contrpantitshow")[0];
+
   newSettings["catchphrase"] = document.getElementById("postcat");
   newSettings["featureOne"] = document.getElementById("feature1");
   newSettings["featureTwo"] = document.getElementById("feature2");
@@ -1168,6 +1171,9 @@ function fillUpSiteMapInfo(responseObj){
   //newSettings.inst.innerText = "Kennoobi!";
 
   newSettings.title.style.visibility = "collapse";
+  newSettings.titleDisp.innerHTML = cloudSettings.title;
+
+
   newSettings.catchphrase.style.visibility = "collapse";
   newSettings.featureOne.style.visibility = "collapse";
   newSettings.featureTwo.style.visibility = "collapse";
