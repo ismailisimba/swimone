@@ -349,6 +349,9 @@ function  initSetupBackend(status){
 
 async function setupBackendCanvasLoggedIn(){
 
+  myGoogleBox.innerHTML = "";
+  myGoogleBox.innerHTML =  `<div class="g-signin2" data-onsuccess="onSignIn"></div>`;
+
   let myButt = document.createElement("div");
   myButt.className = "mylogbutt";
   myButt.innerHTML = `<a href="#" onclick="signOut();">Sign out</a>`;
