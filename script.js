@@ -1118,7 +1118,10 @@ function toggleFileSelectStyleOff() {
   let fileCont = document.querySelectorAll(".imagescontainer")[0];
   let hrefs69 = fileCont.querySelectorAll(".testhref1");
   
-  hrefs69.classList.remove("testhref1selected");
+  hrefs69.forEach(element=>{
+    element.classList.remove("testhref1selected");
+  })
+
 
 
   
