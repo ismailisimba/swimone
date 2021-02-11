@@ -1087,7 +1087,7 @@ function sendDeletionsToServer () {
 
 
 
-function customPopUpFunc(popupEle) {
+function customPopUpFunc(popupEle,phrase) {
 
   popupEle.style.visibility = "visible";
 

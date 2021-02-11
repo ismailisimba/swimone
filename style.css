@@ -143,6 +143,13 @@ html button:hover {
     text-align: center;
     box-shadow: 0 1px 6px black;
     z-index: 1000;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 36px;
+    padding-right: 36px;
 }
 .setinset::-webkit-scrollbar { display: none; }
 .mycolumns:first-child{
