@@ -365,6 +365,7 @@ async function setupBackendCanvasLoggedIn(){
 
   cPan.style.backgroundColor = "#061826";
   cPan.style.borderColor = "#061826";
+  cPan.style.height = "48px";
   cPan.querySelectorAll(".cpancontentcont")[0].innerHTML = "";
   document.querySelectorAll(".mycolumns")[1].appendChild(cPan);
   //tempdiv.innerHTML = localVar.cloudObj.backendHTML;
