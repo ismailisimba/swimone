@@ -539,7 +539,7 @@ function fillContentMom(contentMom,context,numberOfBoxes){
   sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
   }else if(context==="menuSite"){
     let boxHeight = 42;
-    let myTextArr = ["Update", "Edit"];
+    let myTextArr = ["Edit"];
 
   sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
 
