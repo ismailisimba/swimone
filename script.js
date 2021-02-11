@@ -364,7 +364,7 @@ async function setupBackendCanvasLoggedIn(){
   //tempdiv.innerHTML = localVar.cloudObj.backendHTML;
 
   document.querySelectorAll("title")[0].innerHTML= "Swim - You're In!";
-  
+  customPopUpFunc(popUp,"phrase","stop");
   insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML).then(function(){
     addBackendEventListeners();
     fillUpFiles(localVar.cloudObj);
