@@ -630,16 +630,16 @@ function addCpanOptsClickFuncs(){
   if(menuBoxIndex==0){
 
     addFileUploadFuncs("images",cPanItem,menuBox);
-    alert("click1");
+    alert(this.innerText);
 
   }else if(menuBoxIndex==1){
-    alert("click2");
+    alert(this.innerText);
 
   }else if(menuBoxIndex==2){
-    alert("click3");
+    alert(this.innerText);
 
   }else if(menuBoxIndex==3){
-    alert("click4");
+    alert(this.innerText);
 
   }
   
