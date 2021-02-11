@@ -1109,6 +1109,7 @@ function customPopUpFunc(popupEle,phrase,action) {
 
 function myResetFuncs(){
 removeFileSelectClicks();
+toggleFileSelectStyleOff();
 
 }
 
