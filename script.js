@@ -496,7 +496,7 @@ function  displaySiteMapCpanOptions(){
   //let container = document.querySelectorAll(".setinset")[0];
   let contentMom = document.querySelectorAll(".cpancontentcont")[0];
   let context = "menuSite";
-  let numberOfBoxes = 2 //update and edit
+  let numberOfBoxes = 1 // edit
 
   let sumOfHeight = fillContentMom(contentMom,context,numberOfBoxes);
   expandTheCpan(sumOfHeight);
