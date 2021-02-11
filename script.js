@@ -375,6 +375,7 @@ async function setupBackendCanvasLoggedIn(){
   insertAndExecute("temporarydiv",localVar.cloudObj.backendHTML).then(function(){
     addBackendEventListeners();
     fillUpFiles(localVar.cloudObj);
+    fillUpSiteMapInfo(localVar.cloudObj);
   });
 
 
@@ -1131,6 +1132,15 @@ function toggleFileSelectStyleOff() {
   })
 
 
+
+  
+}
+
+
+function fillUpSiteMapInfo(responseObj){
+
+  let title = document.getElementById("posttit");
+  title.innerText = "Kennoobi!"
 
   
 }
