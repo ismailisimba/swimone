@@ -356,7 +356,8 @@ async function setupBackendCanvasLoggedIn(){
 
   let tempdiv = document.createElement("div");
   tempdiv.id = "temporarydiv";
-  document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv)
+  document.querySelectorAll(".mycolumns")[1].appendChild(tempdiv);
+  document.querySelectorAll(".mycolumns")[1].appendChild(myGoogleBox);
   document.querySelectorAll(".mycolumns")[1].style.overflowY="scroll";
 
   cPan.style.backgroundColor = "#061826";
