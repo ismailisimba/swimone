@@ -1089,7 +1089,7 @@ function sendDeletionsToServer () {
 
 function customPopUpFunc(popupEle,phrase,action) {
 
-  let mom = document.querySelectorAll(".spanCont")[0];
+  let mom = popupEle.querySelectorAll(".spanCont")[0];
   let deKid = mom.querySelectorAll("span")[0]
 
   if(action==="stop"){
