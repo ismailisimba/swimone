@@ -1089,12 +1089,16 @@ function sendDeletionsToServer () {
 
 function customPopUpFunc(popupEle,phrase,action) {
 
+  let mom = document.querySelectorAll(".spanCont")[0];
+  let deKid = mom.querySelectorAll("span")[0]
+
   if(action==="stop"){
     popupEle.style.visibility = "collapse";
     popupEle.remove();
 
   }else if(action==="fullsteamahead"){
     popupEle.style.visibility = "visible";
+    deKid.innerText = phrase;
     document.querySelectorAll(".mycolumns")[1].appendChild(popupEle);
   }
 
