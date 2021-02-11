@@ -1166,7 +1166,24 @@ function fillUpSiteMapInfo(responseObj){
   //newSettings.twtt.innerText = "Kennoobi!";
   //newSettings.lnkd.innerText = "Kennoobi!";
   //newSettings.inst.innerText = "Kennoobi!";
-  
+
+  newSettings.title.style.visibility = "collapse";
+  newSettings.catchphrase.style.visibility = "collapse";
+  newSettings.featureOne.style.visibility = "collapse";
+  newSettings.featureTwo.style.visibility = "collapse";
+  newSettings.featureThree.style.visibility = "collapse";
+  newSettings.email.style.visibility = "collapse";
+  newSettings.address.style.visibility = "collapse";
+  newSettings.fb.style.visibility = "collapse";
+  newSettings.num.style.visibility = "collapse";
+  newSettings.twtt.style.visibility = "collapse";
+  newSettings.lnkd.style.visibility = "collapse";
+  newSettings.inst.style.visibility = "collapse";
+
+
+
+ 
+
 
   
 }
