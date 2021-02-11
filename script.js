@@ -116,7 +116,7 @@ function onSignIn(googleUser) {
   let token = googleUser.getAuthResponse().id_token;
 
   hailTheServerOnAllChannels("login",token);
-  customPopUpFunc(popUp);
+  customPopUpFunc(popUp,"Signing In","fullsteamahead");
 }
 
 
@@ -1087,9 +1087,16 @@ function sendDeletionsToServer () {
 
 
 
-function customPopUpFunc(popupEle,phrase) {
+function customPopUpFunc(popupEle,phrase,action) {
 
-  popupEle.style.visibility = "visible";
+  if(action==="stop"){
+    popupEle.style.visibility = "collapse";
+    popupEle.remove();
 
-  document.querySelectorAll(".mycolumns")[1].appendChild(popupEle);
+  }else if(action==="fullsteamahead"){
+    popupEle.style.visibility = "visible";
+    document.querySelectorAll(".mycolumns")[1].appendChild(popupEle);
+  }
+
+  
 }
