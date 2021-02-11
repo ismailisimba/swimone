@@ -1139,8 +1139,33 @@ function toggleFileSelectStyleOff() {
 
 function fillUpSiteMapInfo(responseObj){
 
-  let title = document.getElementById("posttit");
-  title.innerText = "Kennoobi!"
+  let newSettings = {};
+
+  newSettings["title"] = document.getElementById("posttit");
+  newSettings["catchphrase"] = document.getElementById("postcat");
+  newSettings["featureOne"] = document.getElementById("feature1");
+  newSettings["featureTwo"] = document.getElementById("feature2");
+  newSettings["featureThree"] = document.getElementById("feature3");
+  newSettings["email"] = document.getElementById("emailcollector");
+  newSettings["address"] = document.getElementById("wordaddresscollector");
+  newSettings["fb"] = document.getElementById("fbcollector");
+  newSettings["num"] = document.getElementById("phonecollector");
+  newSettings["twtt"] = document.getElementById("twtcollector");
+  newSettings["lnkd"] = document.getElementById("lnkdcollector");
+  newSettings["inst"] = document.getElementById("instcollector");
+  
+  newSettings.title.innerText = "Kennoobi!";
+  newSettings.catchphrase.innerText = "Kennoobi!";
+  newSettings.featureOne.innerText = "Kennoobi!";
+  newSettings.featureTwo.innerText = "Kennoobi!";
+  newSettings.featureThree.innerText = "Kennoobi!";
+  newSettings.email.innerText = "Kennoobi!";
+  newSettings.address.innerText = "Kennoobi!";
+  newSettings.fb.innerText = "Kennoobi!";
+  newSettings.num.innerText = "Kennoobi!";
+  newSettings.twtt.innerText = "Kennoobi!";
+  newSettings.lnkd.innerText = "Kennoobi!";
+  newSettings.inst.innerText = "Kennoobi!";
 
   
 }
