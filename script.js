@@ -435,7 +435,7 @@ function displayYourCPanOptions(){
     theNum = parseInt(theNum,10);
   
     let tempDiv = document.querySelectorAll(".logocontainer")[0];
-    tempDiv.innerHTML = theNum;
+   // tempDiv.innerHTML = theNum;
     
 
   displayCpanOptions(theNum);
@@ -1102,7 +1102,7 @@ function customPopUpFunc(popupEle,phrase,action) {
     document.querySelectorAll(".mycolumns")[1].innerHTML = "";
     popupEle.style.visibility = "visible";
     deKid.innerText = phrase;
-    console.log("bvsbdbv");
+   // console.log("bvsbdbv");
     document.querySelectorAll(".mycolumns")[1].appendChild(popupEle);
   }
 
