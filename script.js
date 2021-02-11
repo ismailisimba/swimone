@@ -609,7 +609,7 @@ function collapseCpan (){
   cPanInside.style.height = "100%";
   document.querySelectorAll(".cpancontentcont")[0].innerHTML = "";
 
-  removeFileSelectClicks();
+
 }
 
 function addCpanOptsClickFuncs(){
@@ -1102,6 +1102,23 @@ function customPopUpFunc(popupEle,phrase,action) {
     console.log("bvsbdbv");
     document.querySelectorAll(".mycolumns")[1].appendChild(popupEle);
   }
+
+  
+}
+
+
+function myResetFuncs(){
+removeFileSelectClicks();
+
+}
+
+
+function toggleFileSelectStyleOff() {
+  let fileCont = document.querySelectorAll("imagescontainer");
+  let hrefs69 = fileCont.querySelectorAll(".testhref1");
+  
+  hrefs69.classList.remove("testhref1selected");
+
 
   
 }
