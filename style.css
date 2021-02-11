@@ -142,6 +142,7 @@ html button:hover {
     letter-spacing: 1.3px;
     text-align: center;
     box-shadow: 0 1px 6px black;
+    z-index: 1000;
 }
 .setinset::-webkit-scrollbar { display: none; }
 .mycolumns:first-child{
