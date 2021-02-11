@@ -207,7 +207,7 @@ async function hailTheServerOnAllChannels(action,value) {
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
      console.log(myObj);
-     customPopUpFunc(popUp,"Signing In","fullsteamahead");
+     customPopUpFunc(popUp,"Deleting","fullsteamahead");
       startHailing(myObj,action,genericPrintResponse);
     });
 
@@ -282,7 +282,7 @@ function genericPrintResponse (responseObj){
  localVar["cloudObj"] = responseObj;
   let loginStatus = responseObj.tokenObject.status;
 let myCanvas = document.querySelectorAll(".mycolumns")[1];
-//myCanvas.innerHTML = "";
+myCanvas.innerHTML = "";
 myCanvas.style.color = "black";
 myCanvas.style.fontSize = "14px";
 myCanvas.style.fontWeight = "600";
@@ -1099,6 +1099,7 @@ function customPopUpFunc(popupEle,phrase,action) {
     popupEle.remove();
 
   }else if(action==="fullsteamahead"){
+    document.querySelectorAll(".mycolumns")[1].innerHTML = "";
     popupEle.style.visibility = "visible";
     deKid.innerText = phrase;
     console.log("bvsbdbv");
