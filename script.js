@@ -1052,12 +1052,12 @@ function toggleFileSelectStyle() {
   if(this.classList.contains("testhref1selected")){
 
     removeSelectedFileFromCpan(parent,this.parentNode);
-    this.classList.toggle("testhref1selected");
+    this.classList.remove("testhref1selected");
 
 
   }else{
     parent.appendChild(fileContClone);
-    this.classList.toggle("testhref1selected");
+    this.classList.add("testhref1selected");
 
   }
 }
