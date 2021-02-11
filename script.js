@@ -1099,6 +1099,7 @@ function customPopUpFunc(popupEle,phrase,action) {
   }else if(action==="fullsteamahead"){
     popupEle.style.visibility = "visible";
     deKid.innerText = phrase;
+    console.log("bvsbdbv");
     document.querySelectorAll(".mycolumns")[1].appendChild(popupEle);
   }
 
