@@ -1146,16 +1146,37 @@ function fillUpSiteMapInfo(responseObj){
   newSettings["titleDisp"] = document.querySelectorAll(".contrpantitshow")[0];
 
   newSettings["catchphrase"] = document.getElementById("postcat");
+  newSettings["catchphraseDisp"] = document.querySelectorAll(".contrpancatshow")[0];
+
   newSettings["featureOne"] = document.getElementById("feature1");
+  newSettings["featureOneDisp"] = document.querySelectorAll(".featureshow1")[0];
+
   newSettings["featureTwo"] = document.getElementById("feature2");
+  newSettings["featureTwoDisp"] = document.querySelectorAll(".featureshow2")[0];
+
   newSettings["featureThree"] = document.getElementById("feature3");
+  newSettings["featureThreeDisp"] = document.querySelectorAll(".featureshow3")[0];
+
   newSettings["email"] = document.getElementById("emailcollector");
+  newSettings["emailDisp"] = document.querySelectorAll(".addrshow1")[0];
+
   newSettings["address"] = document.getElementById("wordaddresscollector");
+  newSettings["addressDisp"] = document.querySelectorAll(".addrshow3")[0];
+
   newSettings["fb"] = document.getElementById("fbcollector");
+  newSettings["fbDisp"] = document.querySelectorAll(".addrshow4")[0];
+
   newSettings["num"] = document.getElementById("phonecollector");
+  newSettings["numDisp"] = document.querySelectorAll(".addrshow2")[0];
+
   newSettings["twtt"] = document.getElementById("twtcollector");
+  newSettings["twttDisp"] = document.querySelectorAll(".addrshow5")[0];
+
   newSettings["lnkd"] = document.getElementById("lnkdcollector");
+  newSettings["lnkdDisp"] = document.querySelectorAll(".addrshow7")[0];
+
   newSettings["inst"] = document.getElementById("instcollector");
+  newSettings["instDisp"] = document.querySelectorAll(".addrshow6")[0];
   
   //newSettings.title.innerText = "Kennoobi!";
   //newSettings.catchphrase.innerText = "Kennoobi!";
@@ -1173,18 +1194,38 @@ function fillUpSiteMapInfo(responseObj){
   newSettings.title.style.visibility = "collapse";
   newSettings.titleDisp.innerHTML = cloudSettings.title;
 
-
   newSettings.catchphrase.style.visibility = "collapse";
+  newSettings.catchphraseDisp.innerHTML = cloudSettings.catchphrase;
+
   newSettings.featureOne.style.visibility = "collapse";
+  newSettings.featureOneDisp.innerHTML = cloudSettings.featureOne;
+
   newSettings.featureTwo.style.visibility = "collapse";
+  newSettings.featureTwoDisp.innerHTML = cloudSettings.featureTwo;
+
   newSettings.featureThree.style.visibility = "collapse";
+  newSettings.featureThreeDisp.innerHTML = cloudSettings.featureThree;
+
   newSettings.email.style.visibility = "collapse";
+  newSettings.emailDisp.innerHTML = cloudSettings.buzEmail;
+
   newSettings.address.style.visibility = "collapse";
+  newSettings.addressDisp.innerHTML = cloudSettings.address;
+
   newSettings.fb.style.visibility = "collapse";
+  newSettings.fbDisp.innerHTML = cloudSettings.fb;
+
   newSettings.num.style.visibility = "collapse";
+  newSettings.numDisp.innerHTML = cloudSettings.num;
+
   newSettings.twtt.style.visibility = "collapse";
+  newSettings.twttDisp.innerHTML = cloudSettings.twt;
+
   newSettings.lnkd.style.visibility = "collapse";
+  newSettings.lnkdDisp.innerHTML = cloudSettings.linkd;
+
   newSettings.inst.style.visibility = "collapse";
+  newSettings.instDisp.innerHTML = cloudSettings.instg;
 
 
 
