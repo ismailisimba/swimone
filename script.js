@@ -116,7 +116,6 @@ function onSignIn(googleUser) {
   let token = googleUser.getAuthResponse().id_token;
 
   hailTheServerOnAllChannels("login",token);
-  customPopUpFunc(popUp,"Signing In","fullsteamahead");
 }
 
 
@@ -192,21 +191,24 @@ async function hailTheServerOnAllChannels(action,value) {
       return data;
     });
 
-    
+    customPopUpFunc(popUp,"Signing In","fullsteamahead");
 
   }else if(action==="uploadFiles"){
     let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft;
-      startHailing(myObj,"uploadImages",fillUpFiles);
+      startHailing(myObj,"uploadImages",genericPrintResponse);
     });
+
+    customPopUpFunc(popUp,"Uploading","fullsteamahead");
   }else if(action==="delete"){
     
     let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
      console.log(myObj);
-      startHailing(myObj,action,fillUpFiles);
+     customPopUpFunc(popUp,"Signing In","fullsteamahead");
+      startHailing(myObj,action,genericPrintResponse);
     });
 
   }
