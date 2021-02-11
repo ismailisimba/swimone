@@ -1,5 +1,6 @@
 
 let dePage = document.querySelectorAll(".mygenericpage")[0];
+let myGoogleBox = document.querySelectorAll(".googlestuff")[0];
 let popUp = document.querySelectorAll(".custompopup")[0];
 let cPanGenericCont = document.querySelectorAll(".genericCpanCont")[0];
 let reqString = "https://script.google.com/macros/s/AKfycbyeGCc2c34RY53aturHkod7EQfF2gOaY4vxUF-cN4HXaKgTlClRazol/exec";
@@ -350,7 +351,6 @@ async function setupBackendCanvasLoggedIn(){
 
   let myButt = document.createElement("div");
   myButt.className = "mylogbutt";
-  let myGoogleBox = document.querySelectorAll(".googlestuff")[0];
   myButt.innerHTML = `<a href="#" onclick="signOut();">Sign out</a>`;
   myGoogleBox.appendChild(myButt);
 
