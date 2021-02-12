@@ -1261,5 +1261,9 @@ function fillUpSiteMapInfo(responseObj){
 }
 
 function deStoryFunc(storyObj){
-    console.log(storyObj);
+
+  let customObj = document.querySelectorAll(".ql-editor")[0]
+  let myText =customObj.innerHTML;
+  myText = myText.toString();
+    console.log(myText);
 }
