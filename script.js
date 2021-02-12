@@ -1276,7 +1276,11 @@ function deStoryFunc(storyObj){
      // tempVal.push(Object.keys(storyObj[i]));
     let  typeOfThisInsert = storyObj[i].insert;
     typeOfThisInsert = typeof typeOfThisInsert;
-    tempVal.push(typeOfThisInsert);
+
+    if(typeOfThisInsert === "object"){
+      tempVal.push(extractImage(storyObj[i])) ;
+    }
+   // tempVal.push(typeOfThisInsert);
   }
 
 
@@ -1286,3 +1290,17 @@ function deStoryFunc(storyObj){
     console.log(newStoryObj);
     console.log(tempVal);
 }
+
+
+
+function extractImage(myObj) {
+
+  let myAttrib = Object.keys(myObj).length;
+
+  if(myAttrib>1){
+    myAttrib = myObj.attributes.width;
+  }
+
+  
+ return myAttrib;
+};
