@@ -187,6 +187,10 @@ html button:hover {
     justify-content: flex-start;
     align-items: center;
 
+    background-image: url("https://ismailisimba.github.io/swimone/resources/testfiles/SwimCity.jpg");
+    background-size: 100%;
+    background-position: right;
+
     overflow-y: hidden;
     overflow-x: hidden;
     scrollbar-width: none; -ms-overflow-style: none;
