@@ -1,6 +1,6 @@
 html{
     font-family: "Quicksand";
-    color: #53f4ff;
+    color: #120094;
 }
 
 .momcontainer{
@@ -14,7 +14,7 @@ html{
 html button {
     font-family: inherit;
     background-color: white;
-    color: #53f4ff;
+    color: #120094;
     border: none;
     padding: 3px 9px;
     border-radius: 3px;
@@ -49,7 +49,7 @@ html button:hover {
     box-shadow: none;
     border: 1px dotted white;
     color: white;
-    background-color: #53f4ff;
+    background-color: #120094;
 }
 
 /*Colors
@@ -59,7 +59,8 @@ html button:hover {
 --dutch-white: #e8dab2;
 --honolulu-blue: #0471a6;
 --rich-white-fogra-29: white;
---electric-blue: #53f4ff;
+--electric-blue: #120094;
+--newdarkblu: #120094
 
 */
 
@@ -102,7 +103,7 @@ html button:hover {
 
     transition: all 1.3s ease-out;
 
-    background-color: #53f4ff;
+    background-color: #120094;
 
     box-shadow: inset 1.69px 1.69px 1.69px 1px white;
     display: flex;
@@ -136,7 +137,7 @@ html button:hover {
     border-radius: 6px;
     width: 85%;
     background-color: white;
-    color: #53f4ff;
+    color: #120094;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 1.3px;
@@ -178,7 +179,7 @@ html button:hover {
     padding: 24px 0px;
     box-sizing: border-box;
     min-height: 600px;
-    background-color: #53f4ff;
+    background-color: #120094;
 
 
     display: flex;
@@ -267,7 +268,7 @@ html button:hover {
     right: 0px;
     width: 33%;
     height: 1.69px;
-    background-color: #53f4ff;
+    background-color: #120094;
 }
 
 .mycolumnchildren:nth-child(3){
@@ -328,7 +329,7 @@ html button:hover {
 
     width: 85%;
     background-color: transparent;
-    color: #53f4ff;
+    color: #120094;
 }
 
 .aboutdescrboxes p{
@@ -343,7 +344,7 @@ html button:hover {
     width: 85%;
     
     background-color: transparent;
-    color: #53f4ff;
+    color: #120094;
 }
 
 .descricon{
@@ -532,7 +533,7 @@ html button:hover {
     height: 350px;
     width: 100%;
     margin-bottom: -69px;
-    background-color: #53f4ff;
+    background-color: #120094;
     color: white;
     text-align: center;
     font-weight: bold;
@@ -560,7 +561,7 @@ html button:hover {
     font-weight: bold;
     letter-spacing: 0px;
     padding: 3px 3px;
-    background-color: #53f4ff;
+    background-color: #120094;
     color: white;
     box-sizing: border-box;
     margin: 64px 0px 64px 0px;
@@ -587,7 +588,7 @@ html button:hover {
 
 .sidemenucontainer li:hover {
   color: white;
-  background-color: #53f4ff;
+  background-color: #120094;
 }
 
 .sidemenuitem li{
@@ -612,7 +613,7 @@ html button:hover {
   }
 
   .spanCont span {
-      color: #53f4ff;
+      color: #120094;
   }
 
   .dots{
@@ -622,7 +623,7 @@ html button:hover {
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background-color: #53f4ff;
+    background-color: #120094;
 
     animation: wobbleMeDots 1.9s linear 0s infinite forwards ;
     transition: all linear 1s;
@@ -743,7 +744,7 @@ html button:hover {
     padding: 6px 0px;
     margin-top: 6px;
     margin-bottom: 6px;
-    border: 0.69px dotted #53f4ff;
+    border: 0.69px dotted #120094;
   }
 
 
@@ -786,13 +787,13 @@ html button:hover {
 
 .loginbutt:hover{
 
-    color: #53f4ff;
+    color: #120094;
     background-color: white;
 }
 
 .googlestuff{
 
-    color: #53f4ff;
+    color: #120094;
     position: absolute;
     top: 25px;
     right: 25px;
@@ -815,7 +816,7 @@ html button:hover {
         border-radius: 3px;
         width: 85%;
         background-color: white;
-        color: #53f4ff;
+        color: #120094;
         font-size: 10px;
         font-weight: 600;
         letter-spacing: 1.3px;
@@ -1054,7 +1055,7 @@ html button:hover {
         box-sizing: border-box;
         margin-bottom: -36px;
         background-color: white;
-        color: #53f4ff;
+        color: #120094;
         justify-content: flex-start;
     
     }
