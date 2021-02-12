@@ -670,14 +670,15 @@ function addSiteMapFuncs(cPanItem){
 
 
     if(thisButtText==="Edit"){
-      siteMapShowEditors();
+      siteMapShowEditors(cPanItem);
     }else{  
     }
 
 }
 
 
-function siteMapShowEditors(){
+function siteMapShowEditors(cPanItem){
+  cPanItem.innerText = "Please review all the entries then click Save - at bottom os SiteMap Box - when done."
   let siteMapCont = document.querySelectorAll(".bigcontrolpanelcont")[0];
   let myTextAreas = siteMapCont.querySelectorAll("textarea");
   let mySelects = siteMapCont.querySelectorAll("select");
