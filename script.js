@@ -1257,10 +1257,9 @@ function fillUpSiteMapInfo(responseObj){
   newSettings.inst.style.visibility = "collapse";
   newSettings.instDisp.innerHTML = cloudSettings.instg;
 
-
-
- 
-
-
   
+}
+
+function deStoryFunc(storyObj){
+    console.log(storyObj);
 }
