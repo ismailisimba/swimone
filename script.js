@@ -635,6 +635,8 @@ function addCpanOptsClickFuncs(){
    
 
   }else if(menuBoxIndex==1){
+
+    addSiteMapFuncs(cPanItem);
    
 
   }else if(menuBoxIndex==2){
@@ -660,11 +662,28 @@ function addFileUploadFuncs(cPanItem){
       setupForFileDeletion();  
     }
 
-    
+}
+
+function addSiteMapFuncs(cPanItem){
+
+  let thisButtText = cPanItem.innerText;
 
 
-  
+    if(thisButtText==="Edit"){
+      siteMapShowEditors();
+    }else{  
+    }
 
+}
+
+
+function siteMapShowEditors(){
+  let siteMapCont = document.querySelectorAll(".bigcontrolpanelcont")[0];
+  let myTextAreas = siteMapCont.querySelectorAll("textarea");
+
+  myTextAreas.forEach(element => {
+    element.style.visibility = "visible";
+  })
 }
 
 function genericInputClick(){
