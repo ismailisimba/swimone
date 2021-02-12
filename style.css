@@ -853,6 +853,10 @@ html button:hover {
         box-sizing: border-box;
         min-height: 600px;
     
+
+        background-image: url("https://ismailisimba.github.io/swimone/resources/testfiles/SwimCity.jpg");
+        background-size: 100%;
+        background-position: right;
     
         
     }
