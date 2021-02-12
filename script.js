@@ -15,6 +15,7 @@ window.onload = () => {
 }
 
 //initiate local counters, indexes, e.t.c here
+localVar["tempDivs"] = {};
 localVar["counters"] = {};
 localVar.counters["currentAtCpan"] = 0
 
@@ -623,6 +624,7 @@ function collapseCpan (){
 function addCpanOptsClickFuncs(){
 
   let cPanItem = this;
+  localVar.tempDivs["butt1"] = this;
   let menuBoxIndex = localVar.counters.currentAtCpan;
   let menuBox = document.querySelectorAll(".backendchildcontainer")[menuBoxIndex]; 
   let tempDiv = document.querySelectorAll(".logocontainer")[0];
@@ -1027,9 +1029,9 @@ function createFilePageContObj(numOfPages,pageLim,remainder){
 
 function setupForFileDeletion(){
 
-  let butClone = this.cloneNode(true);
+  let butClone = localVar.tempDivs.butt1.cloneNode(true);
   let fileContClone = cPanGenericCont.querySelectorAll(".imageListItemCont")[0].cloneNode(true);
-  let parent = this.parentNode;
+  let parent = document.querySelectorAll(".cpancontentcont")[0];
 
   parent.innerHTML = "";
 
