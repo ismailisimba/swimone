@@ -268,7 +268,7 @@ html button:hover {
     right: 0px;
     width: 33%;
     height: 1.69px;
-    background-color: #120094;
+    background-color: #53f4ff;
 }
 
 .mycolumnchildren:nth-child(3){
@@ -894,7 +894,7 @@ html button:hover {
 
     .mylineone{
         min-width: 120px;
-        background-color: white;
+        background-color: #53f4ff;
         bottom: 18px;
     }
 
