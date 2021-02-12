@@ -1266,4 +1266,5 @@ function deStoryFunc(storyObj){
   let myText =customObj.innerHTML;
   myText = myText.toString();
     console.log(myText);
+    console.log(storyObj);
 }
