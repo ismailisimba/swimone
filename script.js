@@ -1275,7 +1275,7 @@ function deStoryFunc(storyObj){
 
      // tempVal.push(Object.keys(storyObj[i]));
     let  typeOfThisInsert = storyObj[i].insert;
-    typeOfThisInsert = typeof tempVal;
+    typeOfThisInsert = typeof typeOfThisInsert;
     tempVal.push(typeOfThisInsert);
   }
 
