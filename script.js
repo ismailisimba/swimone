@@ -653,7 +653,6 @@ function addFileUploadFuncs(cPanItem){
 
   let thisButtText = cPanItem.innerText;
 
-  
 
     if(thisButtText==="Upload Files"){
       genericInputClick();
