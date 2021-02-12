@@ -630,16 +630,16 @@ function addCpanOptsClickFuncs(){
   if(menuBoxIndex==0){
 
     addFileUploadFuncs("images",cPanItem,menuBox);
-    alert(this.innerText);
+   // alert(this.innerText);
 
   }else if(menuBoxIndex==1){
-    alert(this.innerText);
+   // alert(this.innerText);
 
   }else if(menuBoxIndex==2){
-    alert(this.innerText);
+    //alert(this.innerText);
 
   }else if(menuBoxIndex==3){
-    alert(this.innerText);
+    //alert(this.innerText);
 
   }
   
@@ -655,9 +655,11 @@ function addFileUploadFuncs(context,cPanItem,menuBox){
 
     if(thisButtText==="Upload Files"){
      
-      cPanItem.addEventListener("click", genericInputClick);
+      //cPanItem.addEventListener("click", genericInputClick);
+      genericInputClick();
     }else if(thisButtText==="Delete Files"){
-      cPanItem.addEventListener("click",setupForFileDeletion);
+      //cPanItem.addEventListener("click",setupForFileDeletion);
+      setupForFileDeletion();
       
     }
 
