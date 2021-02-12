@@ -1264,7 +1264,17 @@ function deStoryFunc(storyObj){
 
   let customObj = document.querySelectorAll(".ql-editor")[0]
   let myText =customObj.innerHTML;
+  let newStoryObj = {};
+  let tempVal = 0;
+  let numOfObjects = storyObj.length;
+
   myText = myText.toString();
+  tempVal = numOfObjects;
+
+
+
     console.log(myText);
     console.log(storyObj);
+    console.log(newStoryObj);
+    console.log(tempVal);
 }
