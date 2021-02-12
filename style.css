@@ -13,7 +13,7 @@ html{
 
 html button {
     font-family: inherit;
-    background-color: #061826;
+    background-color: white;
     color: #53f4ff;
     border: none;
     padding: 3px 9px;
@@ -24,7 +24,7 @@ html button {
     height: 45px;
     letter-spacing: 1.2px;
     box-sizing: border-box;
-    box-shadow: 1px 1px 5px 0.2px black;
+    box-shadow: 1px 1px 5px 0.2px white;
 }
 
 textarea {
@@ -47,8 +47,8 @@ textarea {
 html button:hover {
     font-weight: bold;
     box-shadow: none;
-    border: 1px dotted black;
-    color: #061826;
+    border: 1px dotted white;
+    color: white;
     background-color: #53f4ff;
 }
 
@@ -58,7 +58,7 @@ html button:hover {
 --dark-moss-green: #3f612d;
 --dutch-white: #e8dab2;
 --honolulu-blue: #0471a6;
---rich-black-fogra-29: #061826;
+--rich-white-fogra-29: white;
 --electric-blue: #53f4ff;
 
 */
@@ -104,7 +104,7 @@ html button:hover {
 
     background-color: #53f4ff;
 
-    box-shadow: inset 1.69px 1.69px 1.69px 1px black;
+    box-shadow: inset 1.69px 1.69px 1.69px 1px white;
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
@@ -135,13 +135,13 @@ html button:hover {
 
     border-radius: 6px;
     width: 85%;
-    background-color: #061826;
+    background-color: white;
     color: #53f4ff;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 1.3px;
     text-align: center;
-    box-shadow: 0 1px 6px black;
+    box-shadow: 0 1px 6px white;
     z-index: 1000;
 
 }
@@ -155,7 +155,7 @@ html button:hover {
     width: 25%;
     min-height: 1000px;
     height: inherit;
-    background-color: #061826;
+    background-color: white;
 
     display: flex;
     flex-flow: column;
@@ -213,12 +213,12 @@ html button:hover {
 
 .mycolumnchildren:first-child h1{
     font-size: 48px;
-    color: #061826;
+    color: white;
 }
 
 .mycolumnchildren:first-child p{
     font-size: 24px;
-    color: #061826;
+    color: white;
 }
 
 .featuredone:first-child img, .featuredone:nth-child(2) img, .featuredone:nth-child(3) img {
@@ -247,7 +247,7 @@ html button:hover {
     width: 100%;
     position: relative;
     box-sizing: border-box;
-    background-color: #061826;
+    background-color: white;
 
     display: flex;
     flex-flow: row;
@@ -275,7 +275,7 @@ html button:hover {
 
     width: 100%;
     min-height: 800px;
-    background-color: #061826;
+    background-color: white;
     text-align: left;
 
     display: flex;
@@ -403,7 +403,7 @@ html button:hover {
 
     width: 100%;
     min-height: 800px;
-    background-color: #061826;
+    background-color: white;
     text-align: left;
 
     display: flex;
@@ -533,7 +533,7 @@ html button:hover {
     width: 100%;
     margin-bottom: -69px;
     background-color: #53f4ff;
-    color: #061826;
+    color: white;
     text-align: center;
     font-weight: bold;
 
@@ -561,7 +561,7 @@ html button:hover {
     letter-spacing: 0px;
     padding: 3px 3px;
     background-color: #53f4ff;
-    color: #061826;
+    color: white;
     box-sizing: border-box;
     margin: 64px 0px 64px 0px;
 }
@@ -586,7 +586,7 @@ html button:hover {
 }
 
 .sidemenucontainer li:hover {
-  color: #061826;
+  color: white;
   background-color: #53f4ff;
 }
 
@@ -680,7 +680,7 @@ html button:hover {
     top: 25%;
     height: 50%;
 
-    background-color: #061826;
+    background-color: white;
     z-index: 1000;
 
     display: flex;
@@ -714,7 +714,7 @@ html button:hover {
     padding-top: 36px;
 
     width: 85%;
-    background-color: black;
+    background-color: white;
     color: white;
     border-radius: 6px;
     padding-bottom: 12px;
@@ -773,21 +773,21 @@ html button:hover {
 
 .mylogbutt{
 
-    border: 3px dotted #061826;
+    border: 3px dotted white;
     padding: 9px 16px;
     border-radius: 6px;
 }
 
 .loginbutt{
 
-    color: #061826;
+    color: white;
     background-color: transparent;
 }
 
 .loginbutt:hover{
 
     color: #53f4ff;
-    background-color: #061826;
+    background-color: white;
 }
 
 .googlestuff{
@@ -799,7 +799,7 @@ html button:hover {
 }
 .googlestuff a{
 
-    color: #061826 !important;
+    color: white !important;
     text-decoration: none !important;
 
 
@@ -814,13 +814,13 @@ html button:hover {
         padding: 6px 6px;
         border-radius: 3px;
         width: 85%;
-        background-color: #061826;
+        background-color: white;
         color: #53f4ff;
         font-size: 10px;
         font-weight: 600;
         letter-spacing: 1.3px;
         text-align: center;
-        box-shadow: 0 1px 6px black;
+        box-shadow: 0 1px 6px white;
     }
 
     .settcont{
@@ -872,7 +872,7 @@ html button:hover {
         align-items: center;
 
         background-color: transparent;
-        color: #061826;
+        color: white;
 
         padding-bottom: 36px;
 
@@ -893,7 +893,7 @@ html button:hover {
 
     .mylineone{
         min-width: 120px;
-        background-color: #061826;
+        background-color: white;
         bottom: 18px;
     }
 
@@ -903,13 +903,13 @@ html button:hover {
 
         
         background-color: transparent;
-        color: #061826;
+        color: white;
     
     }
 
     .aboutdescrboxes h2, .aboutdescrboxes p, .mycolumnchildren:nth-child(4) h1,.mycolumnchildren:nth-child(4) p, .contactlistdiv h2{
   
-        color: #061826;
+        color: white;
     }
 
 
@@ -1053,7 +1053,7 @@ html button:hover {
         padding: 18px 36px;
         box-sizing: border-box;
         margin-bottom: -36px;
-        background-color: #061826;
+        background-color: white;
         color: #53f4ff;
         justify-content: flex-start;
     
