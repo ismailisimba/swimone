@@ -556,15 +556,20 @@ html button:hover {
 .logocontainer{
 
     width: 230px;
-    height: 69px;
+    height: 72px;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 0px;
     padding: 3px 3px;
-    background-color: #120094;
-    color: white;
+    background-color: transparent;
+    color: transparent;
     box-sizing: border-box;
     margin: 64px 0px 64px 0px;
+
+    background-image: url("https://ismailisimba.github.io/swimone/resources/testfiles/taliss-logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .sidemenucontainer ul {
