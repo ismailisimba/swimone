@@ -680,10 +680,16 @@ function addSiteMapFuncs(cPanItem){
 function siteMapShowEditors(){
   let siteMapCont = document.querySelectorAll(".bigcontrolpanelcont")[0];
   let myTextAreas = siteMapCont.querySelectorAll("textarea");
+  let mySelects = siteMapCont.querySelectorAll("select");
 
   myTextAreas.forEach(element => {
     element.style.visibility = "visible";
   })
+
+  mySelects.forEach(element => {
+    element.style.visibility = "visible";
+  })
+
 }
 
 function genericInputClick(){
