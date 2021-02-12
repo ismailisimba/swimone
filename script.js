@@ -631,17 +631,17 @@ function addCpanOptsClickFuncs(){
 
   if(menuBoxIndex==0){
 
-    addFileUploadFuncs("images",cPanItem,menuBox);
-   // alert(this.innerText);
+    addFileUploadFuncs(cPanItem);
+   
 
   }else if(menuBoxIndex==1){
-   // alert(this.innerText);
+   
 
   }else if(menuBoxIndex==2){
-    //alert(this.innerText);
+  
 
   }else if(menuBoxIndex==3){
-    //alert(this.innerText);
+  
 
   }
   
@@ -649,26 +649,22 @@ function addCpanOptsClickFuncs(){
 }
 
 
-function addFileUploadFuncs(context,cPanItem,menuBox){
+function addFileUploadFuncs(cPanItem){
 
   let thisButtText = cPanItem.innerText;
 
-  if(context==="images"){
+  
 
     if(thisButtText==="Upload Files"){
-     
-      //cPanItem.addEventListener("click", genericInputClick);
       genericInputClick();
     }else if(thisButtText==="Delete Files"){
-      //cPanItem.addEventListener("click",setupForFileDeletion);
-      setupForFileDeletion();
-      
+      setupForFileDeletion();  
     }
 
     
 
 
-  }
+  
 
 }
 
