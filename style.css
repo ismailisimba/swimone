@@ -276,7 +276,7 @@ html button:hover {
 
     width: 100%;
     min-height: 800px;
-    background-color: white;
+    background-color: #53f4ff;
     text-align: left;
 
     display: flex;
@@ -903,7 +903,7 @@ html button:hover {
 
 
         
-        background-color: transparent;
+        background-color: #53f4ff;
         color: white;
     
     }
