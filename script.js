@@ -679,7 +679,7 @@ function addSiteMapFuncs(cPanItem){
 
 function siteMapShowEditors(cPanItem){
   cPanItem.style.height = "auto";
-  cPanItem.innerText = "Please review all the entries then click Save - at bottom os SiteMap Box - when done.";
+  cPanItem.innerText = "Please review all the entries then click Save - at bottom of Sitemap Box - when done.";
   let siteMapCont = document.querySelectorAll(".bigcontrolpanelcont")[0];
   let myTextAreas = siteMapCont.querySelectorAll("textarea");
   let mySelects = siteMapCont.querySelectorAll("select");
