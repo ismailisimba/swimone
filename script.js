@@ -1340,7 +1340,7 @@ function extractLink(myObj,contentObj){
     let typeoflink = null;
     if(myAttrib>1){
       typeoflink = typeof myObj.attributes.link;
-      contentObj = typeoflink;
+      contentObj.styles.href = typeoflink;
     }
 
     return contentObj
