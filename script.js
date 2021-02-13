@@ -1330,7 +1330,7 @@ function readSupportedStyles(myObj,contentObj,i){
       underline = myObj[i].attributes.underline;
 
       if(heading!==null){
-       // addStyle("heading",myObj,contentObj,i);
+       addStyle("heading",myObj,contentObj,i);
       }
 
     }
