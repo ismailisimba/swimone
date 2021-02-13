@@ -1334,7 +1334,7 @@ function readSupportedStyles(myObj,contentObj,i){
 
     }
 
-    return contentObj;
+    return contentObj[i];
 
 };
 
