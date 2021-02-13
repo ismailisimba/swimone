@@ -1322,7 +1322,7 @@ function readSupportedStyles(myObj,contentObj,i){
       let italic = null;
       let underline = null;
 
-      contentObj[i].styles.href = myObj[i].heading;
+      contentObj[i].styles.href = myObj[i].attributes.heading;
       //color = myObj[i].attributes.color;
       //bold = myObj[i].attributes.bold;
       //italic = myObj[i].attributes.italic;
