@@ -1285,7 +1285,7 @@ function deStoryFunc(storyObj){
    // tempVal.push(typeOfThisInsert);
   }
 
-tempVal = newStoryObj;
+
 
     console.log(myText);
     console.log(storyObj);
@@ -1321,5 +1321,7 @@ function bundleStoryContentObj(bigArr){
   obj.styles["width"] = "none";
 
   bigArr.push(obj);
+
+  return bigArr;
 
 }
