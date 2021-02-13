@@ -1264,9 +1264,11 @@ function deStoryFunc(storyObj){
 
   let customObj = document.querySelectorAll(".ql-editor")[0]
   let myText =customObj.innerHTML;
-  let newStoryObj = {};
+  let newStoryObj = [];
   let tempVal = [];
   let numOfObjects = storyObj.length;
+
+  newStoryObj = bundleStoryContentObj(newStoryObj);
 
   myText = myText.toString();
   
@@ -1283,7 +1285,7 @@ function deStoryFunc(storyObj){
    // tempVal.push(typeOfThisInsert);
   }
 
-
+tempVal = newStoryObj;
 
     console.log(myText);
     console.log(storyObj);
@@ -1304,3 +1306,20 @@ function extractImage(myObj) {
   
  return myAttrib;
 };
+
+
+function bundleStoryContentObj(bigArr){
+
+  let obj = {};
+
+  obj["type"] = "none";
+  obj["content"] = "none";
+  obj["styles"] = {};
+  obj.styles["href"] = "none";
+  obj.styles["heading"] = "none";
+  obj.styles["color"] = "none";
+  obj.styles["width"] = "none";
+
+  bigArr.push(obj);
+
+}
