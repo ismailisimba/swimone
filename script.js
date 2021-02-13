@@ -1289,6 +1289,7 @@ function deStoryFunc(storyObj){
      
     }else if(typeOfThisInsert === "string"){
       newStoryObj[i] = extractLinkAndText(storyObj[i],newStoryObj[i]);
+      newStoryObj[i] = readSupportedStyles(storyObj,newStoryObj,i);
     }
    // tempVal.push(typeOfThisInsert);
    tempVal.push(newStoryObj[i]);
@@ -1301,6 +1302,63 @@ function deStoryFunc(storyObj){
     console.log(newStoryObj);
     console.log(tempVal);
 }
+
+function readSupportedStyles(myObj,contentObj,i){
+    let myAttrib = Object.keys(myObj).length;
+    let typeofinsert = null;
+    
+    let myInsert = myObj[i].insert.toString();
+    let lengthofinsert = myInsert.length;
+
+    if(myAttrib>1){
+      typeofinsert = lengthofinsert;
+      //contentObj.styles.href = typeoflink;
+    }
+
+    if(typeofinsert!==null&&typeofinsert==1){
+      let heading = null;
+      let color = null;
+      let bold = null;
+      let italic = null;
+      let underline = null;
+
+      heading = myObj[i].attributes.heading;
+      color = myObj[i].attributes.color;
+      bold = myObj[i].attributes.bold;
+      italic = myObj[i].attributes.italic;
+      underline = myObj[i].attributes.underline;
+
+      if(heading!==null){
+        addStyle("heading",myObj,contentObj,i);
+      }
+
+    }
+
+    return contentObj;
+
+};
+
+
+
+function addStyle(style,myObj,contentObj,i){
+
+  if(style==="heading"){
+    let thisInsert = myObj[i].insert;
+    let lengthOfInsert = thisInsert.length;
+
+    if(lengthOfInsert<=1){
+
+      contentObj[i-1].styles.heading = myObj[i].attributes.heading;
+
+    }else{
+
+    }
+  }
+
+
+}
+
+
 
 
 
@@ -1376,6 +1434,9 @@ function bundleStoryContentObj(bigArr){
   obj.styles["heading"] = "none";
   obj.styles["color"] = "none";
   obj.styles["width"] = "none";
+  obj.styles["bold"] = "none";
+  obj.styles["italic"] = "none";
+  obj.styles["underline"] = "none";
 
   bigArr[0] = obj;
 
