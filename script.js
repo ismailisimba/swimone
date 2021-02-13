@@ -1308,16 +1308,17 @@ function extractImage(myObj,contentObj) {
   if(myAttrib>1){
     myAttrib = myObj.attributes.width;
     let typeofwidth = typeof myAttrib;
+    let typeofdataimage = typeof myObj.insert.image
 
     if(typeofwidth==="string"){
       contentObj.content = myObj.insert.image;
       contentObj.type = "imglink";
       contentObj.styles.width = myObj.attributes.width;
-    }
-  }else if(Object.keys(myObj.insert)[0]==="image"){
+    }else if(typeofdataimage==="string"){
 
       contentObj.content = myObj.insert.image;
       contentObj.type = "imgdata";
+    }
 
   }
 
