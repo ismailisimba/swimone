@@ -1275,12 +1275,16 @@ function deStoryFunc(storyObj){
 
   for(let i = 0; i < numOfObjects ; i++){
 
+    newStoryObj.push(JSON.parse(JSON.stringify(newStoryObj[i])));
+
      // tempVal.push(Object.keys(storyObj[i]));
     let  typeOfThisInsert = storyObj[i].insert;
     typeOfThisInsert = typeof typeOfThisInsert;
 
     if(typeOfThisInsert === "object"){
-      tempVal.push(extractImage(storyObj[i])) ;
+      //tempVal.push(extractImage(storyObj[i]),newStoryObj[i]) ;
+
+      tempVal.push(extractImage(storyObj[i]),newStoryObj[i]) ;
     }
    // tempVal.push(typeOfThisInsert);
   }
@@ -1295,16 +1299,23 @@ function deStoryFunc(storyObj){
 
 
 
-function extractImage(myObj) {
+function extractImage(myObj,contentObj) {
 
   let myAttrib = Object.keys(myObj).length;
 
   if(myAttrib>1){
     myAttrib = myObj.attributes.width;
+    let typeofwidth = typeof myAttrib;
+
+    if(typeofwidth==="string"){
+      contentObj.content = myObj.insert.image;
+      contentObj.type = "imglink";
+      contentObj.style.width = myObj.attributes.width;
+    }
   }
 
   
- return myAttrib;
+ return contentObj;
 };
 
 
