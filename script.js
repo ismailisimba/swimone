@@ -1288,7 +1288,7 @@ function deStoryFunc(storyObj){
      newStoryObj[i] = extractImage(storyObj[i],newStoryObj[i]);
      
     }else if(typeOfThisInsert === "string"){
-      newStoryObj[i] = extractLink(storyObj[i],newStoryObj[i]);
+      newStoryObj[i] = extractLinkAndText(storyObj[i],newStoryObj[i]);
     }
    // tempVal.push(typeOfThisInsert);
    tempVal.push(newStoryObj[i]);
@@ -1336,9 +1336,10 @@ function extractImage(myObj,contentObj) {
  return contentObj;
 };
 
-function extractLink(myObj,contentObj){
+function extractLinkAndText(myObj,contentObj){
     let myAttrib = Object.keys(myObj).length;
     let typeoflink = null;
+    let lengthofinsert = myObj.insert.length;
     if(myAttrib>1){
       typeoflink = typeof myObj.attributes.link;
       //contentObj.styles.href = typeoflink;
@@ -1347,6 +1348,8 @@ function extractLink(myObj,contentObj){
     if(typeoflink==="string"){
       contentObj.content = myObj.insert;
       contentObj.styles.href = myObj.attributes.link;
+    }else if(myObj.insert.includes("↵")&&lengthofinsert==1){
+      contentObj.content = myObj.insert;
     }
 
     return contentObj
