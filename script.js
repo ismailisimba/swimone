@@ -1315,7 +1315,7 @@ function readSupportedStyles(myObj,contentObj,i){
       //contentObj.styles.href = typeoflink;
     }
 
-    if(typeofinsert!==null&&typeofinsert==1){
+    if(typeofinsert!==null&&typeofinsert==1&&myAttrib>1){
       let heading = null;
       let color = null;
       let bold = null;
