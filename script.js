@@ -1285,6 +1285,7 @@ function deStoryFunc(storyObj){
       //tempVal.push(extractImage(storyObj[i]),newStoryObj[i]) ;
 
      // tempVal.push(extractImage(storyObj[i]),newStoryObj[i+1]) ;
+     newStoryObj[i] = extractImage(storyObj[i],newStoryObj[i]);
      tempVal.push(newStoryObj[i]);
     }
    // tempVal.push(typeOfThisInsert);
