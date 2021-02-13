@@ -1333,6 +1333,10 @@ function readSupportedStyles(myObj,contentObj,i){
        addStyle("heading",myObj,contentObj,i);
       }
 
+      if(color!==null&&color!==undefined){
+        addStyle("color",myObj,contentObj,i);
+       }
+
     }
 
     return contentObj[i];
@@ -1354,6 +1358,19 @@ function addStyle(style,myObj,contentObj,i){
     }else{
 
     }
+  }else if(style==="color"){
+
+    let thisInsert = myObj[i].insert;
+    let lengthOfInsert = thisInsert.length;
+
+    if(lengthOfInsert<=1){
+    
+      contentObj[i-1].styles.color = myObj[i].attributes.color;
+
+    }else{
+
+    }
+
   }
 
 
