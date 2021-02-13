@@ -1350,7 +1350,7 @@ function extractLinkAndText(myObj,contentObj){
       contentObj.styles.href = myObj.attributes.link;
     }else if(true){
       //myObj.insert.includes("↵")&&lengthofinsert==1
-      contentObj.content = myObj.insert.includes("↵");
+      contentObj.content = myObj.insert;
     }
 
     return contentObj
