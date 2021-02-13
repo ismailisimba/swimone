@@ -1322,6 +1322,8 @@ function extractImage(myObj,contentObj) {
 
   }
 
+  contentObj.styles.heading = typeofdataimage;
+
   
  return contentObj;
 };
