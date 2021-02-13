@@ -1286,11 +1286,12 @@ function deStoryFunc(storyObj){
 
      // tempVal.push(extractImage(storyObj[i]),newStoryObj[i+1]) ;
      newStoryObj[i] = extractImage(storyObj[i],newStoryObj[i]);
-     tempVal.push(newStoryObj[i]);
+     
     }else if(typeOfThisInsert === "string"){
       newStoryObj[i] = extractLink(storyObj[i],newStoryObj[i]);
     }
    // tempVal.push(typeOfThisInsert);
+   tempVal.push(newStoryObj[i]);
   }
 
 
