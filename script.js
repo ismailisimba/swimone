@@ -1304,25 +1304,26 @@ function deStoryFunc(storyObj){
 function extractImage(myObj,contentObj) {
 
   let myAttrib = Object.keys(myObj).length;
+  let typeofdataimage = typeof myObj.insert.image
 
   if(myAttrib>1){
     myAttrib = myObj.attributes.width;
     let typeofwidth = typeof myAttrib;
-    let typeofdataimage = typeof myObj.insert.image
+   
 
     if(typeofwidth==="string"){
       contentObj.content = myObj.insert.image;
       contentObj.type = "imglink";
       contentObj.styles.width = myObj.attributes.width;
-    }else if(typeofdataimage==="string"){
-
-      contentObj.content = myObj.insert.image;
-      contentObj.type = "imgdata";
     }
 
+  }else if(typeofdataimage==="string"){
+
+    contentObj.content = myObj.insert.image;
+    contentObj.type = "imgdata";
   }
 
-  contentObj.styles.heading = typeofdataimage;
+ 
 
   
  return contentObj;
