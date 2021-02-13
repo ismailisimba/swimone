@@ -1339,8 +1339,10 @@ function extractImage(myObj,contentObj) {
 function extractLinkAndText(myObj,contentObj){
     let myAttrib = Object.keys(myObj).length;
     let typeoflink = null;
-    let lengthofinsert = myObj.insert.length;
+    
     let myInsert = myObj.insert.toString();
+    let lengthofinsert = myObj.insert.length;
+    
     if(myAttrib>1){
       typeoflink = typeof myObj.attributes.link;
       //contentObj.styles.href = typeoflink;
@@ -1349,9 +1351,9 @@ function extractLinkAndText(myObj,contentObj){
     if(typeoflink==="string"){
       contentObj.content = myObj.insert;
       contentObj.styles.href = myObj.attributes.link;
-    }else if(myInsert==="↵"){
+    }else if(true){
       //myObj.insert.includes("↵")&&lengthofinsert==1
-      contentObj.content = myObj.insert;
+      contentObj.content = lengthofinsert;
     }
 
     return contentObj
