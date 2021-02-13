@@ -1310,24 +1310,27 @@ function readSupportedStyles(myObj,contentObj,i){
     let myInsert = myObj[i].insert.toString();
     let lengthofinsert = myInsert.length;
 
-    if(myAttrib>1){
-      typeofinsert = lengthofinsert;
-      //contentObj.styles.href = typeoflink;
-    }
-
-
     let heading = null;
       let color = null;
       let bold = null;
       let italic = null;
       let underline = null;
 
-      //contentObj[i].styles.href = myObj[i].attributes.header;
+    if(myAttrib>1){
+      typeofinsert = lengthofinsert;
+      //contentObj.styles.href = typeoflink;
       heading = myObj[i].attributes.header;
       color = myObj[i].attributes.color;
       bold = myObj[i].attributes.bold;
       italic = myObj[i].attributes.italic;
       underline = myObj[i].attributes.underline;
+    }
+
+
+    
+
+      //contentObj[i].styles.href = myObj[i].attributes.header;
+      
 
     if(typeofinsert==1&&myAttrib>1){
       
