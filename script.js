@@ -1356,7 +1356,9 @@ function extractLinkAndText(myObj,contentObj){
       //myObj.insert.includes("↵")&&lengthofinsert==1
       contentObj.content = "<br>";
       contentObj.type = "para";
-      contentObj.styles.href = myInsert.charCodeAt(0);
+    }else if(myInsert.length>1){
+      contentObj.content = myObj.insert;
+      contentObj.type = "para";
     }
 
     return contentObj
