@@ -1342,7 +1342,7 @@ function extractLinkAndText(myObj,contentObj){
     
     let myInsert = myObj.insert.toString();
     let lengthofinsert = myObj.insert.length;
-    
+
     if(myAttrib>1){
       typeoflink = typeof myObj.attributes.link;
       //contentObj.styles.href = typeoflink;
@@ -1351,7 +1351,7 @@ function extractLinkAndText(myObj,contentObj){
     if(typeoflink==="string"){
       contentObj.content = myObj.insert;
       contentObj.styles.href = myObj.attributes.link;
-    }else if(true){
+    }else if(lengthofinsert==1){
       //myObj.insert.includes("↵")&&lengthofinsert==1
       contentObj.content = lengthofinsert;
     }
