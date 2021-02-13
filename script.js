@@ -1341,7 +1341,12 @@ function extractLink(myObj,contentObj){
     let typeoflink = null;
     if(myAttrib>1){
       typeoflink = typeof myObj.attributes.link;
-      contentObj.styles.href = typeoflink;
+      //contentObj.styles.href = typeoflink;
+    }
+
+    if(typeoflink==="string"){
+      contentObj.content = myObj.insert;
+      contentObj.styles.href = myObj.attributes.link;
     }
 
     return contentObj
