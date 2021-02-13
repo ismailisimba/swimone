@@ -1329,7 +1329,7 @@ function readSupportedStyles(myObj,contentObj,i){
       italic = myObj[i].attributes.italic;
       underline = myObj[i].attributes.underline;
 
-      if(heading!==null){
+      if(heading!==null&&heading!==undefined){
        addStyle("heading",myObj,contentObj,i);
       }
 
