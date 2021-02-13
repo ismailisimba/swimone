@@ -1349,7 +1349,7 @@ function addStyle(style,myObj,contentObj,i){
 
     if(lengthOfInsert<=1){
 
-      contentObj[i-1].styles = myObj[i].attributes.header;
+      contentObj[i-1].styles.heading = myObj[i].attributes.header;
 
     }else{
 
