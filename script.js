@@ -1315,8 +1315,8 @@ function readSupportedStyles(myObj,contentObj,i){
       //contentObj.styles.href = typeoflink;
     }
 
-    if(typeofinsert==1&&myAttrib>1){
-      let heading = null;
+
+    let heading = null;
       let color = null;
       let bold = null;
       let italic = null;
@@ -1329,14 +1329,19 @@ function readSupportedStyles(myObj,contentObj,i){
       italic = myObj[i].attributes.italic;
       underline = myObj[i].attributes.underline;
 
+    if(typeofinsert==1&&myAttrib>1){
+      
+
       if(heading!==null&&heading!==undefined){
       contentObj[i] = addStyle("heading",myObj,contentObj,i);
       }
 
-      if(true){
+      
+
+    }else if(typeofinsert>1&&myAttrib>1){
+      if(color!==null&&color!==undefined){
         contentObj[i] = addStyle("color",myObj,contentObj,i);
        }
-
     }
 
     return contentObj[i];
