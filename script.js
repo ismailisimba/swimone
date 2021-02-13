@@ -1322,14 +1322,14 @@ function readSupportedStyles(myObj,contentObj,i){
       let italic = null;
       let underline = null;
 
-      heading = myObj[i].attributes.heading;
-      color = myObj[i].attributes.color;
-      bold = myObj[i].attributes.bold;
-      italic = myObj[i].attributes.italic;
-      underline = myObj[i].attributes.underline;
+      contentObj[i].styles.href = myObj[i];
+      //color = myObj[i].attributes.color;
+      //bold = myObj[i].attributes.bold;
+      //italic = myObj[i].attributes.italic;
+      //underline = myObj[i].attributes.underline;
 
       if(heading!==null){
-        addStyle("heading",myObj,contentObj,i);
+       // addStyle("heading",myObj,contentObj,i);
       }
 
     }
