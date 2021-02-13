@@ -1287,6 +1287,8 @@ function deStoryFunc(storyObj){
      // tempVal.push(extractImage(storyObj[i]),newStoryObj[i+1]) ;
      newStoryObj[i] = extractImage(storyObj[i],newStoryObj[i]);
      tempVal.push(newStoryObj[i]);
+    }else if(typeOfThisInsert === "string"){
+      newStoryObj[i] = extractLink(storyObj[i],newStoryObj[i]);
     }
    // tempVal.push(typeOfThisInsert);
   }
@@ -1332,6 +1334,17 @@ function extractImage(myObj,contentObj) {
   
  return contentObj;
 };
+
+function extractLink(myObj,contentObj){
+    let myAttrib = Object.keys(myObj).length;
+    let typeoflink = null;
+    if(myAttrib>1){
+      typeoflink = typeof myObj.attributes.link;
+      contentObj = typeoflink;
+    }
+
+    return contentObj
+}
 
 
 function bundleStoryContentObj(bigArr){
