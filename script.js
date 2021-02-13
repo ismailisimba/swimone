@@ -1315,14 +1315,14 @@ function readSupportedStyles(myObj,contentObj,i){
       //contentObj.styles.href = typeoflink;
     }
 
-    if(myAttrib>1){
+    if(typeofinsert==1&&myAttrib>1){
       let heading = null;
       let color = null;
       let bold = null;
       let italic = null;
       let underline = null;
 
-      contentObj[i].styles.href = myObj[i].attributes;
+      contentObj[i].styles.href = myObj[i].attributes.header;
       //color = myObj[i].attributes.color;
       //bold = myObj[i].attributes.bold;
       //italic = myObj[i].attributes.italic;
