@@ -1304,11 +1304,11 @@ function deStoryFunc(storyObj){
 function extractImage(myObj,contentObj) {
 
   let myAttrib = Object.keys(myObj).length;
+  let typeofwidth = typeof myObj.attributes.width;
   let typeofdataimage = typeof myObj.insert.image
 
-  if(myAttrib>1){
-    myAttrib = myObj.attributes.width;
-    let typeofwidth = typeof myAttrib;
+  if(myAttrib>1&&typeofwidth==="string"){
+    
    
 
     if(typeofwidth==="string"){
