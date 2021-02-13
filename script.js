@@ -1331,7 +1331,7 @@ function bundleStoryContentObj(bigArr){
   obj.styles["color"] = "none";
   obj.styles["width"] = "none";
 
-  bigArr.push(obj);
+  bigArr[0] = obj;
 
   return bigArr;
 
