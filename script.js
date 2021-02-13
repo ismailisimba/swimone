@@ -1311,8 +1311,8 @@ function extractImage(myObj,contentObj) {
 
     if(typeofwidth==="string"){
       contentObj.content = myObj.insert.image;
-     // contentObj.type = "imglink";
-      //contentObj.style.width = myObj.attributes.width;
+      contentObj.type = "imglink";
+      contentObj.style.width = myObj.attributes.width;
     }
   }
 
