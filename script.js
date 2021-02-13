@@ -1359,17 +1359,8 @@ function addStyle(style,myObj,contentObj,i){
 
     }
   }else if(style==="color"){
-
-    let thisInsert = myObj[i].insert;
-    let lengthOfInsert = thisInsert.length;
-
-    if(lengthOfInsert>1){
     
       contentObj[i].styles.color = myObj[i].attributes.color;
-
-    }else{
-
-    }
 
   }
 
