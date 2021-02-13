@@ -1333,7 +1333,7 @@ function readSupportedStyles(myObj,contentObj,i){
       contentObj[i] = addStyle("heading",myObj,contentObj,i);
       }
 
-      if(color!==null&&color!==undefined){
+      if(true){
         contentObj[i] = addStyle("color",myObj,contentObj,i);
        }
 
