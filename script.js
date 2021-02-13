@@ -1314,6 +1314,11 @@ function extractImage(myObj,contentObj) {
       contentObj.type = "imglink";
       contentObj.styles.width = myObj.attributes.width;
     }
+  }else if(myObj.insert.image){
+
+      contentObj.content = myObj.insert.image;
+      contentObj.type = "imgdata";
+
   }
 
   
