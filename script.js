@@ -1330,11 +1330,11 @@ function readSupportedStyles(myObj,contentObj,i){
       underline = myObj[i].attributes.underline;
 
       if(heading!==null&&heading!==undefined){
-       addStyle("heading",myObj,contentObj,i);
+      contentObj[i] = addStyle("heading",myObj,contentObj,i);
       }
 
       if(color!==null&&color!==undefined){
-        addStyle("color",myObj,contentObj,i);
+        contentObj[i] = addStyle("color",myObj,contentObj,i);
        }
 
     }
@@ -1373,6 +1373,7 @@ function addStyle(style,myObj,contentObj,i){
 
   }
 
+  return contentObj[i];
 
 }
 
