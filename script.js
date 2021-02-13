@@ -1304,7 +1304,7 @@ function deStoryFunc(storyObj){
 }
 
 function readSupportedStyles(myObj,contentObj,i){
-    let myAttrib = Object.keys(myObj).length;
+    let myAttrib = Object.keys(myObj[i]).length;
     let typeofinsert = null;
     
     let myInsert = myObj[i].insert.toString();
@@ -1315,7 +1315,7 @@ function readSupportedStyles(myObj,contentObj,i){
       //contentObj.styles.href = typeoflink;
     }
 
-    if(typeofinsert!==null&&typeofinsert==1&&myAttrib>1){
+    if(typeofinsert==1&&myAttrib>1){
       let heading = null;
       let color = null;
       let bold = null;
