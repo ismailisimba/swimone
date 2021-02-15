@@ -253,6 +253,8 @@ async function bundleMyData(action,value) {
   
     //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
 
+  }else if(action==="uploadStory"){
+
   }
 return data;
 }
@@ -914,6 +916,9 @@ if(context==="images"){
   data = localVar.cloudObj.contentObj.contentObj.delete;
   //console.log(data)
   
+}else if(context==="storyImages"){
+
+
 }
 return data;
 }
@@ -1263,7 +1268,7 @@ function fillUpSiteMapInfo(responseObj){
 function deStoryFunc(storyObj){
 
   let customObj = document.querySelectorAll(".ql-editor")[0]
-  let myText =customObj.innerHTML;
+  //let myText =customObj.innerHTML;
   let newStoryObj = [];
   let tempVal = [];
   let numOfObjects = storyObj.length;
@@ -1295,11 +1300,11 @@ function deStoryFunc(storyObj){
    tempVal.push(newStoryObj[i]);
   }
 
+  newStoryObj = tempVal;
 
-
-    console.log(myText);
-    console.log(storyObj);
-    console.log(newStoryObj);
+   // console.log(myText);
+    //console.log(storyObj);
+   // console.log(newStoryObj);
     console.log(tempVal);
 }
 
