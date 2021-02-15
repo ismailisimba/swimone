@@ -263,7 +263,7 @@ async function bundleMyData(action,value) {
     //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
 
   }else if(action==="uploadStory"){
-    data = updateCloudObj("story",value);
+   // data = updateCloudObj("story",value);
 
   }
 return data;
@@ -928,7 +928,7 @@ if(context==="images"){
   
 }else if(context==="story"){
 
-  console.log(data);
+  
 
 
 }
