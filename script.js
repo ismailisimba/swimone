@@ -389,6 +389,7 @@ async function setupBackendCanvasLoggedIn(){
     addBackendEventListeners();
     fillUpFiles(localVar.cloudObj);
     fillUpSiteMapInfo(localVar.cloudObj);
+    fillUpStories(localVar.cloudObj);
   });
 
 
@@ -1513,3 +1514,12 @@ function bundleStoryContentObj(bigArr){
   return bigArr;
 
 }
+
+
+function  fillUpStories(responseObj) {
+
+  let stories = responseObj.contentObj.contentObj.published.stories.length;
+
+  console.log(stories);
+
+};
