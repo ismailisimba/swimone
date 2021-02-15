@@ -1518,8 +1518,58 @@ function bundleStoryContentObj(bigArr){
 
 function  fillUpStories(responseObj) {
 
-  let stories = responseObj.contentObj.contentObj.published.stories.length;
+  let stories = responseObj.contentObj.contentObj.published.stories;
+
+  let numOfStories = stories.length;
+
+  let storyCont = document.querySelectorAll(".postpreview")[0];
+  let parent = document.querySelectorAll(".postscontainer")[0];
+
+
+
+  for(let i=0 ; i <numOfStories ; i++){
+    let tempDiv = storyCont.cloneNode(true);
+    tempDiv = fillTempStoryDiv(tempDiv,stories[i]);
+    parent.appendChild(tempDiv);
+  }
 
   console.log(stories);
 
 };
+
+
+
+function fillTempStoryDiv(tempDiv,storyObj) {
+
+
+  let myHref2 = document.createElement("a");
+  myHref2.className = "storyhref";
+  let myStyle = document.createElement("style");
+  myStyle.innerHTML = `
+    
+      .storyhref{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: block;
+        font-size:11.69px;
+        width: 69px;
+        height: 18px;
+        box-sizing: border-box;
+        background-color: transparent;
+        z-index: 50;
+
+      }
+  `;
+
+  tempDiv.querySelectorAll("h2")[0].innerHTML = storyObj.title;
+  tempDiv.querySelectorAll("p")[0].innerHTML = storyObj.description;
+  
+  
+  
+  tempDiv.appendChild(myHref2);
+  tempDiv.appendChild(myStyle);
+
+  return tempDiv;
+
+}
