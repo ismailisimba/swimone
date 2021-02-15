@@ -215,11 +215,13 @@ async function hailTheServerOnAllChannels(action,value) {
 
   }else if(action==="uploadStory"){
     let data = await bundleMyData(action,value).then(()=>{
-      let myObj = bundleTokenAfter(value);
-      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
-     console.log(myObj);
-     customPopUpFunc(popUp,"Deleting","fullsteamahead");
-      startHailing(myObj,action,genericPrintResponse);
+
+      console.log(localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj);
+     // let myObj = bundleTokenAfter(value);
+      //myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
+     //console.log(myObj);
+     //customPopUpFunc(popUp,"Deleting","fullsteamahead");
+      //startHailing(myObj,action,genericPrintResponse);
     });
 
   }
@@ -1319,6 +1321,8 @@ function deStoryFunc(storyObj){
   //console.log(storyObj);
   // console.log(newStoryObj);
    // console.log(newStoryObj);
+
+   localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj;
 
     let token = getToken();
     hailTheServerOnAllChannels("uploadStory",token);
