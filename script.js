@@ -213,6 +213,15 @@ async function hailTheServerOnAllChannels(action,value) {
       startHailing(myObj,action,genericPrintResponse);
     });
 
+  }else if(action==="uploadStory"){
+    let data = await bundleMyData(action,value).then(()=>{
+      let myObj = bundleTokenAfter(value);
+      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
+     console.log(myObj);
+     customPopUpFunc(popUp,"Deleting","fullsteamahead");
+      startHailing(myObj,action,genericPrintResponse);
+    });
+
   }
 
 
@@ -254,6 +263,7 @@ async function bundleMyData(action,value) {
     //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
 
   }else if(action==="uploadStory"){
+    data = updateCloudObj("story",value);
 
   }
 return data;
@@ -916,7 +926,9 @@ if(context==="images"){
   data = localVar.cloudObj.contentObj.contentObj.delete;
   //console.log(data)
   
-}else if(context==="storyImages"){
+}else if(context==="story"){
+
+  console.log(data);
 
 
 }
@@ -1301,11 +1313,15 @@ function deStoryFunc(storyObj){
   }
 
   newStoryObj = tempVal;
+  tempVal = null;
 
-   // console.log(myText);
-    //console.log(storyObj);
+  // console.log(myText);
+  //console.log(storyObj);
+  // console.log(newStoryObj);
    // console.log(newStoryObj);
-    console.log(tempVal);
+
+    let token = getToken();
+    hailTheServerOnAllChannels("uploadStory",token);
 }
 
 function readSupportedStyles(myObj,contentObj,i){
