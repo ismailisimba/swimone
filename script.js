@@ -1395,8 +1395,10 @@ function addStyle(style,myObj,contentObj,i){
   if(style==="heading"){
     let thisInsert = myObj[i].insert;
     let lengthOfInsert = thisInsert.length;
+    let prevVal = 0;
+    prevVal = i-1;
 
-    if(lengthOfInsert<=1){
+    if(lengthOfInsert<=1&&prevVal>=0){
 
       contentObj[i-1].styles.heading = myObj[i].attributes.header;
 
