@@ -750,6 +750,7 @@ html button:hover {
     margin-top: 6px;
     margin-bottom: 6px;
     border: 0.69px dotted #120094;
+    color: #120094 !important;
   }
 
 
