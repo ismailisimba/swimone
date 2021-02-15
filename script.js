@@ -1525,6 +1525,8 @@ function  fillUpStories(responseObj) {
   let storyCont = document.querySelectorAll(".postpreview")[0];
   let parent = document.querySelectorAll(".postscontainer")[0];
 
+  parent.innerHTML = "";
+
 
 
   for(let i=0 ; i <numOfStories ; i++){
