@@ -42,7 +42,13 @@ textarea {
     font-weight: bold;
     letter-spacing: 1.3px;
     font-size: 14px;
+
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    overflow-y: scroll;
 }
+
+textarea::-webkit-scrollbar { display: none; }
 
 html button:hover {
     font-weight: bold;
