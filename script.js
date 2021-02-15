@@ -1345,6 +1345,18 @@ function readSupportedStyles(myObj,contentObj,i){
       if(color!==null&&color!==undefined){
         contentObj[i] = addStyle("color",myObj,contentObj,i);
        }
+
+       if(bold!==null&&bold!==undefined){
+        contentObj[i] = addStyle("bold",myObj,contentObj,i);
+       }
+
+       if(italic!==null&&italic!==undefined){
+        contentObj[i] = addStyle("italic",myObj,contentObj,i);
+       }
+
+       if(underline!==null&&underline!==undefined){
+        contentObj[i] = addStyle("underline",myObj,contentObj,i);
+       }
     }
 
     return contentObj[i];
@@ -1369,6 +1381,18 @@ function addStyle(style,myObj,contentObj,i){
   }else if(style==="color"){
     
       contentObj[i].styles.color = myObj[i].attributes.color;
+
+  }else if (style ==="bold"){
+
+    contentObj[i].styles.bold = myObj[i].attributes.bold;
+
+  }else if(style === "italic"){
+
+    contentObj[i].styles.italic = myObj[i].attributes.italic;
+
+  }else if(style==="underline"){
+
+    contentObj[i].styles.underline = myObj[i].attributes.underline;
 
   }
 
