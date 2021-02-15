@@ -376,8 +376,8 @@ async function setupBackendCanvasLoggedIn(){
   document.querySelectorAll(".mycolumns")[1].appendChild(myGoogleBox);
   document.querySelectorAll(".mycolumns")[1].style.overflowY="scroll";
 
-  cPan.style.backgroundColor = "#061826";
-  cPan.style.borderColor = "#061826";
+  cPan.style.backgroundColor = "white";
+  cPan.style.borderColor = "white";
   cPan.querySelectorAll(".setinset")[0].style.height = "48px";
   cPan.querySelectorAll(".cpancontentcont")[0].innerHTML = "";
   document.querySelectorAll(".mycolumns")[1].appendChild(cPan);
