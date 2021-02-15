@@ -1275,7 +1275,7 @@ function deStoryFunc(storyObj){
 
   newStoryObj = bundleStoryContentObj(newStoryObj);
 
-  myText = myText.toString();
+  //myText = myText.toString();
   
 
   for(let i = 0; i < numOfObjects ; i++){
