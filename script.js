@@ -1322,6 +1322,7 @@ function deStoryFunc(storyObj){
 
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj;
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].title = document.getElementById("editposttit").innerText;
+   localVar.cloudObj.contentObj.contentObj.draft.stories[0].type = "draft";
 
     let token = getToken();
     hailTheServerOnAllChannels("uploadStory",token);
