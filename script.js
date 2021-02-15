@@ -218,7 +218,7 @@ async function hailTheServerOnAllChannels(action,value) {
 
       
       let myObj = bundleTokenAfter(value);
-      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj;
+      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft.stories[0];
      
      customPopUpFunc(popUp,"Saving Story","fullsteamahead");
       startHailing(myObj,action,genericPrintResponse);
