@@ -1321,7 +1321,7 @@ function deStoryFunc(storyObj){
    // console.log(newStoryObj);
 
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj;
-   localVar.cloudObj.contentObj.contentObj.draft.stories[0].title = document.getElementById("editposttit").innerText;
+   localVar.cloudObj.contentObj.contentObj.draft.stories[0].title = document.getElementById("editposttit").value;
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].type = "draft";
 
     let token = getToken();
