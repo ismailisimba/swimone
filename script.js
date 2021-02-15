@@ -208,7 +208,7 @@ async function hailTheServerOnAllChannels(action,value) {
     let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
-     console.log(myObj);
+     //console.log(myObj);
      customPopUpFunc(popUp,"Deleting","fullsteamahead");
       startHailing(myObj,action,genericPrintResponse);
     });
@@ -216,12 +216,12 @@ async function hailTheServerOnAllChannels(action,value) {
   }else if(action==="uploadStory"){
     let data = await bundleMyData(action,value).then(()=>{
 
-      console.log(localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj);
-     // let myObj = bundleTokenAfter(value);
-      //myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
-     //console.log(myObj);
-     //customPopUpFunc(popUp,"Deleting","fullsteamahead");
-      //startHailing(myObj,action,genericPrintResponse);
+      
+      let myObj = bundleTokenAfter(value);
+      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj;
+     
+     customPopUpFunc(popUp,"Saving Story","fullsteamahead");
+      startHailing(myObj,action,genericPrintResponse);
     });
 
   }
@@ -236,8 +236,6 @@ async function startHailing(data,para,functionToRunAfter){
   fetchInfoWithFilter(data,para).then((responseObj)=>{
     functionToRunAfter(responseObj);
   });
-
- // return tempVal; 
 }
 
 
