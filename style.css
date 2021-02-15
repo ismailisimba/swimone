@@ -105,7 +105,7 @@ html button:hover {
 
     background-color: #120094;
 
-    box-shadow: inset 1.69px 1.69px 1.69px 1px white;
+    box-shadow: inset 1px 1.69px 1px black;
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
