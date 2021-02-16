@@ -698,7 +698,7 @@ function addPostListFuncs(cPanItem){
 
 
     if(thisButtText==="Delete"){
-    // siteMapShowEditors(cPanItem);
+      setupForStoryDeletion();
     }else{  
     }
 
@@ -1097,6 +1097,25 @@ function setupForFileDeletion(){
   butClone.addEventListener("click",sendDeletionsToServer);
 
   addFileClicks(fileContClone,parent,butClone);
+
+  parent.appendChild(butClone);
+
+}
+
+function setupForStoryDeletion(){
+
+  let butClone = localVar.tempDivs.butt1.cloneNode(true);
+  let fileContClone = cPanGenericCont.querySelectorAll(".imageListItemCont")[0].cloneNode(true);
+  let parent = document.querySelectorAll(".cpancontentcont")[0];
+
+  parent.innerHTML = "";
+
+  butClone.innerHTML = `Please click the stories/posts you want to delete. <br> To unselect, click again. <br> When done, click here to confirm deletion`;
+  butClone.style.height = "auto";
+
+  //butClone.addEventListener("click",sendDeletionsToServer);
+
+  //addFileClicks(fileContClone,parent,butClone);
 
   parent.appendChild(butClone);
 
@@ -1551,7 +1570,7 @@ function  fillUpStories(responseObj) {
     parent.appendChild(tempDiv);
   }
 
-  console.log(stories);
+  
 
 };
 
