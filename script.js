@@ -1734,16 +1734,13 @@ function setupForStoryView() {
 
   localVar.newHtml = document.querySelectorAll(".mygenericpage")[0];
   localVar.columnHtml = document.querySelectorAll(".mycolumns")[1];
-  tempDiv.innerHTML = localVar.columnHtml;
+  
 
   let stories = document.querySelectorAll(".postpreview");
 
   stories.forEach(element => {
     element.addEventListener("click",showStoryReadPage);
   })
-
-  //OldDiv.replaceWith(tempDiv);
-
   
 }
 
