@@ -1830,7 +1830,7 @@ function readStoryObj(storyContainer,storyObj){
 
 
       
-    disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[j].styles,typeofappend);
+    disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[j].styles,typeofappend,storyObj,j);
     
 
       appendedTest = appendedTest+disappend;
@@ -1845,7 +1845,7 @@ function readStoryObj(storyContainer,storyObj){
 
 };
 
-function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type){
+function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type,storyObj,j){
 
   if(stylesObj.bold!=="none"){
     disappend = `<strong>`+disappend+`</strong>`;
