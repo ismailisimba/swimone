@@ -1561,7 +1561,7 @@ function fillTempStoryDiv(tempDiv,storyObj) {
         box-sizing: border-box;
         background-color: transparent;
         z-index: 50;
-        font-weight: 600;
+        font-weight: normal;
         letter-spacing: 1.69px;
 
       }
