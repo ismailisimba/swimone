@@ -686,6 +686,27 @@ html button:hover {
 
 /*JS javascript items styles go here*/
 
+.mygenericpage{
+
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 75%;
+    padding: 24px 0px;
+    box-sizing: border-box;
+    min-height: 600px;
+
+
+
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
 .storyhref2selected {
     background-color: black !important;
 }
@@ -825,10 +846,31 @@ html button:hover {
 
 
 }
+
+
+
+
+
+
+
 /*Media Queries Go Here*/ 
 
 
 @media screen and (max-width: 1024px) {
+    
+        .mygenericpage{
+
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            padding: 24px 48px;
+            box-sizing: border-box;
+            min-height: 600px;
+
+
+        }
 
     .cpancontentcont .butts {
     
