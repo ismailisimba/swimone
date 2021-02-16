@@ -1810,6 +1810,25 @@ function populateStory(storyObj){
   let titleDiv = dePage.querySelectorAll("h1")[0];
   let storyContainer = dePage.querySelectorAll("div")[0];
 
+  readStoryObj(storyContainer,storyObj.storyObj);
+
   titleDiv.innerHTML = storyObj.title;
+
+};
+
+
+function readStoryObj(storyContainer,storyObj){
+
+  let appendedTest = "";
+
+  storyContainer.innerHTML = "";
+
+  for(let j=0; j<storyObj.length ; j++){
+
+      appendedTest = appendtest+storyObj[i].content;
+
+  }
+
+  storyContainer.innerHTML = appendedTest;
 
 };
