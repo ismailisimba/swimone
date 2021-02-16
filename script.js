@@ -1172,7 +1172,7 @@ function toggleStorySelectStyle() {
 
   if(this.classList.contains("storyhref2selected")){
 
-   // removeSelectedFileFromCpan(parent,this.parentNode);
+    removeSelectedStoryFromCpan(parent,this);
     this.classList.remove("storyhref2selected");
 
 
@@ -1181,9 +1181,11 @@ function toggleStorySelectStyle() {
     let filename = storyContClone.querySelectorAll(".filename")[0];
     let filetype = storyContClone.querySelectorAll(".filetype")[0];
     let filesize = storyContClone.querySelectorAll(".filesize")[0];
+    let idhref = storyContClone.querySelectorAll(".idhref")[0];
     filetype.remove();
     filesize.remove();
     filename.innerHTML = this.querySelectorAll("h2")[0].innerHTML;
+    idhref.innerHTML = this.querySelectorAll("a")[0].id;
 
     filename.style.height = "100%";
     filename.style.textOverflow = "unset";
@@ -1219,6 +1221,16 @@ function removeSelectedFileFromCpan(parent,fileParentNode){
   deNode.remove();
 
 };
+
+function removeSelectedStoryFromCpan(parent,fileParentNode){
+
+  let idtoCheck = fileParentNode.querySelectorAll("a")[0].id;
+  let deNode = document.getElementById(idtoCheck);
+  deNode.remove();
+
+};
+
+
 
 
 function sendDeletionsToServer () {
