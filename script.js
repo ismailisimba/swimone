@@ -1819,7 +1819,7 @@ function populateStory(storyObj){
 
 function readStoryObj(storyContainer,storyObj){
 
-  let appendedTest = "";
+  let appendedTest = "<p>";
 
   storyContainer.innerHTML = "";
 
@@ -1828,27 +1828,16 @@ function readStoryObj(storyContainer,storyObj){
     let disappend = storyObj[j].content;
     let typeofappend = storyObj[j].type;
 
-    if(typeofappend==="para"){
 
-     // appendedTest = appendedTest+disappend;
-      disappend = `<p>`+disappend+`</p>`;
-      disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[j].styles,typeofappend);
-
-
-    }else if(typeofappend==="linky"){
-
-      disappend = `<a href="${storyObj[j].styles.href}">`+disappend+`</a>`;
       
-
-    }else if(typeofappend==="imgdata"){
-
-    }else if(typeofappend==="imglink"){
-
-      disappend = `<img src="${disappend}" width="85%" height="auto" style="min-width:240px">`;
-  
-    }
+    disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[j].styles,typeofappend);
+    
 
       appendedTest = appendedTest+disappend;
+
+      if(j==storyObj.length-1){
+        appendedTest = appendedTest+"</p>";
+      }
 
   }
 
@@ -1864,7 +1853,7 @@ function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type){
 
   if(stylesObj.color!=="none"){
   
-      disappend = `<p style="color:${stylesObj.color}">`+disappend+`</p>`;
+      disappend = `<span style="color:${stylesObj.color}">`+disappend+`</span>`;
     
    
   }
@@ -1896,8 +1885,25 @@ function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type){
   }
 
   if(stylesObj.underline!=="none"){
-    disappend = `<p style="text-decoration:underline">`+disappend+`</p>`;
+    disappend = `<span style="text-decoration:underline">`+disappend+`</span>`;
   }
+
+
+  if(typeofappend==="para"){
+  disappend = disappend + disappend
+    // appendedTest = appendedTest+disappend;
+   }else if(typeofappend==="linky"){
+
+     disappend = `<a href="${storyObj[j].styles.href}">`+disappend+`</a>`;
+     
+
+   }else if(typeofappend==="imgdata"){
+
+   }else if(typeofappend==="imglink"){
+
+     disappend = `<img src="${disappend}" width="85%" height="auto" style="min-width:240px">`;
+ 
+   }
 
 
 
