@@ -1184,6 +1184,12 @@ function toggleStorySelectStyle() {
     filetype.remove();
     filesize.remove();
     filename.innerHTML = this.querySelectorAll("h2")[0].innerHTML;
+
+    filename.style.height = "100%";
+    filename.style.textOverflow = "unset";
+    filename.style.overflow = "auto";
+    filename.style.whiteSpace = "normal";
+    
     parent.appendChild(storyContClone);
     this.classList.add("storyhref2selected");
 
