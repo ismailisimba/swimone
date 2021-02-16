@@ -1225,7 +1225,7 @@ function removeSelectedFileFromCpan(parent,fileParentNode){
 function removeSelectedStoryFromCpan(parent,fileParentNode){
 
   let idtoCheck = fileParentNode.querySelectorAll("a")[0].id;
-  let deNode = document.getElementById(idtoCheck);
+  let deNode = parent.getElementById(idtoCheck);
   deNode.remove();
 
 };
