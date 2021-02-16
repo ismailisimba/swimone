@@ -1863,7 +1863,7 @@ function applyHtmlStylesToMyStoryObj(disappend,stylesObj){
   }
 
   if(stylesObj.color!=="none"){
-    disappend = `<p> style="color:${stylesObj.color}"`+disappend+`</p>`;
+    disappend = `<p style="color:${stylesObj.color}">`+disappend+`</p>`;
   }
 
   if(stylesObj.heading!=="none"){
