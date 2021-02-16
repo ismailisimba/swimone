@@ -1889,17 +1889,17 @@ function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type){
   }
 
 
-  if(typeofappend==="para"){
+  if(type==="para"){
   disappend = disappend + disappend
     // appendedTest = appendedTest+disappend;
-   }else if(typeofappend==="linky"){
+   }else if(type==="linky"){
 
      disappend = `<a href="${storyObj[j].styles.href}">`+disappend+`</a>`;
      
 
-   }else if(typeofappend==="imgdata"){
+   }else if(type==="imgdata"){
 
-   }else if(typeofappend==="imglink"){
+   }else if(type==="imglink"){
 
      disappend = `<img src="${disappend}" width="85%" height="auto" style="min-width:240px">`;
  
