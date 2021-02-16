@@ -1195,7 +1195,7 @@ function toggleFileSelectStyle() {
 
 function toggleStorySelectStyle() {
   let storyContClone = document.querySelectorAll(".fileListItemCont")[0].cloneNode(true);
-  storyContClone.id = this.querySelectorAll(".storyhref")[0].id+"child";
+  storyContClone.id = this.querySelectorAll(".storyhref")[0].id+",child";
   let parent = document.querySelectorAll(".cpancontentcont")[0];
 
   
@@ -1254,7 +1254,7 @@ function removeSelectedFileFromCpan(parent,fileParentNode){
 
 function removeSelectedStoryFromCpan(parent,fileParentNode){
 
-  let idtoCheck = fileParentNode.querySelectorAll("a")[0].id+"child";
+  let idtoCheck = fileParentNode.querySelectorAll("a")[0].id+",child";
   let deNode = document.getElementById(idtoCheck);
   deNode.remove();
 
