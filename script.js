@@ -1764,7 +1764,7 @@ function showStoryReadPage() {
   deBut.addEventListener("click", backToBackend)
   
   localVar.columnHtml.replaceWith(dePage);
-  //addNewHtmlFuncs()
+  addNewHtmlFuncs(storyid);
   console.log(storyid);
 }
 
@@ -1772,3 +1772,29 @@ function backToBackend (){
   dePage.replaceWith(localVar.columnHtml);
   dePage.removeEventListener("click",backToBackend,false);
 }
+
+
+function addNewHtmlFuncs(storyid) {
+  let stories = localVar.cloudObj.contentObj.contentObj.published.stories
+  let searchResponse = searchStory(stories,storyid);
+
+  console.log(searchResponse);
+};
+
+function searchStory(stories,storyid){
+
+  let response = {}
+  response["status"] = "notFound";
+
+  for(let i=0 ; i<stories.length ; i++){
+    if(storyid===stories[i].stats[0].timeid){
+
+      response["obj"] = stories[i];
+      response.status = "found";
+
+    }
+  }
+
+  return response
+
+};
