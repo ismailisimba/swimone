@@ -17,7 +17,9 @@ window.onload = () => {
 //initiate local counters, indexes, e.t.c here
 localVar["tempDivs"] = {};
 localVar["counters"] = {};
+localVar["columnHtml"] = "<p>Sorry, Something may have gone wrong!!?<p>"
 localVar.counters["currentAtCpan"] = 0
+
 
 
 function myStartUpFunction () {
@@ -709,7 +711,8 @@ function addPostListFuncs(cPanItem){
 
     if(thisButtText==="Delete"){
       setupForStoryDeletion();
-    }else{  
+    }else if(thisButtText==="View"){ 
+      setupForStoryView(); 
     }
 
 
@@ -1723,4 +1726,19 @@ function fillTempStoryDiv(tempDiv,storyObj) {
 
   return tempDiv;
 
+}
+
+
+function setupForStoryView() {
+
+  console.log(localVar.columnHtml);
+
+  localVar.columnHtml = document.querySelectorAll(".mycolumns")[1].innerHTML;
+  document.querySelectorAll(".mycolumns")[1].innerHTML = "";
+
+  console.log(localVar.columnHtml);
+
+  document.querySelectorAll(".mycolumns")[1].innerHTML = localVar.columnHtml;
+
+  
 }
