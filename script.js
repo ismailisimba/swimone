@@ -1253,7 +1253,9 @@ function customPopUpFunc(popupEle,phrase,action) {
 function myResetFuncs(){
 removeFileSelectClicks();
 removeStorySelectClicks();
+
 toggleFileSelectStyleOff();
+toggleStorySelectStyleOff()
 
 }
 
@@ -1265,9 +1267,15 @@ function toggleFileSelectStyleOff() {
   hrefs69.forEach(element=>{
     element.classList.remove("testhref1selected");
   })
+  
+}
 
-
-
+function toggleStorySelectStyleOff() {
+  let hrefs69 = document.querySelectorAll(".postpreview");
+  
+  hrefs69.forEach(element=>{
+    element.classList.remove("storyhref2selected");
+  })
   
 }
 
