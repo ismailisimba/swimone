@@ -1739,6 +1739,8 @@ function setupForStoryView() {
 
   parent.innerHTML = "";
 
+  let butClone = localVar.tempDivs.butt1.cloneNode(true);
+
   butClone.innerHTML = `Please click the stories/posts you want to read.`;
   butClone.style.height = "auto";
   
