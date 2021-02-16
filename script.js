@@ -17,7 +17,8 @@ window.onload = () => {
 //initiate local counters, indexes, e.t.c here
 localVar["tempDivs"] = {};
 localVar["counters"] = {};
-localVar["columnHtml"] = "<p>Sorry, Something may have gone wrong!!?<p>"
+localVar["columnHtml"] = "<p>Sorry, Something may have gone wrong!!?<p>";
+localVar["newHtml"] = "<p>Sorry, Something may have gone wrong!!?<p>";
 localVar.counters["currentAtCpan"] = 0
 
 
@@ -1731,19 +1732,24 @@ function fillTempStoryDiv(tempDiv,storyObj) {
 
 function setupForStoryView() {
 
-  let tempDiv = document.createElement("div");
-  let OldDiv = document.querySelectorAll(".mycolumns")[1];
+  localVar.newHtml = document.querySelectorAll(".mygenericpage")[0];
+  localVar.columnHtml = document.querySelectorAll(".mycolumns")[1];
   tempDiv.innerHTML = localVar.columnHtml;
 
-  OldDiv.replaceWith(tempDiv);
+  let stories = document.querySelectorAll(".postpreview");
 
- let someTimy = window.setTimeout(function(){
-   tempDiv.replaceWith(OldDiv);
-   window.clearTimeout(someTimy);
- },3000)
-  
-  
+  stories.forEach(element => {
+    element.addEventListener("click",showStoryReadPage);
+  })
 
+  //OldDiv.replaceWith(tempDiv);
 
   
+}
+
+function showStoryReadPage() {
+  let storyid = this.querySelectorAll(".storyhref")[0].id;
+  localVar.columnHtml.replaceWith(localVar.newHtml);
+  //addNewHtmlFuncs()
+  console.log(storyid);
 }
