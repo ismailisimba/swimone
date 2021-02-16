@@ -1167,6 +1167,7 @@ function toggleStorySelectStyle() {
   let storyContClone = document.querySelectorAll(".fileListItemCont")[0].cloneNode(true);
   storyContClone.id = this.querySelectorAll(".storyhref")[0].id;
   let parent = document.querySelectorAll(".cpancontentcont")[0];
+
   
 
   if(this.classList.contains("storyhref2selected")){
@@ -1176,6 +1177,13 @@ function toggleStorySelectStyle() {
 
 
   }else{
+
+    let filename = storyContClone.querySelectorAll(".filename")[0];
+    let filetype = storyContClone.querySelectorAll(".filetype")[0];
+    let filesize = storyContClone.querySelectorAll(".filesize")[0];
+    filetype.remove();
+    filesize.remove();
+    filename.innerHTML = this.querySelectorAll("h2")[0].innerHTML;
     parent.appendChild(storyContClone);
     this.classList.add("storyhref2selected");
 
