@@ -1778,6 +1778,12 @@ function addNewHtmlFuncs(storyid) {
   let stories = localVar.cloudObj.contentObj.contentObj.published.stories
   let searchResponse = searchStory(stories,storyid);
 
+  if(searchResponse.status==="found"){
+    populateStory(searchResponse.obj);
+  }else{
+    alert("Ooops there's been an error reading your post. Please report to ismaili.a.simba@gmail.com");
+  }
+
   console.log(searchResponse);
 };
 
@@ -1796,5 +1802,14 @@ function searchStory(stories,storyid){
   }
 
   return response
+
+};
+
+
+function populateStory(storyObj){
+  let titleDiv = dePage.querySelectorAll("h1")[0];
+  let storyContainer = dePage.querySelectorAll("div")[0];
+
+  titleDiv.innerHTML = storyObj.title;
 
 };
