@@ -1901,7 +1901,7 @@ function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type,storyObj,j){
 
    }else if(type==="imglink"){
 
-     disappend = `<img src="${disappend}" width="85%" height="auto" style="min-width:240px">`;
+     disappend = `<img src="${disappend}" width="85%" height="auto" style="min-width:240px; max-width:569px;">`;
  
    }
 
