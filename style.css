@@ -691,7 +691,7 @@ html button:hover {
     display: block;
     position: absolute;
     top: 0px;
-    right: 0px;
+    right: 6%;
     width: 69%;
     padding: 24px 0px;
     box-sizing: border-box;
