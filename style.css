@@ -689,6 +689,7 @@ html button:hover {
 .mygenericpage{
 
     display: block;
+    visibility: collapse;
     position: absolute;
     top: 0px;
     right: 6%;

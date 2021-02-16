@@ -1757,7 +1757,18 @@ function setupForStoryView() {
 
 function showStoryReadPage() {
   let storyid = this.querySelectorAll(".storyhref")[0].id;
+  dePage.style.visibility = "visible";
+
+  let deBut = dePage.querySelectorAll("button")[0];
+
+  deBut.addEventListener("click", backToBackend)
+  
   localVar.columnHtml.replaceWith(dePage);
   //addNewHtmlFuncs()
   console.log(storyid);
+}
+
+function backToBackend (){
+  dePage.replaceWith(localVar.columnHtml);
+  dePage.removeEventListener("click",backToBackend,false);
 }
