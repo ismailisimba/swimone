@@ -1551,6 +1551,7 @@ function fillTempStoryDiv(tempDiv,storyObj) {
     
       .storyhref{
         position: absolute;
+        color: white;
         top: 0px;
         right: 0px;
         display: block;
@@ -1560,12 +1561,15 @@ function fillTempStoryDiv(tempDiv,storyObj) {
         box-sizing: border-box;
         background-color: transparent;
         z-index: 50;
+        font-weight: 600;
+        letter-spacing: 1.69px;
 
       }
   `;
 
   tempDiv.querySelectorAll("h2")[0].innerHTML = storyObj.title;
   tempDiv.querySelectorAll("p")[0].innerHTML = storyObj.description;
+  myHref2.innerHTML = storyObj.type
   
   
   
