@@ -1736,6 +1736,11 @@ function setupForStoryView() {
   tempDiv.innerHTML = localVar.columnHtml;
 
   OldDiv.replaceWith(tempDiv);
+
+ let someTimy = window.setTimeout(function(){
+   tempDiv.replaceWith(OldDiv);
+   window.clearTimeout(someTimy);
+ },3000)
   
   
 
