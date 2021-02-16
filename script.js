@@ -1143,7 +1143,7 @@ function setupForStoryDeletion(){
   butClone.innerHTML = `Please click the stories/posts you want to delete. <br> To unselect, click again. <br> When done, click here to confirm deletion`;
   butClone.style.height = "auto";
 
-  //butClone.addEventListener("click",sendDeletionsToServer);
+  butClone.addEventListener("click", sendDeletionsToServerToo);
 
   addStoryClicks();
 
