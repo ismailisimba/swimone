@@ -1825,10 +1825,78 @@ function readStoryObj(storyContainer,storyObj){
 
   for(let j=0; j<storyObj.length ; j++){
 
-      appendedTest = appendedTest+storyObj[j].content;
+    let disappend = storyObj[j].content;
+    let typeofappend = storyObj[i].type;
+
+    if(typeofappend==="para"){
+
+     // appendedTest = appendedTest+disappend;
+      disappend = `<p>`+disappend+`</p>`;
+      disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[i].styles);
+
+
+    }else if(typeofappend==="linky"){
+
+      disappend = `<a href="${storyObj[i].styles.href}">`+disappend+`</a>`;
+      disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[i].styles);
+
+    }else if(typeofappend==="imgdata"){
+
+    }else if(typeofappend==="imglink"){
+
+      disappend = `<img src="${disappend}" width="85%" height="auto" style="min-width:240px">`;
+  
+    }
+
+      appendedTest = appendedTest+disappend;
 
   }
 
   storyContainer.innerHTML = appendedTest;
 
+};
+
+function applyHtmlStylesToMyStoryObj(disappend,stylesObj){
+
+  if(stylesObj.bold!=="none"){
+    disappend = `<strong>`+disappend+`</strong>`;
+  }
+
+  if(stylesObj.color!=="none"){
+    disappend = `<p> style="color:${stylesObj.color}"`+disappend+`</p>`;
+  }
+
+  if(stylesObj.heading!=="none"){
+
+      if(stylesObj.heading==1){
+        disappend = `<h2>`+disappend+`</h2>`;
+
+      }else if(stylesObj.heading==2){
+
+        disappend = `<h3>`+disappend+`</h3>`;
+
+      }else if(stylesObj.heading==3){
+        disappend = `<h4>`+disappend+`</h4>`;
+
+      }else if(stylesObj.heading==4){
+
+        disappend = `<strong>`+disappend+`</strong>`;
+
+      }else{
+        disappend = `<strong>`+disappend+`</strong>`;
+      }
+    
+  }
+
+  if(stylesObj.italic!=="none"){
+    disappend = `<em>`+disappend+`</em>`;
+  }
+
+  if(stylesObj.underline!=="none"){
+    disappend = `<p style="text-decoration:underline">`+disappend+`</p>`;
+  }
+
+
+
+  return disappend
 };
