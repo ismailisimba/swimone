@@ -653,6 +653,8 @@ function addCpanOptsClickFuncs(){
    
 
   }else if(menuBoxIndex==2){
+
+    addPostListFuncs(cPanItem);
   
 
   }else if(menuBoxIndex==3){
@@ -686,6 +688,20 @@ function addSiteMapFuncs(cPanItem){
       siteMapShowEditors(cPanItem);
     }else{  
     }
+
+}
+
+
+function addPostListFuncs(cPanItem){
+
+  let thisButtText = cPanItem.innerText;
+
+
+    if(thisButtText==="Delete"){
+    // siteMapShowEditors(cPanItem);
+    }else{  
+    }
+
 
 }
 
@@ -1569,7 +1585,9 @@ function fillTempStoryDiv(tempDiv,storyObj) {
 
   tempDiv.querySelectorAll("h2")[0].innerHTML = storyObj.title;
   tempDiv.querySelectorAll("p")[0].innerHTML = storyObj.description;
-  myHref2.innerHTML = storyObj.type
+  
+  myHref2.innerHTML = storyObj.type;
+  myHref2.id = storyObj.stats[0].timeid;
   
   
   
