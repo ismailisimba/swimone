@@ -1096,7 +1096,7 @@ function setupForFileDeletion(){
 
   butClone.addEventListener("click",sendDeletionsToServer);
 
-  addFileClicks(fileContClone,parent,butClone);
+  addFileClicks();
 
   parent.appendChild(butClone);
 
@@ -1115,19 +1115,29 @@ function setupForStoryDeletion(){
 
   //butClone.addEventListener("click",sendDeletionsToServer);
 
-  //addFileClicks(fileContClone,parent,butClone);
+  addStoryClicks();
 
   parent.appendChild(butClone);
 
 }
 
 
-function addFileClicks(fileContClone,parent,butClone){
+function addFileClicks(){
 
   let myClickableFileHrefs = document.querySelectorAll(".testhref1");
 
   myClickableFileHrefs.forEach(element => {
     element.addEventListener("click",toggleFileSelectStyle)
+  })
+
+}
+
+function addStoryClicks(){
+
+  let myClickableStoryHrefs = document.querySelectorAll(".postpreview");
+
+  myClickableStoryHrefs.forEach(element => {
+    element.addEventListener("click",toggleStorySelectStyle)
   })
 
 
@@ -1149,6 +1159,25 @@ function toggleFileSelectStyle() {
   }else{
     parent.appendChild(fileContClone);
     this.classList.add("testhref1selected");
+
+  }
+}
+
+function toggleStorySelectStyle() {
+  let storyContClone = document.querySelectorAll(".fileListItemCont")[0].cloneNode(true);
+  storyContClone.id = this.querySelectorAll(".storyhref")[0].id;
+  let parent = document.querySelectorAll(".cpancontentcont")[0];
+  
+
+  if(this.classList.contains("storyhref2selected")){
+
+   // removeSelectedFileFromCpan(parent,this.parentNode);
+    this.classList.remove("storyhref2selected");
+
+
+  }else{
+    parent.appendChild(storyContClone);
+    this.classList.add("storyhref2selected");
 
   }
 }

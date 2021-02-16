@@ -686,6 +686,10 @@ html button:hover {
 
 /*JS javascript items styles go here*/
 
+.storyhref2selected {
+    background-color: black !important;
+}
+
 .custompopup{
     display: block;
     visibility: hidden;
