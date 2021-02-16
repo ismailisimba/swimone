@@ -1825,7 +1825,7 @@ function readStoryObj(storyContainer,storyObj){
 
   for(let j=0; j<storyObj.length ; j++){
 
-      appendedTest = appendedTest+storyObj[i].content;
+      appendedTest = appendedTest+storyObj[j].content;
 
   }
 
