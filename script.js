@@ -1743,6 +1743,8 @@ function setupForStoryView() {
 
   butClone.innerHTML = `Please click the stories/posts you want to read.`;
   butClone.style.height = "auto";
+
+  parent.appendChild(butClone);
   
 
   let stories = document.querySelectorAll(".postpreview");
