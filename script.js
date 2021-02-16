@@ -1732,7 +1732,7 @@ function fillTempStoryDiv(tempDiv,storyObj) {
 
 function setupForStoryView() {
 
-  localVar.newHtml = document.querySelectorAll(".mygenericpage")[0];
+  localVar.newHtml = document.querySelectorAll(".mygenericpage")[0].cloneNode(true);
   localVar.columnHtml = document.querySelectorAll(".mycolumns")[1];
 
   let parent = document.querySelectorAll(".cpancontentcont")[0];
