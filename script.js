@@ -1731,14 +1731,14 @@ function fillTempStoryDiv(tempDiv,storyObj) {
 
 function setupForStoryView() {
 
-  console.log(localVar.columnHtml);
+  let tempDiv = document.createElement("div");
+  let OldDiv = document.querySelectorAll(".mycolumns")[1];
+  tempDiv.innerHTML = localVar.columnHtml;
 
-  localVar.columnHtml = document.querySelectorAll(".mycolumns")[1].innerHTML;
-  document.querySelectorAll(".mycolumns")[1].innerHTML = "";
+  OldDiv.replaceWith(tempDiv);
+  
+  
 
-  console.log(localVar.columnHtml);
-
-  document.querySelectorAll(".mycolumns")[1].innerHTML = localVar.columnHtml;
 
   
 }
