@@ -152,6 +152,10 @@ html button:hover {
     z-index: 1000;
 
 }
+
+.cpancontentcont .butts:hover{
+    box-shadow: none;
+}
 .setinset::-webkit-scrollbar { display: none; }
 .mycolumns:first-child{
 
