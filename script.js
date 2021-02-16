@@ -1838,7 +1838,7 @@ function readStoryObj(storyContainer,storyObj){
     }else if(typeofappend==="linky"){
 
       disappend = `<a href="${storyObj[j].styles.href}">`+disappend+`</a>`;
-      disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[j].styles,typeofappend);
+      
 
     }else if(typeofappend==="imgdata"){
 
@@ -1863,11 +1863,9 @@ function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type){
   }
 
   if(stylesObj.color!=="none"){
-    if(type==="linky"){
-      disappend = `<a style="color:${stylesObj.color}">`+disappend+`</a>`;
-    }else{
+  
       disappend = `<p style="color:${stylesObj.color}">`+disappend+`</p>`;
-    }
+    
    
   }
 
