@@ -1826,19 +1826,19 @@ function readStoryObj(storyContainer,storyObj){
   for(let j=0; j<storyObj.length ; j++){
 
     let disappend = storyObj[j].content;
-    let typeofappend = storyObj[i].type;
+    let typeofappend = storyObj[j].type;
 
     if(typeofappend==="para"){
 
      // appendedTest = appendedTest+disappend;
       disappend = `<p>`+disappend+`</p>`;
-      disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[i].styles);
+      disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[j].styles);
 
 
     }else if(typeofappend==="linky"){
 
-      disappend = `<a href="${storyObj[i].styles.href}">`+disappend+`</a>`;
-      disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[i].styles);
+      disappend = `<a href="${storyObj[j].styles.href}">`+disappend+`</a>`;
+      disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[j].styles);
 
     }else if(typeofappend==="imgdata"){
 
