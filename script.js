@@ -1189,7 +1189,7 @@ function toggleStorySelectStyle() {
     filename.style.textOverflow = "unset";
     filename.style.overflow = "auto";
     filename.style.whiteSpace = "normal";
-    
+
     parent.appendChild(storyContClone);
     this.classList.add("storyhref2selected");
 
@@ -1201,6 +1201,14 @@ function removeFileSelectClicks () {
 
   myClickableFileHrefs.forEach(element => {
     element.removeEventListener("click",toggleFileSelectStyle,false)
+  })
+}
+
+function removeStorySelectClicks () {
+  let myClickableStoryHrefs = document.querySelectorAll(".postpreview");
+
+  myClickableStoryHrefs.forEach(element => {
+    element.removeEventListener("click",toggleStorySelectStyle,false)
   })
 }
 
@@ -1244,6 +1252,7 @@ function customPopUpFunc(popupEle,phrase,action) {
 
 function myResetFuncs(){
 removeFileSelectClicks();
+removeStorySelectClicks();
 toggleFileSelectStyleOff();
 
 }
