@@ -1734,6 +1734,13 @@ function setupForStoryView() {
 
   localVar.newHtml = document.querySelectorAll(".mygenericpage")[0];
   localVar.columnHtml = document.querySelectorAll(".mycolumns")[1];
+
+  let parent = document.querySelectorAll(".cpancontentcont")[0];
+
+  parent.innerHTML = "";
+
+  butClone.innerHTML = `Please click the stories/posts you want to read.`;
+  butClone.style.height = "auto";
   
 
   let stories = document.querySelectorAll(".postpreview");
