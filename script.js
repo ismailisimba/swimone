@@ -224,6 +224,14 @@ async function hailTheServerOnAllChannels(action,value) {
       startHailing(myObj,action,genericPrintResponse);
     });
 
+  }else if(action==="deleteStories"){
+    let data = await bundleMyData(action,value).then(()=>{
+      let myObj = bundleTokenAfter(value);
+      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
+     //console.log(myObj);
+     customPopUpFunc(popUp,"Deleting","fullsteamahead");
+      startHailing(myObj,action,genericPrintResponse);
+    });
   }
 
 
@@ -265,6 +273,8 @@ async function bundleMyData(action,value) {
   }else if(action==="uploadStory"){
    // data = updateCloudObj("story",value);
 
+  }else if (action==="deleteStories"){
+    data = updateCloudObj("deleteStories",{});
   }
 return data;
 }
@@ -943,7 +953,27 @@ if(context==="images"){
   data = localVar.cloudObj.contentObj.contentObj.delete;
   //console.log(data)
   
-}else if(context==="story"){
+}else if(context==="deleteStories"){
+  let copy = localVar.cloudObj.contentObj.contentObj.delete[0];
+  let itemsToDel = document.querySelectorAll(".cpancontentcont")[0];
+  itemsToDel = itemsToDel.querySelectorAll(".fileListItemCont");
+  localVar.cloudObj.contentObj.contentObj.delete = [];
+
+  for(let i = 0 ; i < itemsToDel.length ; i++){
+
+    let tempObj = JSON.parse(JSON.stringify(copy));
+
+    tempObj.type =  "story";
+    tempObj.id =  itemsToDel[i].querySelectorAll(".idhref")[0].innerText;
+
+ //   console.log(data.length);
+
+ localVar.cloudObj.contentObj.contentObj.delete.push(tempObj);
+
+  }
+
+  data = localVar.cloudObj.contentObj.contentObj.delete;
+  //console.log(data)
 
   
 
@@ -1236,6 +1266,12 @@ function removeSelectedStoryFromCpan(parent,fileParentNode){
 function sendDeletionsToServer () {
   let token = getToken();
   hailTheServerOnAllChannels("delete",token);
+
+}
+
+function sendDeletionsToServerToo () {
+  let token = getToken();
+  hailTheServerOnAllChannels("deleteStories",token);
 
 }
 
