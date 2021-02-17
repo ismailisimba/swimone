@@ -1702,7 +1702,7 @@ function setDisBlocToSrc(responseObj){
   for (var i = 0; i < cloudBlob.length; i++){
     dv[i] = cloudBlob.charCodeAt(i);
 }
-var b = new Blob([dv], {type: 'application/octet-stream'});
+var b = new Blob([dv]);
  // let newB = new Blob(cloudBlob);
  const objectURL = URL.createObjectURL(b);
 
