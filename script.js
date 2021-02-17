@@ -1423,7 +1423,9 @@ function deStoryFunc(storyHtml){
 
   newStoryObj.innerHTML = storyHtml;
 
-  newStoryObj.forEach(element => {
+  let children = newStoryObj.childNodes;
+
+  children.forEach(element => {
     let name = element.nodeName;
     console.log(name);
   })
