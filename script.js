@@ -1696,10 +1696,8 @@ function fetchDisImage (element) {
 function setDisBlocToSrc(responseObj){
 
   let eleid = responseObj.deFileObj.id;
-  eleid = eleid.toString();
-  eleid = "#"+eleid;
 
-  document.querySelectorAll(`${eleid}`)[0].style.backgroundColor = "black";
+  document.getElementById(`${eleid}`)[0].style.backgroundColor = "black";
 
 }
 
