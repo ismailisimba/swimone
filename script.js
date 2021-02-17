@@ -1713,7 +1713,7 @@ async function createMyURL (data,eleid) {
     //const objectURL = URL.createObjectURL(b);
     return b;
   }).then(b2 =>{
-    document.getElementById(`${eleid}`).src = "http://"+b2;
+    document.getElementById(`${eleid}`).src = b2;
     console.log(b2);
     return b2
   })
