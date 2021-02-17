@@ -1696,8 +1696,11 @@ function fetchDisImage (element) {
 function setDisBlocToSrc(responseObj){
 
   let eleid = responseObj.deFileObj.id;
+  let cloudBlob = responseObj.deFileObj.data;
+  cloudBlob = atob(cloudBlob);
+  const objectURL = URL.createObjectURL(cloudBlob);
 
-  document.getElementById(`${eleid}`).style.backgroundColor = "black";
+  document.getElementById(`${eleid}`).src = objectURL;
 
 }
 
