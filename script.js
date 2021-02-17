@@ -1419,11 +1419,16 @@ function fillUpSiteMapInfo(responseObj){
 
 function deStoryFunc(storyHtml){
 
-  let newStoryObj = document.createElement("div");
+  let tempDivObj = document.createElement("div");
+  let newStoryObj = {};
+  newStoryObj["myHtml"] = "";
+  newStoryObj["myImages"] = [];
 
-  newStoryObj.innerHTML = storyHtml;
+  let imgObj = {id:"",data:"",mime:""};
 
-  let children = newStoryObj.childNodes;
+  tempDivObj.innerHTML = storyHtml;
+
+  let children = tempDivObj.childNodes;
   let imgindex = 0;
 
   children.forEach(element => {
@@ -1440,21 +1445,24 @@ function deStoryFunc(storyHtml){
 
         }else {
 
-            let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
+          let copy = JSON.parse(JSON.stringify(imgObj));
+
+        let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
         let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
 
         let newArr = child.src.split(",");
-        let imgdata = newArr[1];
-        let imgmime = newArr[0].split(";")[0];
-        imgmime = imgmime.split(":")[1];
+        copy.data = newArr[1];
+        copy.mime = newArr[0].split(";")[0];
+        copy.mime = copy.mime.split(":")[1];
 
-        let imgid = myDate+hour+minute+second+document.getElementById("editposttit").value+imgindex
+        copy.id = myDate+hour+minute+second+document.getElementById("editposttit").value+imgindex
 
         
-          console.log(imgid);
           child.src = "https://ismizo.com/resources/icons/loading.png";
-          child.id = imgid;
-          console.log(imgmime);
+          child.id = copy.id;
+
+          newStoryObj.myImages.push(copy);
+          
         
         imgindex++;
 
@@ -1464,8 +1472,12 @@ function deStoryFunc(storyHtml){
       
       }
     })
+
+  
    
   })
+
+  newStoryObj.myHtml = tempDivObj.innerHTML;
   
 
 
@@ -1473,7 +1485,7 @@ function deStoryFunc(storyHtml){
   console.log(newStoryObj);
   
 
-   localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj.innerHTML;
+   localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj;
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].title = document.getElementById("editposttit").value;
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].description = document.getElementById("descrtit").value;
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].type = "draft";
