@@ -1420,7 +1420,7 @@ function fillUpSiteMapInfo(responseObj){
 function deStoryFunc(storyObj){
 
   let customObj = document.querySelectorAll(".ql-editor")[0]
-  //let myText =customObj.innerHTML;
+  let myText =customObj.innerHTML;
   let newStoryObj = [];
   let tempVal = [];
   let numOfObjects = storyObj.length;
@@ -1429,6 +1429,7 @@ function deStoryFunc(storyObj){
 
   //myText = myText.toString();
   console.log(storyObj);
+  console.log(myText);
 
   for(let i = 0; i < numOfObjects ; i++){
 
@@ -1465,7 +1466,7 @@ function deStoryFunc(storyObj){
 
     let token = getToken();
     hailTheServerOnAllChannels("uploadStory",token);
-    console.log(newStoryObj);
+    
 }
 
 function readSupportedStyles(myObj,contentObj,i){
