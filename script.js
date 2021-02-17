@@ -1697,11 +1697,11 @@ function setDisBlocToSrc(responseObj){
 
   let eleid = responseObj.deFileObj.id;
   let cloudBlob = responseObj.deFileObj.data;
-  cloudBlob = atob(cloudBlob);
-  //let newB = new Blob(cloudBlob);
- // const objectURL = URL.createObjectURL(newB);
+ // cloudBlob = atob(cloudBlob);
+  let newB = new Blob(cloudBlob);
+  const objectURL = URL.createObjectURL(newB);
 
-//  document.getElementById(`${eleid}`).src = objectURL;
+document.getElementById(`${eleid}`).src = objectURL;
 
 console.log(cloudBlob);
 
