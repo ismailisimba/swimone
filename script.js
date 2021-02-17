@@ -1449,6 +1449,7 @@ function deStoryFunc(storyHtml){
 
         let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
         let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
+        console.log(child.src);
 
         let newArr = child.src.split(",");
         copy.data = newArr[1];
@@ -1713,7 +1714,7 @@ async function createMyURL (data,eleid) {
     //const objectURL = URL.createObjectURL(b);
     return b;
   }).then(b2 =>{
-    document.getElementById(`${eleid}`).src = b2;
+    document.getElementById(`${eleid}`).src = "";
     console.log(b2);
     return b2
   })
