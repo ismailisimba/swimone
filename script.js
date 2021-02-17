@@ -1446,7 +1446,7 @@ function deStoryFunc(storyObj){
      
     }else if(typeOfThisInsert === "string"){
       
-      console.log(storyObj[i].insert);
+      console.log(storyObj[i].insert.length);
       newStoryObj[i] = extractLinkAndText(storyObj[i],newStoryObj[i]);
       newStoryObj[i] = readSupportedStyles(storyObj,newStoryObj,i);
     }
