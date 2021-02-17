@@ -1432,7 +1432,7 @@ function deStoryFunc(storyHtml){
     names.forEach(child=>{
       
       if(child.nodeName==="IMG"){
-        console.log(child.width);
+        console.log(child.src.split(":")[0]);
         let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
         let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
 
