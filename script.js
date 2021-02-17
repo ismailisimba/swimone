@@ -1681,8 +1681,14 @@ function readStoryObj(storyContainer,storyObj){
 function fetchDisImage (element) {
 
   let deId = {id:element.id};
+  let contextObject = JSON.parse(JSON.stringify(paraTemplate));
 
-  startHailing(deId,"quickfetch",setDisBlocToSrc);
+  contextObject.params[0]["action"] = "later...";
+  contextObject.params[0]["token"] = "wHaT tOkEn!";
+  contextObject.params[0]["dataObj"] = deId;
+
+
+  startHailing(contextObject,"quickfetch",setDisBlocToSrc);
 
 
 }
