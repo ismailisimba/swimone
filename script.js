@@ -1434,6 +1434,7 @@ function deStoryFunc(storyHtml){
         let newArr = child.src.split(",");
         let imgdata = newArr[1];
         let imgmime = newArr[0].split(";")[0];
+        imgmime = imgmime.split(":")[1];
 
         if(newArr.length>1){
           console.log(imgdata);
