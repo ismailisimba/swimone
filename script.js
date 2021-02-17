@@ -1245,6 +1245,7 @@ function removeStorySelectClicks () {
 
   myClickableStoryHrefs.forEach(element => {
     element.removeEventListener("click",toggleStorySelectStyle,false)
+    element.removeEventListener("click",showStoryReadPage,false)
   })
 }
 
