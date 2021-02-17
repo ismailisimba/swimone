@@ -1491,7 +1491,7 @@ function deStoryFunc(storyHtml){
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].type = "draft";
 
     let token = getToken();
-  //  hailTheServerOnAllChannels("uploadStory",token);
+  hailTheServerOnAllChannels("uploadStory",token);
     
 }
 
