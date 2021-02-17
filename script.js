@@ -1891,7 +1891,7 @@ function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type,storyObj,j){
 
 
   if(type==="para"){
-  //disappend = disappend + disappend
+  disappend = swapTheWeirdEnterSymbol(disappend);
     // appendedTest = appendedTest+disappend;
    }else if(type==="linky"){
 
@@ -1910,3 +1910,8 @@ function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type,storyObj,j){
 
   return disappend
 };
+
+function swapTheWeirdEnterSymbol(disappend){
+  disappend.replace("↵","<br><br>");
+  return disappend;
+}
