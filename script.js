@@ -1417,49 +1417,20 @@ function fillUpSiteMapInfo(responseObj){
   
 }
 
-function deStoryFunc(storyObj){
+function deStoryFunc(storyHtml){
 
-  let customObj = document.querySelectorAll(".ql-editor")[0]
-  let myText =customObj.innerHTML;
-  let newStoryObj = [];
-  let tempVal = [];
-  let numOfObjects = storyObj.length;
+  let newStoryObj = document.createElement("div");
 
-  newStoryObj = bundleStoryContentObj(newStoryObj);
+  newStoryObj.innerHTML = storyHtml;
+  
+
 
   //myText = myText.toString();
-  console.log(storyObj);
-  console.log(myText);
+  console.log(storyHtml);
 
-  for(let i = 0; i < numOfObjects ; i++){
+  
 
-    newStoryObj.push(JSON.parse(JSON.stringify(newStoryObj[i])));
-
-     // tempVal.push(Object.keys(storyObj[i]));
-    let  typeOfThisInsert = storyObj[i].insert;
-    typeOfThisInsert = typeof typeOfThisInsert;
-
-    if(typeOfThisInsert === "object"){
-      //tempVal.push(extractImage(storyObj[i]),newStoryObj[i]) ;
-
-     // tempVal.push(extractImage(storyObj[i]),newStoryObj[i+1]) ;
-     newStoryObj[i] = extractImage(storyObj[i],newStoryObj[i]);
-     
-    }else if(typeOfThisInsert === "string"){
-      
-     
-      newStoryObj[i] = extractLinkAndText(storyObj[i],newStoryObj[i]);
-      newStoryObj[i] = readSupportedStyles(storyObj,newStoryObj,i);
-    }
-   // tempVal.push(typeOfThisInsert);
-   tempVal.push(newStoryObj[i]);
-  }
-
-  newStoryObj = tempVal;
-  tempVal = null;
-
-
-   localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj;
+   localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj.innerHTML;
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].title = document.getElementById("editposttit").value;
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].description = document.getElementById("descrtit").value;
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].type = "draft";
@@ -1469,104 +1440,6 @@ function deStoryFunc(storyObj){
     
 }
 
-function readSupportedStyles(myObj,contentObj,i){
-    let myAttrib = Object.keys(myObj[i]).length;
-    let typeofinsert = null;
-    
-    let myInsert = myObj[i].insert.toString();
-    let lengthofinsert = myInsert.length;
-
-    let heading = null;
-      let color = null;
-      let bold = null;
-      let italic = null;
-      let underline = null;
-
-    if(myAttrib>1){
-      typeofinsert = lengthofinsert;
-      //contentObj.styles.href = typeoflink;
-      heading = myObj[i].attributes.header;
-      color = myObj[i].attributes.color;
-      bold = myObj[i].attributes.bold;
-      italic = myObj[i].attributes.italic;
-      underline = myObj[i].attributes.underline;
-    }
-
-
-    
-
-      //contentObj[i].styles.href = myObj[i].attributes.header;
-      
-
-    if(typeofinsert==1&&myAttrib>1){
-      
-
-      if(heading!==null&&heading!==undefined){
-      contentObj[i] = addStyle("heading",myObj,contentObj,i);
-      }
-
-      
-
-    }else if(typeofinsert>1&&myAttrib>1){
-      if(color!==null&&color!==undefined){
-        contentObj[i] = addStyle("color",myObj,contentObj,i);
-       }
-
-       if(bold!==null&&bold!==undefined){
-        contentObj[i] = addStyle("bold",myObj,contentObj,i);
-       }
-
-       if(italic!==null&&italic!==undefined){
-        contentObj[i] = addStyle("italic",myObj,contentObj,i);
-       }
-
-       if(underline!==null&&underline!==undefined){
-        contentObj[i] = addStyle("underline",myObj,contentObj,i);
-       }
-    }
-
-    return contentObj[i];
-
-};
-
-
-
-function addStyle(style,myObj,contentObj,i){
-
-  if(style==="heading"){
-    let thisInsert = myObj[i].insert;
-    let lengthOfInsert = thisInsert.length;
-    let prevVal = 0;
-    prevVal = i-1;
-
-    if(lengthOfInsert<=1&&prevVal>=0){
-
-      contentObj[i-1].styles.heading = myObj[i].attributes.header;
-
-    }else{
-
-    }
-  }else if(style==="color"){
-    
-      contentObj[i].styles.color = myObj[i].attributes.color;
-
-  }else if (style ==="bold"){
-
-    contentObj[i].styles.bold = myObj[i].attributes.bold;
-
-  }else if(style === "italic"){
-
-    contentObj[i].styles.italic = myObj[i].attributes.italic;
-
-  }else if(style==="underline"){
-
-    contentObj[i].styles.underline = myObj[i].attributes.underline;
-
-  }
-
-  return contentObj[i];
-
-}
 
 
 
@@ -1604,56 +1477,8 @@ function extractImage(myObj,contentObj) {
  return contentObj;
 };
 
-function extractLinkAndText(myObj,contentObj){
-    let myAttrib = Object.keys(myObj).length;
-    let typeoflink = null;
-    
-    let myInsert = myObj.insert.toString();
-    let lengthofinsert = myObj.insert.length;
-
-    if(myAttrib>1){
-      typeoflink = typeof myObj.attributes.link;
-      //contentObj.styles.href = typeoflink;
-    }
-
-    if(typeoflink==="string"){
-      contentObj.content = myObj.insert;
-      contentObj.type = "linky";
-      contentObj.styles.href = myObj.attributes.link;
-    }else if(lengthofinsert==1){
-      //myObj.insert.includes("↵")&&lengthofinsert==1
-      console.log("storyObj[i].insert.length");
-      contentObj.content = "<br><br>";
-      contentObj.type = "para";
-    }else if(myInsert.length>1){
-      contentObj.content = myObj.insert;
-      contentObj.type = "para";
-    }
-
-    return contentObj
-}
 
 
-function bundleStoryContentObj(bigArr){
-
-  let obj = {};
-
-  obj["type"] = "none";
-  obj["content"] = "none";
-  obj["styles"] = {};
-  obj.styles["href"] = "none";
-  obj.styles["heading"] = "none";
-  obj.styles["color"] = "none";
-  obj.styles["width"] = "none";
-  obj.styles["bold"] = "none";
-  obj.styles["italic"] = "none";
-  obj.styles["underline"] = "none";
-
-  bigArr[0] = obj;
-
-  return bigArr;
-
-}
 
 
 function  fillUpStories(responseObj) {
