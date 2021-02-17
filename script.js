@@ -1710,8 +1710,8 @@ async function createMyURL (data,eleid) {
     //let newB = new Blob(blob);
     return blob;
   }).then(b =>{
-    const objectURL = URL.createObjectURL(b);
-    return objectURL;
+    //const objectURL = URL.createObjectURL(b);
+    return b;
   }).then(b2 =>{
     document.getElementById(`${eleid}`).src = "http://"+b2;
     console.log(b2);
