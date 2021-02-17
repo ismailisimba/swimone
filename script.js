@@ -1446,10 +1446,10 @@ function deStoryFunc(storyHtml){
           console.log(imgid);
           console.log(imgmime);
         }
-       
+        imgindex++;
       }
     })
-    imgindex++;
+   
   })
   
 
