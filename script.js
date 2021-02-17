@@ -1432,10 +1432,12 @@ function deStoryFunc(storyHtml){
       if(child.nodeName==="IMG"){
 
         let newArr = child.src.split(",");
+        let imgdata = newArr[1];
+        let imgmime = newArr[0].split(";")[0];
 
         if(newArr.length>1){
-          console.log(newArr[1]);
-          console.log(newArr[0]);
+          console.log(imgdata);
+          console.log(imgmime);
         }
        
       }
