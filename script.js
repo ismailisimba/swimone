@@ -1430,8 +1430,9 @@ function deStoryFunc(storyHtml){
     let names = element.childNodes;
 
     names.forEach(child=>{
-      if(child.nodeName==="IMG"&& child.width.length>1 ){
-
+      
+      if(child.nodeName==="IMG"){
+        console.log(child.width);
         let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
         let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
 
