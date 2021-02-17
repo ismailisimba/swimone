@@ -1430,7 +1430,13 @@ function deStoryFunc(storyHtml){
 
     names.forEach(child=>{
       if(child.nodeName==="IMG"){
-        console.log(child.src);
+
+        let newArr = child.src.split(",");
+
+        if(newArr.length>1){
+
+        }
+       
       }
     })
   })
@@ -1438,7 +1444,7 @@ function deStoryFunc(storyHtml){
 
 
 
-
+  console.log(newStoryObj);
   
 
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj.innerHTML;
@@ -1447,7 +1453,7 @@ function deStoryFunc(storyHtml){
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].type = "draft";
 
     let token = getToken();
-    hailTheServerOnAllChannels("uploadStory",token);
+  //  hailTheServerOnAllChannels("uploadStory",token);
     
 }
 
@@ -1456,37 +1462,7 @@ function deStoryFunc(storyHtml){
 
 
 
-function extractImage(myObj,contentObj) {
 
-  let myAttrib = Object.keys(myObj).length;
-  let typeofwidth = null;
-  if(myAttrib>1){
-    typeofwidth = typeof myObj.attributes.width;
-  }
-  
-  let typeofdataimage = typeof myObj.insert.image
-
-  if(myAttrib>1&&typeofwidth==="string"){
-    
-   
-
-    if(typeofwidth==="string"){
-      contentObj.content = myObj.insert.image;
-      contentObj.type = "imglink";
-      contentObj.styles.width = myObj.attributes.width;
-    }
-
-  }else if(typeofdataimage==="string"){
-
-    contentObj.content = myObj.insert.image;
-    contentObj.type = "imgdata";
-  }
-
- 
-
-  
- return contentObj;
-};
 
 
 
