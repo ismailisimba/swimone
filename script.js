@@ -1669,10 +1669,25 @@ function readStoryObj(storyContainer,storyObj){
   images.forEach(element => {
     if(element.src==="https://ismizo.com/resources/icons/loading.png"){
       console.log("we have at least one...!");
+      fetchDisImage(element);
     }
   })
 
  
 
 };
+
+
+function fetchDisImage (element) {
+
+  let deId = {id:element.id};
+
+  startHailing(deId,"quickfetch",setDisBlocToSrc);
+
+
+}
+
+function setDisBlocToSrc(responseObj){
+
+}
 
