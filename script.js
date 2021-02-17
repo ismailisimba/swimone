@@ -1430,7 +1430,7 @@ function deStoryFunc(storyHtml){
 
     names.forEach(child=>{
       if(child.nodeName==="IMG"){
-        console.log(child.innerHTML);
+        console.log(child.src);
       }
     })
   })
