@@ -1440,21 +1440,23 @@ function deStoryFunc(storyHtml){
 
         }else {
 
-          let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
-          let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
-  
-          let newArr = child.src.split(",");
-          let imgdata = newArr[1];
-          let imgmime = newArr[0].split(";")[0];
-          imgmime = imgmime.split(":")[1];
-  
-          let imgid = myDate+hour+minute+second+document.getElementById("editposttit").value+imgindex
-  
-          if(newArr.length>1){
-            console.log(imgid);
-            console.log(imgmime);
-          }
-          imgindex++;
+            let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
+        let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
+
+        let newArr = child.src.split(",");
+        let imgdata = newArr[1];
+        let imgmime = newArr[0].split(";")[0];
+        imgmime = imgmime.split(":")[1];
+
+        let imgid = myDate+hour+minute+second+document.getElementById("editposttit").value+imgindex
+
+        
+          console.log(imgid);
+          child.src = "https://ismizo.com/resources/icons/loading.png";
+          child.id = imgid;
+          console.log(imgmime);
+        
+        imgindex++;
 
 
         }
