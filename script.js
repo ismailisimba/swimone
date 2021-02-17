@@ -1704,9 +1704,9 @@ function setDisBlocToSrc(responseObj){
 }
 var b = new Blob([dv], {type: 'application/octet-stream'});
  // let newB = new Blob(cloudBlob);
- // const objectURL = URL.createObjectURL(newB);
+ const objectURL = URL.createObjectURL(b);
 
-//document.getElementById(`${eleid}`).src = objectURL;
+document.getElementById(`${eleid}`).src = objectURL;
 
 console.log(b);
 
