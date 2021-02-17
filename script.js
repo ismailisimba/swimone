@@ -1446,7 +1446,7 @@ function deStoryFunc(storyObj){
      
     }else if(typeOfThisInsert === "string"){
       
-      console.log(storyObj[i].insert.length);
+     
       newStoryObj[i] = extractLinkAndText(storyObj[i],newStoryObj[i]);
       newStoryObj[i] = readSupportedStyles(storyObj,newStoryObj,i);
     }
@@ -1465,6 +1465,7 @@ function deStoryFunc(storyObj){
 
     let token = getToken();
     hailTheServerOnAllChannels("uploadStory",token);
+    console.log(newStoryObj);
 }
 
 function readSupportedStyles(myObj,contentObj,i){
@@ -1620,6 +1621,7 @@ function extractLinkAndText(myObj,contentObj){
       contentObj.styles.href = myObj.attributes.link;
     }else if(lengthofinsert==1){
       //myObj.insert.includes("↵")&&lengthofinsert==1
+      console.log("storyObj[i].insert.length");
       contentObj.content = "<br><br>";
       contentObj.type = "para";
     }else if(myInsert.length>1){
