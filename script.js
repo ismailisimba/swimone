@@ -1697,13 +1697,18 @@ function setDisBlocToSrc(responseObj){
 
   let eleid = responseObj.deFileObj.id;
   let cloudBlob = responseObj.deFileObj.data;
- // cloudBlob = atob(cloudBlob);
-  let newB = new Blob(cloudBlob);
-  const objectURL = URL.createObjectURL(newB);
+  cloudBlob = atob(cloudBlob);
+  var dv = new Uint16Array(cloudBlob.length);
+  for (var i = 0; i < cloudBlob.length; i++){
+    dv[i] = cloudBlob.charCodeAt(i);
+}
+var b = new Blob([dv], {type: 'application/octet-stream'});
+ // let newB = new Blob(cloudBlob);
+ // const objectURL = URL.createObjectURL(newB);
 
-document.getElementById(`${eleid}`).src = objectURL;
+//document.getElementById(`${eleid}`).src = objectURL;
 
-console.log(cloudBlob);
+console.log(b);
 
 }
 
