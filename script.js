@@ -1422,11 +1422,15 @@ function deStoryFunc(storyHtml){
   let newStoryObj = document.createElement("div");
 
   newStoryObj.innerHTML = storyHtml;
+
+  newStoryObj.forEach(element => {
+    let name = element.nodeName;
+    console.log(name);
+  })
   
 
 
-  //myText = myText.toString();
-  console.log(storyHtml);
+
 
   
 
