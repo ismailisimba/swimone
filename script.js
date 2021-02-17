@@ -1482,7 +1482,7 @@ function deStoryFunc(storyHtml){
 
 
 
-  console.log(newStoryObj);
+  
   
 
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj;
@@ -1653,7 +1653,7 @@ function populateStory(storyObj){
   let titleDiv = dePage.querySelectorAll("h1")[0];
   let storyContainer = dePage.querySelectorAll("div")[0];
 
-  readStoryObj(storyContainer,storyObj.storyObj);
+  readStoryObj(storyContainer,storyObj);
 
   titleDiv.innerHTML = storyObj.title;
 
@@ -1662,98 +1662,9 @@ function populateStory(storyObj){
 
 function readStoryObj(storyContainer,storyObj){
 
-  let appendedTest = "<p>";
+  storyContainer.innerHTML = storyObj.storyObj.myHtml;
 
-  storyContainer.innerHTML = "";
-
-  for(let j=0; j<storyObj.length ; j++){
-
-    let disappend = storyObj[j].content;
-    let typeofappend = storyObj[j].type;
-
-
-      
-    disappend = applyHtmlStylesToMyStoryObj(disappend,storyObj[j].styles,typeofappend,storyObj,j);
-    
-
-      appendedTest = appendedTest+disappend;
-
-      if(j==storyObj.length-1){
-        appendedTest = appendedTest+"</p>";
-      }
-
-  }
-
-  storyContainer.innerHTML = appendedTest;
-
-};
-
-function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type,storyObj,j){
-
-  if(stylesObj.bold!=="none"){
-    disappend = `<strong>`+disappend+`</strong>`;
-  }
-
-  if(stylesObj.color!=="none"){
-  
-      disappend = `<span style="color:${stylesObj.color}">`+disappend+`</span>`;
-    
-   
-  }
-
-  if(stylesObj.heading!=="none"){
-
-      if(stylesObj.heading==1){
-        disappend = `<h2>`+disappend+`</h2>`;
-
-      }else if(stylesObj.heading==2){
-
-        disappend = `<h3>`+disappend+`</h3>`;
-
-      }else if(stylesObj.heading==3){
-        disappend = `<h4>`+disappend+`</h4>`;
-
-      }else if(stylesObj.heading==4){
-
-        disappend = `<strong>`+disappend+`</strong>`;
-
-      }else{
-        disappend = `<strong>`+disappend+`</strong>`;
-      }
-    
-  }
-
-  if(stylesObj.italic!=="none"){
-    disappend = `<em>`+disappend+`</em>`;
-  }
-
-  if(stylesObj.underline!=="none"){
-    disappend = `<span style="text-decoration:underline">`+disappend+`</span>`;
-  }
-
-
-  if(type==="para"){
-  disappend = swapTheWeirdEnterSymbol(disappend);
-    // appendedTest = appendedTest+disappend;
-   }else if(type==="linky"){
-
-     disappend = `<a href="${storyObj[j].styles.href}">`+disappend+`</a>`;
-     
-
-   }else if(type==="imgdata"){
-
-   }else if(type==="imglink"){
-
-     disappend = `<img src="${disappend}" width="85%" height="auto" style="min-width:240px; max-width:569px;">`;
  
-   }
 
-
-
-  return disappend
 };
 
-function swapTheWeirdEnterSymbol(disappend){
-  disappend.replace("↵","<br><br>");
-  return disappend;
-}
