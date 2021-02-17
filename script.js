@@ -1693,22 +1693,39 @@ function fetchDisImage (element) {
 
 }
 
-function setDisBlocToSrc(responseObj){
+async function setDisBlocToSrc(responseObj){
 
   let eleid = responseObj.deFileObj.id;
   let cloudBlob = responseObj.deFileObj.data;
   cloudBlob = atob(cloudBlob);
-  var dv = new Uint16Array(cloudBlob.length);
-  for (var i = 0; i < cloudBlob.length; i++){
-    dv[i] = cloudBlob.charCodeAt(i);
-}
-var b = new Blob([dv]);
- // let newB = new Blob(cloudBlob);
- const objectURL = URL.createObjectURL(b);
-
-document.getElementById(`${eleid}`).src = objectURL;
+  var b = await createMyURL(cloudBlob);
 
 console.log(b);
 
+}
+
+async function createMyURL (data) {
+
+  let myURl = await to16arr(data).then(blob => {
+    let newB = new Blob(blob);
+    return newB;
+  }).then(b =>{
+    const objectURL = URL.createObjectURL(b);
+    return objectURL;
+  }).then(b2 =>{
+    document.getElementById(`${eleid}`).src = b2;
+    return b2
+  })
+
+}
+
+async function to16arr(data){
+  var dv = new Uint16Array(data.length);
+
+  for (var i = 0; i < data.length; i++){
+    dv[i] = data.charCodeAt(i);
+}
+
+return dv;
 }
 
