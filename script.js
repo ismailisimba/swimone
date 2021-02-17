@@ -1698,13 +1698,13 @@ async function setDisBlocToSrc(responseObj){
   let eleid = responseObj.deFileObj.id;
   let cloudBlob = responseObj.deFileObj.data;
   cloudBlob = atob(cloudBlob);
-  var b = await createMyURL(cloudBlob);
+  var b = await createMyURL(cloudBlob,eleid);
 
 console.log(b);
 
 }
 
-async function createMyURL (data) {
+async function createMyURL (data,eleid) {
 
   let myURl = await to16arr(data).then(blob => {
     let newB = new Blob(blob);
