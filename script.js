@@ -106,14 +106,7 @@ function checkTheURL () {
 
 
 function onSignIn(googleUser) {
- /*  var profile = googleUser.getBasicProfile();
- console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
- 
-  console.log('Token: ' + googleUser.getAuthResponse().id_token);
-   */
+
   let signInBut = document.querySelectorAll(".g-signin2")[0];
   signInBut.style.visibility = "collapse";
   signInBut.style.width = "0px";
@@ -211,7 +204,7 @@ async function hailTheServerOnAllChannels(action,value) {
     let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
-     //console.log(myObj);
+     
      customPopUpFunc(popUp,"Deleting","fullsteamahead");
       startHailing(myObj,action,genericPrintResponse);
     });
@@ -231,7 +224,7 @@ async function hailTheServerOnAllChannels(action,value) {
     let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
-     //console.log(myObj);
+    
      customPopUpFunc(popUp,"Deleting","fullsteamahead");
       startHailing(myObj,action,genericPrintResponse);
     });
@@ -264,14 +257,14 @@ async function bundleMyData(action,value) {
       data = updateCloudObj("images",data);
       return data;
     });
-    //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
+  
     
   }else if(action==="delete"){
     
    data = updateCloudObj("deleteFiles",{});
       
   
-    //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
+    
 
   }else if(action==="uploadStory"){
    // data = updateCloudObj("story",value);
@@ -333,7 +326,7 @@ function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
     location.reload();
-    console.log('User signed out.');
+    
   });
 }
 
@@ -854,7 +847,7 @@ function addImageUpoadFuncs(){
     hailTheServerOnAllChannels("uploadFiles",token);
   }
   
- // console.log(myText);
+ 
 }
 
 async function bundleFilesForUpload(){
@@ -912,7 +905,7 @@ function updateCloudObj(context,data){
   
 
 if(context==="images"){
-  //console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
+
   let copy =  localVar.cloudObj.contentObj.contentObj.draft.images[0];
   localVar.cloudObj.contentObj.contentObj.draft.images = [];
   let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
@@ -928,13 +921,13 @@ if(context==="images"){
     tempObj.info.push({"mime":data[i].fileInfo.meme});
     tempObj.info.push({"timeObj":[{"myDate":myDate},{"hour":hour},{"minute":minute},{"second":second}]});
 
- //   console.log(data.length);
+ 
 
  localVar.cloudObj.contentObj.contentObj.draft.images.push(tempObj);
 
   }
 
-//  console.log(localVar.cloudObj.contentObj.contentObj.draft.images);
+
 }else if(context==="deleteFiles"){
   let copy = localVar.cloudObj.contentObj.contentObj.delete[0];
   let itemsToDel = document.querySelectorAll(".cpancontentcont")[0];
@@ -948,14 +941,14 @@ if(context==="images"){
     tempObj.type =  "file";
     tempObj.id =  itemsToDel[i].querySelectorAll(".idhref")[0].innerText;
 
- //   console.log(data.length);
+ 
 
  localVar.cloudObj.contentObj.contentObj.delete.push(tempObj);
 
   }
 
   data = localVar.cloudObj.contentObj.contentObj.delete;
-  //console.log(data)
+  
   
 }else if(context==="deleteStories"){
   let copy = localVar.cloudObj.contentObj.contentObj.delete[0];
@@ -970,14 +963,14 @@ if(context==="images"){
     tempObj.type =  "story";
     tempObj.id =  itemsToDel[i].querySelectorAll(".idhref")[0].innerText;
 
- //   console.log(data.length);
+
 
  localVar.cloudObj.contentObj.contentObj.delete.push(tempObj);
 
   }
 
   data = localVar.cloudObj.contentObj.contentObj.delete;
-  //console.log(data)
+  
 
   
 
@@ -1026,9 +1019,8 @@ function fillUpFiles(responseObj) {
 
 
 
- 
-//  console.log(numOfPages);
-  
+
+
 
 }
 
@@ -1295,7 +1287,6 @@ function customPopUpFunc(popupEle,phrase,action) {
     document.querySelectorAll(".mycolumns")[1].innerHTML = "";
     popupEle.style.visibility = "visible";
     deKid.innerText = phrase;
-   // console.log("bvsbdbv");
     document.querySelectorAll(".mycolumns")[1].appendChild(popupEle);
   }
 
@@ -1466,10 +1457,6 @@ function deStoryFunc(storyObj){
   newStoryObj = tempVal;
   tempVal = null;
 
-  // console.log(myText);
-  //console.log(storyObj);
-  // console.log(newStoryObj);
-   // console.log(newStoryObj);
 
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].storyObj = newStoryObj;
    localVar.cloudObj.contentObj.contentObj.draft.stories[0].title = document.getElementById("editposttit").value;
@@ -1633,8 +1620,6 @@ function extractLinkAndText(myObj,contentObj){
       contentObj.styles.href = myObj.attributes.link;
     }else if(lengthofinsert==1){
       //myObj.insert.includes("↵")&&lengthofinsert==1
-      console.log(myObj.insert.charAt(0));
-      console.log(myObj.insert);
       contentObj.content = "<br><br>";
       contentObj.type = "para";
     }else if(myInsert.length>1){
@@ -1770,7 +1755,7 @@ function showStoryReadPage() {
   
   localVar.columnHtml.replaceWith(dePage);
   addNewHtmlFuncs(storyid);
-  console.log(storyid);
+
 }
 
 function backToBackend (){
@@ -1789,7 +1774,7 @@ function addNewHtmlFuncs(storyid) {
     alert("Ooops there's been an error reading your post. Please report to ismaili.a.simba@gmail.com");
   }
 
-  console.log(searchResponse);
+ 
 };
 
 function searchStory(stories,storyid){
