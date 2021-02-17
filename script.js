@@ -1704,7 +1704,7 @@ async function setDisBlocToSrc(responseObj){
 
 async function createMyURL (data,eleid) {
 
-  //var buffer = await data.arrayBuffer();
+  data = new Blob(data);
 
   let myURl = await to16arr(data).then(b2 =>{
     document.getElementById(`${eleid}`).src = "http://"+b2;
