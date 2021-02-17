@@ -1714,6 +1714,7 @@ async function createMyURL (data,eleid) {
     return objectURL;
   }).then(b2 =>{
     document.getElementById(`${eleid}`).src = b2;
+    console.log(b2);
     return b2
   })
 
