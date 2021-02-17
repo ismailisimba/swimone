@@ -1664,6 +1664,14 @@ function readStoryObj(storyContainer,storyObj){
 
   storyContainer.innerHTML = storyObj.storyObj.myHtml;
 
+  let images = storyContainer.querySelectorAll("img");
+
+  images.forEach(element => {
+    if(element.src==="https://ismizo.com/resources/icons/loading.png"){
+      console.log("we have at least one...!");
+    }
+  })
+
  
 
 };
