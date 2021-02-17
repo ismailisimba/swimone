@@ -1707,8 +1707,8 @@ async function createMyURL (data,eleid) {
   //var buffer = await data.arrayBuffer();
 
   let myURl = await to16arr(data).then(blob => {
-    let newB = new Blob(blob);
-    return newB;
+    //let newB = new Blob(blob);
+    return blob;
   }).then(b =>{
     const objectURL = URL.createObjectURL(b);
     return objectURL;
