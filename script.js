@@ -1454,6 +1454,8 @@ function deStoryFunc(storyObj){
      newStoryObj[i] = extractImage(storyObj[i],newStoryObj[i]);
      
     }else if(typeOfThisInsert === "string"){
+      
+      console.log(storyObj[i].insert);
       newStoryObj[i] = extractLinkAndText(storyObj[i],newStoryObj[i]);
       newStoryObj[i] = readSupportedStyles(storyObj,newStoryObj,i);
     }
