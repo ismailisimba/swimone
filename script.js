@@ -1704,9 +1704,15 @@ async function setDisBlocToSrc(responseObj){
 
 async function createMyURL (data,eleid) {
 
-  data = new Blob(Array.from(data));
+  //var buffer = await data.arrayBuffer();
 
-  let myURl = await to16arr(data).then(b2 =>{
+  let myURl = await to16arr(data).then(blob => {
+    let newB = new Blob(blob);
+    return newB;
+  }).then(b =>{
+    const objectURL = URL.createObjectURL(b);
+    return objectURL;
+  }).then(b2 =>{
     document.getElementById(`${eleid}`).src = "http://"+b2;
     console.log(b2);
     return b2
@@ -1718,6 +1724,9 @@ async function createMyURL (data,eleid) {
 
 async function to16arr(data){
 
+  
+  var dv = new Uint16Array(data);
+  data = new Blob(dv);
 
     const toBinaryString2 = file => new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -1731,6 +1740,10 @@ async function to16arr(data){
   
     return parsedFile;
   }
+
+
+
+
 
 
 
