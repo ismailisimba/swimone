@@ -1697,7 +1697,7 @@ function setDisBlocToSrc(responseObj){
 
   let eleid = responseObj.deFileObj.id;
 
-  document.getElementById(`${eleid}`)[0].style.backgroundColor = "black";
+  document.getElementById(`${eleid}`).style.backgroundColor = "black";
 
 }
 
