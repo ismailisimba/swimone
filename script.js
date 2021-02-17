@@ -1890,7 +1890,7 @@ function applyHtmlStylesToMyStoryObj(disappend,stylesObj,type,storyObj,j){
 
 
   if(type==="para"){
-  disappend = disappend + disappend
+  //disappend = disappend + disappend
     // appendedTest = appendedTest+disappend;
    }else if(type==="linky"){
 
