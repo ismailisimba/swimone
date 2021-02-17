@@ -1424,6 +1424,7 @@ function deStoryFunc(storyHtml){
   newStoryObj.innerHTML = storyHtml;
 
   let children = newStoryObj.childNodes;
+  let imgindex = 0;
 
   children.forEach(element => {
     let names = element.childNodes;
@@ -1431,18 +1432,24 @@ function deStoryFunc(storyHtml){
     names.forEach(child=>{
       if(child.nodeName==="IMG"){
 
+        let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
+        let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
+
         let newArr = child.src.split(",");
         let imgdata = newArr[1];
         let imgmime = newArr[0].split(";")[0];
         imgmime = imgmime.split(":")[1];
 
+        let imgid = myDate+hour+minute+second+document.getElementById("editposttit").value+imgindex
+
         if(newArr.length>1){
-          console.log(imgdata);
+          console.log(imgid);
           console.log(imgmime);
         }
        
       }
     })
+    imgindex++;
   })
   
 
