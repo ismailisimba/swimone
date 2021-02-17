@@ -1426,8 +1426,13 @@ function deStoryFunc(storyHtml){
   let children = newStoryObj.childNodes;
 
   children.forEach(element => {
-    let name = element.nodeName;
-    console.log(name);
+    let names = element.childNodes;
+
+    names.forEach(child=>{
+      if(child.nodeName==="IMG"){
+        console.log(child.innerHTML);
+      }
+    })
   })
   
 
