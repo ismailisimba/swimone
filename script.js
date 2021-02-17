@@ -1706,13 +1706,7 @@ async function createMyURL (data,eleid) {
 
   //var buffer = await data.arrayBuffer();
 
-  let myURl = await to16arr(data).then(blob => {
-    let newB = new Blob(blob);
-    return newB;
-  }).then(b =>{
-    const objectURL = URL.createObjectURL(b);
-    return objectURL;
-  }).then(b2 =>{
+  let myURl = await to16arr(data).then(b2 =>{
     document.getElementById(`${eleid}`).src = "http://"+b2;
     console.log(b2);
     return b2
@@ -1723,12 +1717,20 @@ async function createMyURL (data,eleid) {
 }
 
 async function to16arr(data){
-  var dv = new Uint16Array(data.length);
 
-  for (var i = 0; i < data.length; i++){
-    dv[i] = data.charCodeAt(i);
-}
 
-return dv;
-}
+    const toBinaryString2 = file => new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file)
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+  });
+  
+  let parsedFile = null;
+  parsedFile =  await toBinaryString2(data);
+  
+    return parsedFile;
+  }
+
+
 
