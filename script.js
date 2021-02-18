@@ -1366,10 +1366,19 @@ function customPopUpFunc(popupEle,phrase,action) {
 function myResetFuncs(){
 removeFileSelectClicks();
 removeStorySelectClicks();
+removeAddToEditor();
 
 toggleFileSelectStyleOff();
 toggleStorySelectStyleOff()
 
+}
+
+function removeAddToEditor (){
+  let myClickableStoryHrefs = document.querySelectorAll(".postpreview");
+
+  myClickableStoryHrefs.forEach(element => {
+    element.removeEventListener("click",addStoryToEditor,false);
+  })
 }
 
 
