@@ -887,6 +887,10 @@ html button:hover {
 
 
 @media screen and (max-width: 1024px) {
+
+    .mystorycontainer p img {
+        width: 96% !important;
+    }
     
         .mygenericpage{
 
