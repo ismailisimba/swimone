@@ -1763,7 +1763,10 @@ function addStoryToEditor () {
 function addThisStoryToEditor(storyObj){
   let titleDiv = document.getElementById("editposttit") ;
   let descrDiv = document.getElementById("descrtit");
-  let storyContainer = document.querySelectorAll("ql-editor")[0];
+  let storyContainer = document.querySelectorAll(".ql-editor")[0];
+
+  document.getElementById("backendoxtitle2").click();
+  document.getElementById("backendoxtitle3").click();
 
   readStoryObj(storyContainer,storyObj);
 
