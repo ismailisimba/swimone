@@ -568,7 +568,7 @@ function fillContentMom(contentMom,context,numberOfBoxes){
     let boxHeight = 42;
     let myTextArr = ["View","Edit","Delete","Publish","Unpublish"];
 
-  sumOfHeight =  fillBoxes(contentMom,boxHeight,numberOfBoxes,myTextArr);
+  sumOfHeight =  fillBoxes(contentMom,boxHeight,5,myTextArr);
 
 
   }
@@ -707,6 +707,8 @@ function addPostListFuncs(cPanItem){
       setupForStoryDeletion();
     }else if(thisButtText==="View"){ 
       setupForStoryView(); 
+    }else if(thisButtText==="Edit"){
+      console.log(thisButtText);
     }
 
 
