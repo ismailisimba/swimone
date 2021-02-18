@@ -20,6 +20,7 @@ localVar["counters"] = {};
 localVar["columnHtml"] = "<p>Sorry, Something may have gone wrong!!?<p>";
 localVar["newHtml"] = "<p>Sorry, Something may have gone wrong!!?<p>";
 localVar.counters["currentAtCpan"] = 0
+localVar["thisEditToDel"] = "none";
 
 
 
@@ -1484,7 +1485,17 @@ function deStoryFunc(storyHtml){
   newStoryObj.myHtml = tempDivObj.innerHTML;
   
 
+  if(localVar.thisEditToDel!=="none"){
+    localVar.cloudObj.contentObj.contentObj.delete[0].id = localVar.thisEditToDel;
+    localVar.cloudObj.contentObj.contentObj.delete[0].type = "story";
+    let token = getToken();
+    let myObj = bundleTokenAfter(token);
+    myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
+    startHailing(myObj,"delete",function(responseObj){
+      console.log(responseObj);
+    });
 
+  }
 
   
   
@@ -1747,6 +1758,7 @@ function appendStoryToEditor() {
 function addStoryToEditor () {
 
   let storyid = this.querySelectorAll(".storyhref")[0].id;
+  localVar.thisEditToDel = storyid;
   let stories = localVar.cloudObj.contentObj.contentObj.published.stories
   let searchResponse = searchStory(stories,storyid);
 
