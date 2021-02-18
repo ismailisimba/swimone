@@ -710,6 +710,8 @@ html button:hover {
 
 }
 
+
+
 .mystorycontainer{
 
     display: flex;
@@ -717,6 +719,10 @@ html button:hover {
     justify-content: center;
     align-items: center;
     padding: 12px 36px;
+}
+
+.mystorycontainer .ql-align-center{
+    text-align: center !important;
 }
 
 .mystorycontainer p {
