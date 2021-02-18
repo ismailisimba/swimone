@@ -21,6 +21,7 @@ localVar["columnHtml"] = "<p>Sorry, Something may have gone wrong!!?<p>";
 localVar["newHtml"] = "<p>Sorry, Something may have gone wrong!!?<p>";
 localVar.counters["currentAtCpan"] = 0
 localVar["thisEditToDel"] = "none";
+localVar["publishStat"] = "none";
 
 
 
@@ -230,11 +231,15 @@ async function hailTheServerOnAllChannels(action,value) {
       startHailing(myObj,action,genericPrintResponse);
     });
   }else if(action==="updatePublish"){
+    let data = await bundleMyData(action,value).then(()=>{
+
+      
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
-    
+     
      customPopUpFunc(popUp,"Updating","fullsteamahead");
       startHailing(myObj,action,genericPrintResponse);
+    });
   
 
     
@@ -282,6 +287,8 @@ async function bundleMyData(action,value) {
 
   }else if (action==="deleteStories"){
     data = updateCloudObj("deleteStories",{});
+  }else if(action==="updatePublish"){
+    data = updateCloudObj("updatePublish",{});
   }
 return data;
 }
@@ -721,9 +728,10 @@ function addPostListFuncs(cPanItem){
     }else if(thisButtText==="Edit"){
       appendStoryToEditor();
     }else if(thisButtText==="Publish"){
+      setupForStoryPublishment("Publish");
 
     }else if(thisButtText==="Unpublish"){
-
+      setupForStoryPublishment("unPublish")
     }
 
 
@@ -992,6 +1000,26 @@ if(context==="images"){
   
 
 
+}else if(action==="updatePublish"){
+
+  let copy = localVar.cloudObj.contentObj.contentObj.delete[0];
+  let itemsToDel = document.querySelectorAll(".cpancontentcont")[0];
+  itemsToDel = itemsToDel.querySelectorAll(".fileListItemCont");
+  localVar.cloudObj.contentObj.contentObj.delete = [];
+
+  for(let i = 0 ; i < itemsToDel.length ; i++){
+
+    let tempObj = JSON.parse(JSON.stringify(copy));
+
+    tempObj.type =  "story";
+    tempObj["newUpdate"] = localVar.publishStat;
+    tempObj.id =  itemsToDel[i].querySelectorAll(".idhref")[0].innerText;
+
+
+
+ localVar.cloudObj.contentObj.contentObj.delete.push(tempObj);
+}
+
 }
 return data;
 }
@@ -1164,8 +1192,8 @@ function setupForStoryDeletion(){
 
 }
 
-function setupForStoryPublishment(){
-
+function setupForStoryPublishment(string){
+localVar.publishStat = string;
   let butClone = localVar.tempDivs.butt1.cloneNode(true);
   let fileContClone = cPanGenericCont.querySelectorAll(".imageListItemCont")[0].cloneNode(true);
   let parent = document.querySelectorAll(".cpancontentcont")[0];
