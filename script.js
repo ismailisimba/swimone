@@ -1667,11 +1667,20 @@ function readStoryObj(storyContainer,storyObj){
   storyContainer.innerHTML = storyObj.storyObj.myHtml;
 
   let images = storyContainer.querySelectorAll("img");
+  let paras = storyContainer.querySelectorAll("p");
 
   images.forEach(element => {
     if(element.src==="https://ismizo.com/resources/icons/loading.png"){
       
       fetchDisImage(element);
+    }
+  })
+
+  paras.forEach( paragraph => {
+    let imagesInside = []
+    imagesInside = paragraph.querySelectorAll("img");
+    if(imagesInside.length>=1){
+      paragraph.style.textAlign = "center";
     }
   })
 
@@ -1702,10 +1711,10 @@ async function setDisBlocToSrc(responseObj){
   let cloudBlob = responseObj.deFileObj.data;
 
   let element = document.getElementById(`${eleid}`);
-  let parPar = element.parentNode;
+  
  
   element.src = `data:${meme};base64,${cloudBlob}`;
-  parPar.style.textAlign = "center";
+
 
 }
 
