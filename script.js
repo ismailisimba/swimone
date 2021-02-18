@@ -708,7 +708,7 @@ function addPostListFuncs(cPanItem){
     }else if(thisButtText==="View"){ 
       setupForStoryView(); 
     }else if(thisButtText==="Edit"){
-      console.log(thisButtText);
+      appendStoryToEditor();
     }
 
 
@@ -1721,7 +1721,55 @@ async function setDisBlocToSrc(responseObj){
 }
 
 
+function appendStoryToEditor() {
+  localVar.columnHtml = document.querySelectorAll(".mycolumns")[1];
 
+  let parent = document.querySelectorAll(".cpancontentcont")[0];
+
+  parent.innerHTML = "";
+
+  let butClone = localVar.tempDivs.butt1.cloneNode(true);
+
+  butClone.innerHTML = `Please click the story you want to edit then check the editor (under Add/Edit Posts).`;
+  butClone.style.height = "auto";
+
+  parent.appendChild(butClone);
+  
+
+  let stories = document.querySelectorAll(".postpreview");
+
+  stories.forEach(element => {
+    element.addEventListener("click",addStoryToEditor);
+  })
+
+};
+
+function addStoryToEditor () {
+
+  let storyid = this.querySelectorAll(".storyhref")[0].id;
+  let stories = localVar.cloudObj.contentObj.contentObj.published.stories
+  let searchResponse = searchStory(stories,storyid);
+
+  if(searchResponse.status==="found"){
+    addThisStoryToEditor(searchResponse.obj);
+  }else{
+    alert("Ooops there's been an error reading your post. Please report to ismaili.a.simba@gmail.com");
+  }
+
+
+}
+
+
+function addThisStoryToEditor(storyObj){
+  let titleDiv = document.getElementById("editposttit") ;
+  let descrDiv = document.getElementById("descrtit");
+  let storyContainer = document.querySelectorAll("ql-editor")[0];
+
+  readStoryObj(storyContainer,storyObj);
+
+  titleDiv.value = storyObj.title;
+  descrDiv.value = storyObj.description;
+}
 
 
 
