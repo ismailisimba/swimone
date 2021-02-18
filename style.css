@@ -708,6 +708,14 @@ html button:hover {
 
 }
 
+.mystorycontainer{
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .storyhref2selected {
     background-color: black !important;
 }
