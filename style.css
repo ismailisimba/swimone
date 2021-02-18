@@ -695,6 +695,8 @@ html button:hover {
     right: 6%;
     width: 69%;
     padding: 24px 0px;
+    background-color: #120094;
+    color: white;
     box-sizing: border-box;
     min-height: 600px;
 
@@ -714,6 +716,7 @@ html button:hover {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    padding: 12px 36px;
 }
 
 .mystorycontainer p {
@@ -722,6 +725,10 @@ html button:hover {
 
 .mystorycontainer p img {
     max-width: 450px !important;
+}
+
+.mystorycontainer p a {
+    color: #53f4ff !important;
 }
 
 .storyhref2selected {
