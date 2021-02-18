@@ -229,6 +229,16 @@ async function hailTheServerOnAllChannels(action,value) {
      customPopUpFunc(popUp,"Deleting","fullsteamahead");
       startHailing(myObj,action,genericPrintResponse);
     });
+  }else if(action==="updatePublish"){
+      let myObj = bundleTokenAfter(value);
+      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
+    
+     customPopUpFunc(popUp,"Updating","fullsteamahead");
+      startHailing(myObj,action,genericPrintResponse);
+  
+
+    
+
   }
 
 
@@ -710,6 +720,10 @@ function addPostListFuncs(cPanItem){
       setupForStoryView(); 
     }else if(thisButtText==="Edit"){
       appendStoryToEditor();
+    }else if(thisButtText==="Publish"){
+
+    }else if(thisButtText==="Unpublish"){
+
     }
 
 
@@ -1150,6 +1164,25 @@ function setupForStoryDeletion(){
 
 }
 
+function setupForStoryPublishment(){
+
+  let butClone = localVar.tempDivs.butt1.cloneNode(true);
+  let fileContClone = cPanGenericCont.querySelectorAll(".imageListItemCont")[0].cloneNode(true);
+  let parent = document.querySelectorAll(".cpancontentcont")[0];
+
+  parent.innerHTML = "";
+
+  butClone.innerHTML = `Please click the stories/posts you want to publish/unpublish. <br> To unselect, click again. <br> When done, click here to confirm publishing/unpublishing`;
+  butClone.style.height = "auto";
+
+  butClone.addEventListener("click", sendPublishStatusToServer);
+
+  addStoryClicks();
+
+  parent.appendChild(butClone);
+
+}
+
 
 function addFileClicks(){
 
@@ -1275,6 +1308,11 @@ function sendDeletionsToServerToo () {
 
 }
 
+function sendPublishStatusToServer () {
+  let token = getToken();
+  hailTheServerOnAllChannels("updatePublish",token);
+
+}
 
 
 function customPopUpFunc(popupEle,phrase,action) {
