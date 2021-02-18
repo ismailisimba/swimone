@@ -716,6 +716,14 @@ html button:hover {
     align-items: center;
 }
 
+.mystorycontainer p {
+    width: 100% !important;
+}
+
+.mystorycontainer p img {
+    max-width: 450px !important;
+}
+
 .storyhref2selected {
     background-color: black !important;
 }
