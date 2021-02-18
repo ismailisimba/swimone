@@ -1707,25 +1707,6 @@ async function setDisBlocToSrc(responseObj){
 
 
 
-async function to16arr(data){
-
-  
-  //var dv = new Uint16Array(data);
-  //data = new Blob(dv);
-
-    const toBinaryString2 = file => new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file)
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-  });
-  
- // let parsedFile = null;
-  //parsedFile =  await toBinaryString2(data);
-  
-    return data;
-  }
-
 
 
 
