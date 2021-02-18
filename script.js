@@ -1700,8 +1700,12 @@ async function setDisBlocToSrc(responseObj){
   let eleid = responseObj.deFileObj.id;
   let meme = responseObj.deFileObj.mime;
   let cloudBlob = responseObj.deFileObj.data;
+
+  let element = document.getElementById(`${eleid}`);
+  let parPar = element.parentNode;
  
-  document.getElementById(`${eleid}`).src = `data:${meme};base64,${cloudBlob}`;
+  element.src = `data:${meme};base64,${cloudBlob}`;
+  parPar.style.textAlign = "center";
 
 }
 
