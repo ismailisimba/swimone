@@ -1437,6 +1437,7 @@ function deStoryFunc(storyHtml){
     names.forEach(child=>{
       
       if(child.nodeName==="IMG"){
+        console.log(child);
 
         let typeOfImage = child.src.split(":")[0];
         typeOfImage = typeOfImage.match(/\b(\w*http\w*)\b/g);
