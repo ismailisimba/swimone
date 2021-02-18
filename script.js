@@ -1000,7 +1000,7 @@ if(context==="images"){
   
 
 
-}else if(action==="updatePublish"){
+}else if(context==="updatePublish"){
 
   let copy = localVar.cloudObj.contentObj.contentObj.delete[0];
   let itemsToDel = document.querySelectorAll(".cpancontentcont")[0];
