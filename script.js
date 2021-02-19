@@ -1878,7 +1878,7 @@ function addThisStoryToEditor(storyObj){
 
 function  fillPublishedStoriesSelections(){
 
-  let stories = responseObj.contentObj.contentObj.published.stories;
+  let stories = localVar.cloudObj.contentObj.contentObj.published.stories;
   let publishedTitsArr = [];
   let obj = {id:"",title:""}
   let myParConts = document.querySelectorAll(".featuresgeneric");
