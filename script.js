@@ -1899,9 +1899,10 @@ function  fillPublishedStoriesSelections(){
     miHref.remove();
 
       for(let i=0 ; i<publishedTitsArr.length ; i++){
-        miHref.innerHTML = publishedTitsArr[i].title;
-        miHref.value = publishedTitsArr[i].id;
-        par.appendChild(miHref);
+        let cloneMiHref = miHref.cloneNode(true);
+        cloneMiHref.innerHTML = publishedTitsArr[i].title;
+        cloneMiHref.value = publishedTitsArr[i].id;
+        par.appendChild(cloneMiHref);
 
       }
   })
