@@ -507,7 +507,7 @@ html button:hover {
     width: 100%;
 
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     justify-content: center;
     align-items:center;
 }
@@ -524,6 +524,7 @@ html button:hover {
     background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .socialitem:nth-child(1){
