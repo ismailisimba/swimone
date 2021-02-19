@@ -1894,13 +1894,14 @@ function  fillPublishedStoriesSelections(){
   }
 
   myParConts.forEach(element=>{
-    let miHref = element.querySelectorAll(".story0")[0];
+    let miHref = element.querySelectorAll("option")[1];
     let par = element.querySelectorAll(".featureshowdrop")[0];
     miHref.remove();
 
       for(let i=0 ; i<publishedTitsArr.length ; i++){
         miHref.innerHTML = publishedTitsArr[i].title;
         miHref.value = publishedTitsArr[i].id;
+        par.appendChild(miHref);
 
       }
   })
