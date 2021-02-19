@@ -100,6 +100,8 @@ function checkTheURL () {
     popUp.remove();
     
     initiateLogInSetup(backendMatch);
+  }else{
+    fillDeFrontEnd();
   }
   
  
@@ -2008,6 +2010,10 @@ function getStoryTit(id){
 }
 
 
+async function fillDeFrontEnd(){
+  let myObj = await fetchInfoWithFilter({},"strangerDanger");
+  console.log(myObj);
+}
 
 
 
