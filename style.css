@@ -475,6 +475,7 @@ html button:hover {
 
 .formitemdiv:nth-child(3){
     width: 100%;
+    margin-bottom: 24px;
 }
 
 #contactmessage{
