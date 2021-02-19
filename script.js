@@ -2019,11 +2019,7 @@ async function fillDeFrontEnd(){
 
 
  fillFeatured(myObj);
-
-
-
-
-
+ fillAddress(myObj);
 
 
 
@@ -2077,6 +2073,25 @@ function getStoryTitAndDescr(id,myObj){
   return obj;
 
 }
+
+
+function  fillAddress(myObj){
+
+  let addressItems = document.querySelectorAll(".addresslistitem");
+
+  let address = addressItems[0].querySelectorAll("p")[0];
+  address.innerHTML = myObj.settingsObj.address;
+
+  let email = addressItems[1].querySelectorAll("p")[0];
+  email.innerHTML = myObj.settingsObj.buzEmail;
+
+  let num = addressItems[2].querySelectorAll("p")[0];
+  num.innerHTML = myObj.settingsObj.num;
+
+
+
+
+};
 
 
 
