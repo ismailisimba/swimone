@@ -244,6 +244,18 @@ async function hailTheServerOnAllChannels(action,value) {
 
     
 
+  }else if(action==="updateSettings"){
+    let data = await bundleMyData(action,value).then(()=>{
+
+      
+      let myObj = bundleTokenAfter(value);
+      myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
+     
+     customPopUpFunc(popUp,"Updating","fullsteamahead");
+      startHailing(myObj,action,genericPrintResponse);
+    });
+
+
   }
 
 
@@ -289,6 +301,8 @@ async function bundleMyData(action,value) {
     data = updateCloudObj("deleteStories",{});
   }else if(action==="updatePublish"){
     data = updateCloudObj("updatePublish",{});
+  }else if(action==="updateSettings"){
+    data = updateCloudObj("updateSettings",{});
   }
 return data;
 }
@@ -1027,6 +1041,8 @@ if(context==="images"){
  localVar.cloudObj.contentObj.contentObj.delete.push(tempObj);
 }
 
+}else if(context==="updateSettings"){
+
 }
 return data;
 }
@@ -1472,39 +1488,51 @@ function fillUpSiteMapInfo(responseObj){
   //newSettings.inst.innerText = "Kennoobi!";
 
   newSettings.title.style.visibility = "collapse";
+  newSettings.title.value = cloudSettings.title;
   newSettings.titleDisp.innerHTML = cloudSettings.title;
 
   newSettings.catchphrase.style.visibility = "collapse";
+  newSettings.catchphrase.value = cloudSettings.catchphrase;
   newSettings.catchphraseDisp.innerHTML = cloudSettings.catchphrase;
 
   newSettings.featureOne.style.visibility = "collapse";
+  newSettings.featureOne.value = cloudSettings.featureOne;
   newSettings.featureOneDisp.innerHTML = cloudSettings.featureOne;
 
   newSettings.featureTwo.style.visibility = "collapse";
+  newSettings.featureTwo.value = cloudSettings.featureTwo;
   newSettings.featureTwoDisp.innerHTML = cloudSettings.featureTwo;
 
   newSettings.featureThree.style.visibility = "collapse";
+  newSettings.featureThree.value = cloudSettings.featureThree;
   newSettings.featureThreeDisp.innerHTML = cloudSettings.featureThree;
 
   newSettings.email.style.visibility = "collapse";
+  newSettings.emailDisp.value = cloudSettings.buzEmail;
   newSettings.emailDisp.innerHTML = cloudSettings.buzEmail;
 
   newSettings.address.style.visibility = "collapse";
+  newSettings.address.value = cloudSettings.address;
   newSettings.addressDisp.innerHTML = cloudSettings.address;
 
   newSettings.fb.style.visibility = "collapse";
+  newSettings.fb.value = cloudSettings.fb;
   newSettings.fbDisp.innerHTML = cloudSettings.fb;
 
   newSettings.num.style.visibility = "collapse";
+  newSettings.num.value = cloudSettings.num;
   newSettings.numDisp.innerHTML = cloudSettings.num;
 
   newSettings.twtt.style.visibility = "collapse";
+  newSettings.twtt.value = cloudSettings.twt;
   newSettings.twttDisp.innerHTML = cloudSettings.twt;
 
   newSettings.lnkd.style.visibility = "collapse";
+  newSettings.lnkd.value = cloudSettings.linkd;
   newSettings.lnkdDisp.innerHTML = cloudSettings.linkd;
 
   newSettings.inst.style.visibility = "collapse";
+  newSettings.inst.value = cloudSettings.instg;
   newSettings.instDisp.innerHTML = cloudSettings.instg;
 
   
@@ -1928,6 +1956,8 @@ function  fillPublishedStoriesSelections(){
 
 function addSiteMapSaveButClick(){
   console.log("helloooo");
+  let token = getToken();
+  hailTheServerOnAllChannels("updateSettings",token);
 
 };
 
