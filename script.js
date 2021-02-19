@@ -1528,15 +1528,15 @@ function fillUpSiteMapInfo(responseObj){
 
   newSettings.featureOne.style.visibility = "collapse";
   newSettings.featureOne.value = cloudSettings.featureOne;
-  newSettings.featureOneDisp.innerHTML = cloudSettings.featureOne;
+  newSettings.featureOneDisp.innerHTML = getStoryTit(cloudSettings.featureOne);
 
   newSettings.featureTwo.style.visibility = "collapse";
   newSettings.featureTwo.value = cloudSettings.featureTwo;
-  newSettings.featureTwoDisp.innerHTML = cloudSettings.featureTwo;
+  newSettings.featureTwoDisp.innerHTML = getStoryTit(cloudSettings.featureTwo);
 
   newSettings.featureThree.style.visibility = "collapse";
   newSettings.featureThree.value = cloudSettings.featureThree;
-  newSettings.featureThreeDisp.innerHTML = cloudSettings.featureThree;
+  newSettings.featureThreeDisp.innerHTML = getStoryTit(cloudSettings.featureThree);
 
   newSettings.email.style.visibility = "collapse";
   newSettings.email.value = cloudSettings.buzEmail;
@@ -1991,6 +1991,21 @@ function addSiteMapSaveButClick(){
   hailTheServerOnAllChannels("updateSettings",token);
 
 };
+
+function getStoryTit(id){
+  let stories = localVar.cloudObj.contentObj.contentObj.published.stories;
+  let title = "Not Found";
+
+  for(let i=0 ; i<stories.length ; i++){
+
+    if(id===stories[i].stats[0].timeid){
+      title = stories[i].title;
+    }
+  }
+
+  return title;
+
+}
 
 
 
