@@ -755,7 +755,12 @@ function siteMapShowEditors(cPanItem){
 
   fillPublishedStoriesSelections();
 
+  document.querySelectorAll(".sitemapbut")[0].addEventListener("click",addSiteMapSaveButClick)
+
+
 }
+
+
 
 function genericInputClick(){
   let menuBoxIndex = localVar.counters.currentAtCpan;
@@ -1369,9 +1374,17 @@ function myResetFuncs(){
 removeFileSelectClicks();
 removeStorySelectClicks();
 removeAddToEditor();
+removeSiteMapSave();
 
 toggleFileSelectStyleOff();
 toggleStorySelectStyleOff()
+
+}
+
+function removeSiteMapSave(){
+  let myClickableStoryHrefs = document.querySelectorAll(".sitemapbut")[0];
+  myClickableStoryHrefs.removeEventListener("click",addSiteMapSaveButClick,false);
+
 
 }
 
@@ -1912,6 +1925,11 @@ function  fillPublishedStoriesSelections(){
 
 
 }
+
+function addSiteMapSaveButClick(){
+  console.log("helloooo");
+
+};
 
 
 
