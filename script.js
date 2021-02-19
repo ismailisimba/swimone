@@ -2046,8 +2046,8 @@ function  fillFeatured(myObj){
 
       let obj = getStoryTitAndDescr(featureArr[i],myObj);
 
-      momOfFeatures.querySelectorAll("h1")[0].innerHTML = obj.title;
-      momOfFeatures.querySelectorAll("p")[0].innerHTML = obj.descr;
+      momOfFeatures[i].querySelectorAll("h1")[0].innerHTML = obj.title;
+      momOfFeatures[i].querySelectorAll("p")[0].innerHTML = obj.descr;
 
 
 
