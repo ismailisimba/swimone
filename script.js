@@ -1638,6 +1638,7 @@ function fillTempStoryDiv(tempDiv,storyObj) {
         font-size:11.69px;
         width: 69px;
         height: 18px;
+        padding: 1px 3px;
         box-sizing: border-box;
         background-color: transparent;
         z-index: 50;
@@ -1669,6 +1670,7 @@ function colorPublishedStyle(deHref){
 
   if(myText==="published"){
     deHref.style.backgroundColor = "#53f4ff";
+    deHref.style.color = "#120094";
   }
 
 }
