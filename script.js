@@ -753,6 +753,8 @@ function siteMapShowEditors(cPanItem){
     element.style.visibility = "visible";
   })
 
+  fillPublishedStoriesSelections();
+
 }
 
 function genericInputClick(){
@@ -1670,7 +1672,7 @@ function colorPublishedStyle(deHref){
 
   if(myText==="published"){
     deHref.style.backgroundColor = "#53f4ff";
-    deHref.style.color = "#120094";
+    deHref.style.color = "black";
   }
 
 }
@@ -1872,6 +1874,41 @@ function addThisStoryToEditor(storyObj){
 
   titleDiv.value = storyObj.title;
   descrDiv.value = storyObj.description;
+}
+
+function  fillPublishedStoriesSelections(){
+
+  let stories = responseObj.contentObj.contentObj.published.stories;
+  let publishedTitsArr = [];
+  let obj = {id:"",title:""}
+  let myParConts = document.querySelectorAll(".featuresgeneric");
+
+
+  for(let i=0; i<stories.length ; i++){
+    if(stories[i].type==="published"){
+      let copy = JSON.parse(JSON.stringify(obj));
+      copy.id = stories[i].stats[0].timeid;
+      copy.title = stories[i].title;
+      publishedTitsArr.push(copy)
+    }
+  }
+
+  myParConts.forEach(element=>{
+    let miHref = element.querySelectorAll(".story0")[0];
+    let par = element.querySelectorAll(".featureshowdrop")[0];
+    miHref.remove();
+
+      for(let i=0 ; i<publishedTitsArr.length ; i++){
+        miHref.innerHTML = publishedTitsArr[i].title;
+        miHref.value = publishedTitsArr[i].id;
+
+      }
+  })
+
+
+
+
+
 }
 
 
