@@ -532,6 +532,15 @@ html button:hover {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    z-index: 50;
+}
+
+.socialitem a{
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+
 }
 
 .socialitem:nth-child(1){
