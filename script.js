@@ -2048,6 +2048,7 @@ function  fillFeatured(myObj){
 
       momOfFeatures[i].querySelectorAll("h1")[0].innerHTML = obj.title;
       momOfFeatures[i].querySelectorAll("p")[0].innerHTML = obj.descr;
+      momOfFeatures[i].querySelectorAll("button")[0].id = obj.stats[0].timeid;
 
 
 

@@ -271,7 +271,7 @@ html button:hover {
     margin-left: 48px;
     
 }
-.featuredbox h1{
+.featuredbox h1, .featuredbox p{
     width: 85%;
 }
 
