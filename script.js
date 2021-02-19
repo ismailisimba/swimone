@@ -2048,7 +2048,7 @@ function  fillFeatured(myObj){
 
       momOfFeatures[i].querySelectorAll("h1")[0].innerHTML = obj.title;
       momOfFeatures[i].querySelectorAll("p")[0].innerHTML = obj.descr;
-      momOfFeatures[i].querySelectorAll("button")[0].id = obj.stats[0].timeid;
+      momOfFeatures[i].querySelectorAll("button")[0].id = obj.timeid;
 
 
 
@@ -2062,13 +2062,15 @@ function getStoryTitAndDescr(id,myObj){
   let stories = myObj.contentObj.contentObj.published.stories;
   let title = "Not Found";
   let descr = "Not Found";
-  let obj = {title:title,descr:descr};
+  let timeid = "Not Found";
+  let obj = {title:title,descr:descr,timeid:timeid};
 
   for(let i=0 ; i<stories.length ; i++){
 
     if(id===stories[i].stats[0].timeid){
       obj.title = stories[i].title;
       obj.descr = stories[i].description;
+      obj.timeid = stories[i].stats[0].timeid;
     }
   }
 
