@@ -2044,7 +2044,7 @@ function  fillFeatured(myObj){
 
     if(featureArr[i].length>1){
 
-      let obj = getStoryTitAndDescr(featureArr[i]);
+      let obj = getStoryTitAndDescr(featureArr[i],myObj);
 
       momOfFeatures.querySelectorAll("h1")[0].innerHTML = obj.title;
       momOfFeatures.querySelectorAll("p")[0].innerHTML = obj.descr;
@@ -2057,8 +2057,8 @@ function  fillFeatured(myObj){
 };
 
 
-function getStoryTitAndDescr(id){
-  let stories = localVar.cloudObj.contentObj.contentObj.published.stories;
+function getStoryTitAndDescr(id,myObj){
+  let stories = myObj.contentObj.contentObj.published.stories;
   let title = "Not Found";
   let descr = "Not Found";
   let obj = {title:title,descr:descr};
