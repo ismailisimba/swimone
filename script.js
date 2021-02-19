@@ -2012,6 +2012,8 @@ function getStoryTit(id){
 
 async function fillDeFrontEnd(){
   let contextObject = JSON.parse(JSON.stringify(paraTemplate));
+  contextObject.params[0]["action"] = "login";
+  contextObject.params[0]["token"] = "letMeIn";
   let myObj = await fetchInfoWithFilter({contextObject},"strangerDanger");
   console.log(myObj);
 }
