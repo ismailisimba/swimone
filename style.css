@@ -1062,6 +1062,10 @@ html button:hover {
         background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/instagram.png");
     }
 
+    .socialitem:nth-child(3){
+        background-image: url("https://ismailisimba.github.io/swimone/resources/icons/mobile/linked.png");
+    }
+
 
 
     .aboutdescrboxes{
