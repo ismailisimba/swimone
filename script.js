@@ -1651,6 +1651,7 @@ function fillTempStoryDiv(tempDiv,storyObj) {
   tempDiv.querySelectorAll("p")[0].innerHTML = storyObj.description;
   
   myHref2.innerHTML = storyObj.type;
+  colorPublishedStyle(myHref2);
   myHref2.id = storyObj.stats[0].timeid;
   
   
@@ -1659,6 +1660,16 @@ function fillTempStoryDiv(tempDiv,storyObj) {
   tempDiv.appendChild(myStyle);
 
   return tempDiv;
+
+}
+
+function colorPublishedStyle(deHref){
+
+  let myText = deHref.innerText;
+
+  if(myText==="published"){
+    deHref.style.backgroundColor = "#53f4ff";
+  }
 
 }
 
