@@ -2078,6 +2078,8 @@ function getStoryTitAndDescr(id,myObj){
 function  fillAddress(myObj){
 
   let addressItems = document.querySelectorAll(".addresslistitem");
+  let mySocials = document.querySelectorAll(".mysocials")[0];
+  mySocials = mySocials.querySelectorAll(".socialitem");
 
   let address = addressItems[0].querySelectorAll("p")[0];
   address.innerHTML = myObj.settingsObj.address;
@@ -2088,6 +2090,17 @@ function  fillAddress(myObj){
   let num = addressItems[2].querySelectorAll("p")[0];
   num.innerHTML = myObj.settingsObj.num;
 
+  let fb = mySocials[0].querySelectorAll("a")[0];
+  fb.href = myObj.settingsObj.fb;
+
+  let twt = mySocials[1].querySelectorAll("a")[0];
+  twt.href = myObj.settingsObj.twt;
+
+  let inst = mySocials[2].querySelectorAll("a")[0];
+  inst.href = myObj.settingsObj.instg;
+
+  let lnkd = mySocials[3].querySelectorAll("a")[0];
+  lnkd.href = myObj.settingsObj.linkd;
 
 
 
