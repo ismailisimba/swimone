@@ -271,6 +271,9 @@ html button:hover {
     margin-left: 48px;
     
 }
+.featuredbox h1{
+    width: 85%;
+}
 
 .mylineone{
     position: absolute;
