@@ -1043,6 +1043,37 @@ if(context==="images"){
 
 }else if(context==="updateSettings"){
 
+  let newSettings = {};
+  let copy = localVar.cloudObj.contentObj.contentObj.delete[0];
+  localVar.cloudObj.contentObj.contentObj.delete = {};
+
+  newSettings["title"] = document.getElementById("posttit");
+  newSettings["catchphrase"] = document.getElementById("postcat");
+  newSettings["featureOne"] = document.getElementById("feature1");
+  newSettings["featureTwo"] = document.getElementById("feature2");
+  newSettings["featureThree"] = document.getElementById("feature3");
+  newSettings["email"] = document.getElementById("emailcollector");
+  newSettings["address"] = document.getElementById("wordaddresscollector");
+  newSettings["fb"] = document.getElementById("fbcollector");
+  newSettings["num"] = document.getElementById("phonecollector");
+  newSettings["twtt"] = document.getElementById("twtcollector");
+  newSettings["lnkd"] = document.getElementById("lnkdcollector");
+  newSettings["inst"] = document.getElementById("instcollector");
+  
+
+  localVar.cloudObj.contentObj.contentObj.delete ["title"] = newSettings.title.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["catchphrase"] = newSettings.catchphrase.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["featureOne"] = newSettings.featureOne.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["featureTwo"] = newSettings.featureTwo.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["featureThree"] = newSettings.featureThree.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["email"] = newSettings.email.value ;
+  localVar.cloudObj.contentObj.contentObj.delete ["address"] = newSettings.address.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["fb"] = newSettings.fb.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["num"] = newSettings.num.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["twtt"] = newSettings.twtt.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["lnkd"] = newSettings.lnkd.value;
+  localVar.cloudObj.contentObj.contentObj.delete ["inst"] = newSettings.inst.value;
+  
 }
 return data;
 }
@@ -1508,7 +1539,7 @@ function fillUpSiteMapInfo(responseObj){
   newSettings.featureThreeDisp.innerHTML = cloudSettings.featureThree;
 
   newSettings.email.style.visibility = "collapse";
-  newSettings.emailDisp.value = cloudSettings.buzEmail;
+  newSettings.email.value = cloudSettings.buzEmail;
   newSettings.emailDisp.innerHTML = cloudSettings.buzEmail;
 
   newSettings.address.style.visibility = "collapse";
