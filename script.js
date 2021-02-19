@@ -2016,7 +2016,63 @@ async function fillDeFrontEnd(){
   contextObject.params[0]["token"] = "letMeIn";
   contextObject.params[0]["dataObj"] = "letMeIn";
   let myObj = await fetchInfoWithFilter(contextObject,"strangerDanger");
+
+
+ fillFeatured(myObj);
+
+
+
+
+
+
+
+
+
   console.log(myObj);
+}
+
+
+function  fillFeatured(myObj){
+  let featureArr = [];
+  let momOfFeatures = document.querySelectorAll(".featuredone");
+
+  featureArr.push(myObj.settingsObj.featureOne);
+  featureArr.push(myObj.settingsObj.featureTwo);
+  featureArr.push(myObj.settingsObj.featureThree);
+
+  for(let i=0 ; i<featureArr.length ; i++){
+
+    if(featureArr[i].length>1){
+
+      let obj = getStoryTitAndDescr(featureArr[i]);
+
+      momOfFeatures.querySelectorAll("h1")[0].innerHTML = obj.title;
+      momOfFeatures.querySelectorAll("p")[0].innerHTML = obj.descr;
+
+
+
+    }
+
+  }
+};
+
+
+function getStoryTitAndDescr(id){
+  let stories = localVar.cloudObj.contentObj.contentObj.published.stories;
+  let title = "Not Found";
+  let descr = "Not Found";
+  let obj = {title:title,descr:descr};
+
+  for(let i=0 ; i<stories.length ; i++){
+
+    if(id===stories[i].stats[0].timeid){
+      obj.title = stories[i].title;
+      obj.descr = stories[i].description;
+    }
+  }
+
+  return obj;
+
 }
 
 
