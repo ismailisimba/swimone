@@ -2011,7 +2011,8 @@ function getStoryTit(id){
 
 
 async function fillDeFrontEnd(){
-  let myObj = await fetchInfoWithFilter({},"strangerDanger");
+  let contextObject = JSON.parse(JSON.stringify(paraTemplate));
+  let myObj = await fetchInfoWithFilter({contextObject},"strangerDanger");
   console.log(myObj);
 }
 
