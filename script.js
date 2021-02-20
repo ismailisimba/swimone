@@ -101,6 +101,7 @@ function checkTheURL () {
     
     initiateLogInSetup(backendMatch);
   }else{
+    popUp.remove();
     fillDeFrontEnd();
   }
   
@@ -2102,10 +2103,44 @@ function  fillAddress(myObj){
   let lnkd = mySocials[3].querySelectorAll("a")[0];
   lnkd.href = myObj.settingsObj.linkd;
 
+let hailTheCapt = document.querySelectorAll(".contactformdiv")[0];
+hailTheCapt = hailTheCapt.querySelectorAll("button")[0];
 
+hailTheCapt.addEventListener("click",sendAStrangersHail)
 
 };
 
 
+function sendAStrangersHail(){
+
+
+  let deId = {};
+  deId["message"] = document.getElementById("contactmessage").value;
+  deId["email"] = document.getElementById("contactemail").value;
+  deId["name"] = document.getElementById("contactname").value;
+
+  let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
+  let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
+
+  deId["timeid"] = myDate+"-"+hour+"-"+minute+"-"+second;
+
+  let contextObject = JSON.parse(JSON.stringify(paraTemplate));
+
+  contextObject.params[0]["action"] = "later...";
+  contextObject.params[0]["token"] = "wHaT tOkEn!";
+  contextObject.params[0]["dataObj"] = deId;
+
+  customPopUpFunc(popUp,"Sending to TALISS","fullsteamahead");
+ startHailing(contextObject,"hollacomoestas",custFunkyTempySempaiUwu);
+  
+
+ 
+
+}
+
+function custFunkyTempySempaiUwu(){
+  customPopUpFunc(popUp,"phrase","stop");
+  reloadHomePage();
+}
 
 
