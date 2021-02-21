@@ -103,6 +103,7 @@ function checkTheURL () {
   }else{
     popUp.remove();
     fillDeFrontEnd();
+    
   }
   
  
@@ -2016,18 +2017,51 @@ async function fillDeFrontEnd(){
   contextObject.params[0]["action"] = "login";
   contextObject.params[0]["token"] = "letMeIn";
   contextObject.params[0]["dataObj"] = "letMeIn";
-  let myObj = await fetchInfoWithFilter(contextObject,"strangerDanger");
+  let myObj = await fetchInfoWithFilter(contextObject,"strangerDanger").then(myObj=>{
+    
+    fillFeatured(myObj);
+    fillAddress(myObj);
+    addStoryPageShowFrontEnd(myObj);
+  });
 
 
- fillFeatured(myObj);
- fillAddress(myObj);
+ 
 
 
 
 
-  console.log(myObj);
+  
 }
 
+
+function addStoryPageShowFrontEnd(myObj){
+  let butts = document.querySelectorAll(".mycolumnchildren")[1];
+  butts = butts.querySelectorAll("button");
+
+  let aboutstorbox = document.querySelectorAll(".aboutdescrboxes")[5];
+
+  aboutstorbox.addEventListener("click",toDeStoryPageFrontEnd)
+
+  butts.forEach(butt=>{
+    butt.addEventListener("click",toDeStoryPageFrontEnd);
+  })
+};
+
+function toDeStoryPageFrontEnd(){
+ // window.location.href='#abouttitdiv';
+  localVar.columnHtml = document.querySelectorAll(".mycolumns")[1];
+  dePage.style.visibility = "visible";
+  localVar.columnHtml.replaceWith(dePage);
+  window.scrollTo(0, 0);
+  let deBut = dePage.querySelectorAll("button")[0];
+
+  deBut.addEventListener("click", backToFrontEnd)
+}
+
+function backToFrontEnd(){
+  dePage.replaceWith(localVar.columnHtml);
+  dePage.removeEventListener("click",backToFrontEnd,false);
+}
 
 function  fillFeatured(myObj){
   let featureArr = [];
@@ -2107,6 +2141,7 @@ let hailTheCapt = document.querySelectorAll(".contactformdiv")[0];
 hailTheCapt = hailTheCapt.querySelectorAll("button")[0];
 
 hailTheCapt.addEventListener("click",sendAStrangersHail)
+
 
 };
 
