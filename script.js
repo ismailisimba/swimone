@@ -1,5 +1,6 @@
 
 let dePage = document.querySelectorAll(".mygenericpage")[0];
+let postsMomCont = document.querySelectorAll(".postscontainer")[0];
 let myGoogleBox = document.querySelectorAll(".googlestuff")[0];
 let popUp = document.querySelectorAll(".custompopup")[0];
 let cPanGenericCont = document.querySelectorAll(".genericCpanCont")[0];
@@ -38,6 +39,7 @@ function myStartUpFunction () {
 function myGenericPageFormatting (){
 
   dePage.remove()
+  postsMomCont.remove();
 
     
 }
@@ -1282,7 +1284,7 @@ function addFileClicks(){
 
 function addStoryClicks(){
 
-  let myClickableStoryHrefs = document.querySelectorAll(".postpreview");
+  let myClickableStoryHrefs = postsMomCont.querySelectorAll(".postpreview");
 
   myClickableStoryHrefs.forEach(element => {
     element.addEventListener("click",toggleStorySelectStyle)
@@ -1355,7 +1357,7 @@ function removeFileSelectClicks () {
 }
 
 function removeStorySelectClicks () {
-  let myClickableStoryHrefs = document.querySelectorAll(".postpreview");
+  let myClickableStoryHrefs = postsMomCont.querySelectorAll(".postpreview");
 
   myClickableStoryHrefs.forEach(element => {
     element.removeEventListener("click",toggleStorySelectStyle,false)
@@ -1440,7 +1442,7 @@ function removeSiteMapSave(){
 }
 
 function removeAddToEditor (){
-  let myClickableStoryHrefs = document.querySelectorAll(".postpreview");
+  let myClickableStoryHrefs = postsMomCont.querySelectorAll(".postpreview");
 
   myClickableStoryHrefs.forEach(element => {
     element.removeEventListener("click",addStoryToEditor,false);
@@ -1459,7 +1461,7 @@ function toggleFileSelectStyleOff() {
 }
 
 function toggleStorySelectStyleOff() {
-  let hrefs69 = document.querySelectorAll(".postpreview");
+  let hrefs69 = postsMomCont.querySelectorAll(".postpreview");
   
   hrefs69.forEach(element=>{
     element.classList.remove("storyhref2selected");
@@ -1680,8 +1682,8 @@ function  fillUpStories(responseObj) {
 
   let numOfStories = stories.length;
 
-  let storyCont = document.querySelectorAll(".postpreview")[0];
-  let parent = document.querySelectorAll(".postscontainer")[0];
+  let storyCont = postsMomCont.querySelectorAll(".postpreview")[0];
+  let parent = postsMomCont;
 
   parent.innerHTML = "";
 
@@ -1771,7 +1773,7 @@ function setupForStoryView() {
   parent.appendChild(butClone);
   
 
-  let stories = document.querySelectorAll(".postpreview");
+  let stories = postsMomCont.querySelectorAll(".postpreview");
 
   stories.forEach(element => {
     element.addEventListener("click",showStoryReadPage);
@@ -1913,7 +1915,7 @@ function appendStoryToEditor() {
   parent.appendChild(butClone);
   
 
-  let stories = document.querySelectorAll(".postpreview");
+  let stories = postsMomCont.querySelectorAll(".postpreview");
 
   stories.forEach(element => {
     element.addEventListener("click",addStoryToEditor);
@@ -2018,6 +2020,7 @@ async function fillDeFrontEnd(){
   contextObject.params[0]["token"] = "letMeIn";
   contextObject.params[0]["dataObj"] = "letMeIn";
   let myObj = await fetchInfoWithFilter(contextObject,"strangerDanger").then(myObj=>{
+    localVar.cloudObj = myObj;
     
     fillFeatured(myObj);
     fillAddress(myObj);
@@ -2052,6 +2055,7 @@ function toDeStoryPageFrontEnd(){
   localVar.columnHtml = document.querySelectorAll(".mycolumns")[1];
   dePage.style.visibility = "visible";
   localVar.columnHtml.replaceWith(dePage);
+  fillStoryPageFrontEnd(this.id);
   window.scrollTo(0, 0);
   let deBut = dePage.querySelectorAll("button")[0];
 
@@ -2178,4 +2182,20 @@ function custFunkyTempySempaiUwu(){
   reloadHomePage();
 }
 
+function  fillStoryPageFrontEnd(id){
+
+   localVar.cloudObj;
+
+  if(id.length>3){
+
+  }else{
+
+    fillUpStories(localVar.cloudObj);
+   // console.log(localVar.cloudObj);
+
+  }
+
+
+
+};
 
