@@ -1,5 +1,6 @@
 
 let dePage = document.querySelectorAll(".mygenericpage")[0];
+let mobNav = document.getElementById("mobile-nav");
 let postsMomCont = document.querySelectorAll(".postscontainer")[0];
 let myGoogleBox = document.querySelectorAll(".googlestuff")[0];
 let popUp = document.querySelectorAll(".custompopup")[0];
@@ -8,6 +9,10 @@ let reqString = "https://script.google.com/macros/s/AKfycbyeGCc2c34RY53aturHkod7
 let paraTemplate = {"params":[{"initVal":"initKey"}]};
 let localVar = {};
 let cPan = document.querySelectorAll(".settcont")[0];
+
+let lelink = "https://script.google.com/macros/s/AKfycbyAl44CwyGcvrxb_YWYx0Fd2QKLjThO3WUNNo8Yg3W4P_YJDDEXSr9kOA/exec";
+let cloudObj = {};
+
 
 
 window.onload = () => {
@@ -40,6 +45,7 @@ function myGenericPageFormatting (){
 
   dePage.remove()
   postsMomCont.remove();
+  mobNav.remove();
 
     
 }
@@ -104,6 +110,7 @@ function checkTheURL () {
     initiateLogInSetup(backendMatch);
   }else{
     popUp.remove();
+    addMobMenu(window.screen.width);
     fillDeFrontEnd();
     
   }
@@ -1595,7 +1602,7 @@ function deStoryFunc(storyHtml){
     names.forEach(child=>{
       
       if(child.nodeName==="IMG"){
-        console.log(child);
+      
 
         let typeOfImage = child.src.split(":")[0];
         typeOfImage = typeOfImage.match(/\b(\w*http\w*)\b/g);
@@ -1608,7 +1615,7 @@ function deStoryFunc(storyHtml){
 
         let [myDate]    = new Date().toLocaleDateString("en-US").split("-");
         let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /);
-        console.log(child.src);
+        
 
         let newArr = child.src.split(",");
         copy.data = newArr[1];
@@ -1647,7 +1654,7 @@ function deStoryFunc(storyHtml){
     let myObj = bundleTokenAfter(token);
     myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
     startHailing(myObj,"delete",function(responseObj){
-      console.log(responseObj);
+      
     });
 
   }
@@ -2010,7 +2017,7 @@ function  fillPublishedStoriesSelections(){
 }
 
 function addSiteMapSaveButClick(){
-  console.log("helloooo");
+  
   let token = getToken();
   hailTheServerOnAllChannels("updateSettings",token);
 
@@ -2160,9 +2167,9 @@ function  fillAddress(myObj){
   lnkd.href = myObj.settingsObj.linkd;
 
 let hailTheCapt = document.querySelectorAll(".contactformdiv")[0];
-hailTheCapt = hailTheCapt.querySelectorAll("button")[0];
+hailTheCapt = hailTheCapt.querySelectorAll(".simplecaptchamom")[0];
 
-hailTheCapt.addEventListener("click",sendAStrangersHail)
+//hailTheCapt.addEventListener("click",sendAStrangersHail)
 
 
 };
@@ -2211,7 +2218,7 @@ function  fillStoryPageFrontEnd(id){
   }else{
 
     fillUpStories(localVar.cloudObj,"front");
-   // console.log(localVar.cloudObj);
+   
 
   }
 
@@ -2219,3 +2226,161 @@ function  fillStoryPageFrontEnd(id){
 
 };
 
+/*Captcha Functions*/
+
+fetcher({},"first",firstDisp);
+ 
+
+
+
+ async function fetcher(data,action,funcAft){
+
+let temp = await getCaptchaObj(action,data).then(resObj=>{
+  funcAft(resObj);
+})
+
+}
+
+
+
+function firstDisp(resObj){
+
+let captchaItemsCont = document.querySelectorAll(".captchaitems");
+
+let img1 = captchaItemsCont[0].querySelectorAll("img")[0];
+img1.src = `data:image/jpeg;base64,${resObj.ghh.l11}`;
+
+let img2 = captchaItemsCont[2].querySelectorAll("img")[0];
+img2.src = `data:image/jpeg;base64,${resObj.ghh.l12}`;
+
+captchaItemsCont[4].value = "?";
+
+captchaItemsCont[4].addEventListener("input",checkAnswer)
+
+if(resObj.symbol===0){
+  captchaItemsCont[1].innerHTML = "+";
+}else{
+  captchaItemsCont[1].innerHTML = "+";
+}
+captchaItemsCont[3].innerHTML = "=";
+
+  cloudObj = resObj;
+}
+
+
+function checkAnswer(){
+  let val = this;
+  val.removeEventListener("input",checkAnswer);
+
+  let timeOutkk = window.setTimeout(function(){
+
+    val = val.value;
+    let objee = {};
+        objee["one"] = val;
+        objee["two"] = cloudObj.ghh.eqid;
+
+      if(val.length>=1){
+       
+        fetcher(objee,"second",funcToHook);
+      }
+
+      window.clearTimeout(timeOutkk);
+
+  },1000);
+ 
+ 
+}
+
+function funcToHook(resObj){
+  let mom = document.querySelectorAll(".simplecaptchamom")[0];
+  let name = document.getElementById("contactname");
+  let email = document.getElementById("contactemail");
+  let message = document.getElementById("contactmessage");
+  if(resObj.status==="pass"&&name.value.length>3&&email.value.length>6&&message.value.length>9){
+
+    mom.innerHTML = "";
+    mom.style.backgroundColor = "green";
+    mom.style.color = "black";
+    mom.innerHTML = "Success!"
+
+    let tempyTimy = window.setTimeout(function(){
+      sendAStrangersHail();
+      window.clearTimeout(tempyTimy);
+    },690);
+  }else{
+   let ans = mom.querySelectorAll("textarea")[0];
+   ans.value = "X!";
+   fetcher({},"first",firstDisp);
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  async function getCaptchaObj(action,data){ 
+    var myRequest = new Request(lelink+"?paraOne="+action);
+
+    data = JSON.stringify(data);
+     
+const returnVal = await fetch(myRequest, {
+  method: 'POST', // *GET, POST, PUT, DELETE, etc.
+  mode: 'cors', // no-cors, *cors, same-origin
+  cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+  credentials: 'omit', // include, *same-origin, omit
+  headers: {
+    //'Content-Type': 'text/txt'
+    // 'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  redirect: 'follow', // manual, *follow, error
+  referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+  body:data// body data type must match "Content-Type" header
+})
+      .then(function(response) {
+        if (!response.ok) {
+          
+          throw new Error("HTTP error, status = " + response.status);
+          
+        }
+        
+        return response.text();
+      })
+      .then(function(myBlob) {
+        
+        var cloudObject = JSON.parse(myBlob);
+        
+      
+        return cloudObject;
+        
+      })
+      .catch(function(error) {
+        var p = document.createElement('p');
+        p.appendChild(
+          document.createTextNode('Error: ' + error.message)
+        );
+
+        document.querySelectorAll(".simplecaptchamom")[0].innerHTML = p.innerHTML;
+       
+      });
+      return returnVal; 
+};
+/* Captcha Functions*/ 
+
+
+
+function addMobMenu(width){
+
+  if(width<=1024){
+    document.querySelectorAll(".mycolumns")[1].appendChild(mobNav);
+    console.log("dd");
+  }
+  
+};

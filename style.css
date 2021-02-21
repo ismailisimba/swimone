@@ -3,11 +3,91 @@ html{
     color: black;
 }
 
+#mobile-nav {
+
+    display: none;
+}
+
+.contentbox{
+    color: white;
+}
+
 .momcontainer{
 
     height: auto;
     overflow: hidden;
 }
+
+.simplecaptchamom{
+    display: flex;
+    position: relative;
+    width: 169px;
+    height: 69px;
+    background-color: white;
+    color: white;
+
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .captchaitems {
+    position: relative;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    
+    width: 33px;
+    height: 33px;
+    margin: 3px 3px;
+    box-sizing: border-box;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .simplecaptchamom textarea{
+      width: 33px !important;
+      min-width: 33px !important;
+  }
+
+  .captchaitems img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+
+  }
+
+  .captchaitems:nth-child(5){
+    
+    
+    
+    overflow: hidden;
+    resize: none;
+    padding: 3px 3px 3px 3px;
+    
+    box-sizing: border-box;
+
+    font-family: inherit;
+    font-weight: bold;
+    letter-spacing: .69px;
+    font-size: 16px !important;
+    
+
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    overflow-y: scroll;
+
+        }
+
+  textarea::-webkit-scrollbar { display: none; }
+  
 
 
 
@@ -975,6 +1055,10 @@ overflow-y: scroll;
 
 @media screen and (max-width: 1024px) {
 
+    .simplecaptchamom{
+        background-color: black;
+    }
+
     .mystorycontainer p img {
         width: 96% !important;
     }
@@ -1042,7 +1126,7 @@ overflow-y: scroll;
         min-height: 600px;
     
 
-        background-image: url("hhttps://www.talissclub.com/img_ly/taliss-custom-photo-homepage.jpg");
+        background-image: url("https://www.talissclub.com/img_ly/taliss-custom-photo-homepage.jpg");
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: top;
@@ -1262,6 +1346,137 @@ overflow-y: scroll;
         right: -48%;
         top: 42px;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #mobile-nav {
+
+        display: block;
+        position: fixed;
+        top: 0px;
+        right: -200px;
+
+        
+
+        background-color: none;
+
+        z-index: 150;
+
+        transition: all;
+
+        -webkit-transition-duration: 1.5s;
+        -moz-transition-duration: 1.5s;
+        -o-transition-duration: 1.5s;
+        transition-duration: 1.5s;
+    
+    
+        -webkit-transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -o-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+
+    #mobile-nav:hover, #mobile-nav:active {
+
+        right: 0px;
+
+       
+    }
+
+    #mobile-nav-back{
+        
+ background-color: white;
+
+        opacity: 0.96;
+
+    }
+
+    #mobile-nav-container{
+        display: block;
+        width: 100%;
+        height: 320px;
+
+        display: flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .mobile-nav-items {
+
+        text-align: center;
+    }
+
+    #mobile-nav-items{
+        display: flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-nav-items:nth-child(1), .mobile-nav-items:nth-child(2), .mobile-nav-items:nth-child(3) {
+
+        background-color: #320e3b;
+        color: #dbfcff;
+        border: none;
+        font-family: "Crimson Pro";
+    
+        padding: 5px 14px;
+        
+        width: 50%;
+        
+        font-size: small;
+        font-weight: 200;
+        letter-spacing: 3px;
+        box-sizing: border-box;
+        margin-bottom: 9px;
+    
+        box-shadow: 3px 2px 5px 0.2px black;
+
+    }
+
+    #mobile-nav-close{
+
+        width: 200px;
+        height: 36px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        background-color: none;
+    }
+
+    #arrow-left-close{
+        width: 69px; 
+        height: 69px; 
+        background-color: white;
+        position: absolute;
+        left: -68px;
+        top: 0px;
+      
+    }
+   #search-container textarea, #contact-us-container button {
+        width: 70%;
+        margin-bottom: 7px;
+        margin-top: 15px;
+   }
+
+   #search-container {
+       height: 80px;
+   }
 
  
     
