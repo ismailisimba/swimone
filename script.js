@@ -433,7 +433,7 @@ async function setupBackendCanvasLoggedIn(){
     addBackendEventListeners();
     fillUpFiles(localVar.cloudObj);
     fillUpSiteMapInfo(localVar.cloudObj);
-    fillUpStories(localVar.cloudObj);
+    fillUpStories(localVar.cloudObj,"back");
   });
 
 
@@ -1705,6 +1705,12 @@ function  fillUpStories(responseObj,context) {
      deCont.innerHTML = "";
       deCont.appendChild(parent);
 
+      let stories = parent.querySelectorAll(".postpreview");
+
+      stories.forEach(element => {
+       element.addEventListener("click",showStoryReadPage);
+     })
+
   }
 
   
@@ -2196,13 +2202,15 @@ function custFunkyTempySempaiUwu(){
 
 function  fillStoryPageFrontEnd(id){
 
-   localVar.cloudObj;
+  
 
   if(id.length>3){
 
+    addNewHtmlFuncs(id)
+
   }else{
 
-    fillUpStories(localVar.cloudObj);
+    fillUpStories(localVar.cloudObj,"front");
    // console.log(localVar.cloudObj);
 
   }
