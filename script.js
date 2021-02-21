@@ -1676,7 +1676,7 @@ function deStoryFunc(storyHtml){
 
 
 
-function  fillUpStories(responseObj) {
+function  fillUpStories(responseObj,context) {
 
   let stories = responseObj.contentObj.contentObj.published.stories;
 
@@ -1693,6 +1693,18 @@ function  fillUpStories(responseObj) {
     let tempDiv = storyCont.cloneNode(true);
     tempDiv = fillTempStoryDiv(tempDiv,stories[i]);
     parent.appendChild(tempDiv);
+  }
+
+  if(context==="back"){
+
+    document.querySelectorAll(".backendchildcontainer")[2].appendChild(parent);
+
+  }else{
+     dePage.querySelectorAll("h1")[0].innerHTML = "Stories And News From TALISS";
+     let deCont = dePage.querySelectorAll(".mystorycontainer")[0];
+     deCont.innerHTML = "";
+      deCont.appendChild(parent);
+
   }
 
   
