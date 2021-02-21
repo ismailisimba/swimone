@@ -56,7 +56,7 @@ function addLogInButt () {
 
 function logInButtEventOne () {
 
-  window.location = "./backend.html";
+  window.location = "./backend";
   
 }
 
@@ -69,7 +69,7 @@ function addHomeClicFunc (){
 }
 
 function reloadHomePage () {
-  window.location = "./index.html";
+  window.location = "./";
   document.querySelectorAll(".mycolumns")[1].style.overflowY="hidden";
 }
 
