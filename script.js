@@ -2226,6 +2226,9 @@ function  fillStoryPageFrontEnd(id){
 
 };
 
+
+
+
 /*Captcha Functions*/
 
 fetcher({},"first",firstDisp);
