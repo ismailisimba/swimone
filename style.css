@@ -201,7 +201,9 @@ html button:hover {
 
     transition: all 1.3s ease-out;
 
-    background-color: #53f4ff;
+    background-color: transparent;
+    border: 0.69px solid white;
+    border-radius: 3px;
 
     box-shadow: inset 1px 1.69px 1px white;
     display: flex;
@@ -1126,11 +1128,13 @@ overflow-y: scroll;
 
     .settcont{
         left: 36px;
+        top: 25px;
     }
 
     #temporarydiv{
 
-        margin-right: -9px;
+    
+        width: 100%
     }
 
 
