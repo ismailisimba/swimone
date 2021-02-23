@@ -572,6 +572,11 @@ html button:hover {
     text-align: center;
 }
 
+.contactlistdiv a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .formitemdiv p{
 
     margin-block-start: 6px;
