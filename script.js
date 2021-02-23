@@ -1706,13 +1706,16 @@ function  fillUpStories(responseObj,context) {
   for(let i=0 ; i <numOfStories ; i++){
     let tempDiv = storyCont.cloneNode(true);
     tempDiv = fillTempStoryDiv(tempDiv,stories[i]);
+  
+    parent.appendChild(tempDiv);
     let hreftempy = null;
+    let length = null; 
     hreftempy = parent.querySelectorAll(".storyhref")[0];
+    length = parent.querySelectorAll(".storyhref");
 
-    if(hreftempy!==null&&hreftempy!==undefined){
+    if(hreftempy!==null&&hreftempy!==undefined&&length>1){
       hreftempy.remove();
     }
-    parent.appendChild(tempDiv);
   }
 
   if(context==="back"){
