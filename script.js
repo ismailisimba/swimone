@@ -213,7 +213,9 @@ async function hailTheServerOnAllChannels(action,value) {
     let data = await bundleMyData(action,value).then(()=>{
       let myObj = bundleTokenAfter(value);
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft;
-      startHailing(myObj,"uploadImages",genericPrintResponse);
+      startHailing(myObj,"uploadImages",function(){
+        window.location.href = "./backend"
+      });
     });
 
     customPopUpFunc(popUp,"Uploading","fullsteamahead");
@@ -224,7 +226,9 @@ async function hailTheServerOnAllChannels(action,value) {
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
      
      customPopUpFunc(popUp,"Deleting","fullsteamahead");
-      startHailing(myObj,action,genericPrintResponse);
+      startHailing(myObj,action,function(){
+        window.location.href = "./backend"
+      });
     });
 
   }else if(action==="uploadStory"){
@@ -235,7 +239,9 @@ async function hailTheServerOnAllChannels(action,value) {
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.draft.stories[0];
      
      customPopUpFunc(popUp,"Saving Story","fullsteamahead");
-      startHailing(myObj,action,genericPrintResponse);
+      startHailing(myObj,action,function(){
+        window.location.href = "./backend"
+      });
     });
 
   }else if(action==="deleteStories"){
@@ -244,7 +250,9 @@ async function hailTheServerOnAllChannels(action,value) {
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
     
      customPopUpFunc(popUp,"Deleting","fullsteamahead");
-      startHailing(myObj,action,genericPrintResponse);
+      startHailing(myObj,action,function(){
+        window.location.href = "./backend"
+      });
     });
   }else if(action==="updatePublish"){
     let data = await bundleMyData(action,value).then(()=>{
@@ -254,7 +262,9 @@ async function hailTheServerOnAllChannels(action,value) {
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
      
      customPopUpFunc(popUp,"Updating","fullsteamahead");
-      startHailing(myObj,action,genericPrintResponse);
+      startHailing(myObj,action,function(){
+        window.location.href = "./backend"
+      });
     });
   
 
@@ -268,7 +278,9 @@ async function hailTheServerOnAllChannels(action,value) {
       myObj.params[0].dataObj = localVar.cloudObj.contentObj.contentObj.delete;
      
      customPopUpFunc(popUp,"Updating","fullsteamahead");
-      startHailing(myObj,action,genericPrintResponse);
+      startHailing(myObj,action,function(){
+        window.location.href = "./backend"
+      });
     });
 
 
