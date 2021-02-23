@@ -8,6 +8,16 @@ html{
     display: none;
 }
 
+#mobile-home-butt{
+
+    margin-top: 25px;
+    min-height: 36px;
+    color: white;
+    font-size: 18px;
+    font-weight:  bold;
+    letter-spacing: 1.69px;
+}
+
 .contentbox{
     color: white;
 }
