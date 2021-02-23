@@ -1181,7 +1181,8 @@ function fillTempFileDiv(tempDiv,fileObj) {
 
   tempDiv.querySelectorAll(".filename")[0].innerHTML = fileObj.realName;
   tempDiv.querySelectorAll(".filetype")[0].innerHTML = "";
-  tempDiv.querySelectorAll(".filesize")[0].innerHTML = fileObj.size;
+  let size = formatFileSize(fileObj.size);
+  tempDiv.querySelectorAll(".filesize")[0].innerHTML = size;
   myHref2.innerText = fileObj.name;
   tempDiv.appendChild(myHref1);
   tempDiv.appendChild(myHref2);
@@ -1702,6 +1703,12 @@ function  fillUpStories(responseObj,context) {
   for(let i=0 ; i <numOfStories ; i++){
     let tempDiv = storyCont.cloneNode(true);
     tempDiv = fillTempStoryDiv(tempDiv,stories[i]);
+    let hreftempy = null;
+    hreftempy = parent.querySelectorAll(".storyhref")[0];
+
+    if(hreftempy!==null&&hreftempy!==undefined){
+      hreftempy.remove();
+    }
     parent.appendChild(tempDiv);
   }
 
@@ -1738,6 +1745,7 @@ function anonyFunkyFukenFunck_idInsertionFrontendStoryPopulation (){
 
 
 function fillTempStoryDiv(tempDiv,storyObj) {
+
 
 
   let myHref2 = document.createElement("a");
@@ -2404,6 +2412,7 @@ const returnVal = await fetch(myRequest, {
 
 
 
+
 function addMobMenu(width){
 
   if(width<=1024){
@@ -2424,3 +2433,20 @@ function addMobMenu(width){
   }
   
 };
+
+
+function formatFileSize(size){
+
+  if(size<=1024){
+    size = "1 kb"
+  }else if(size>1024&&size<=524288){
+      size = Math.floor(size/1024);
+      size = size+" kbs";
+  }else if(size>524288){
+    size = Math.floor(size/1048576);
+    size = size+" MBs";
+  }
+
+  return size;
+
+}
