@@ -1082,6 +1082,8 @@ overflow-y: scroll;
         color: black;
         box-shadow: 0 1px 6px white;
         font-size: 18px;
+        text-align: center;
+        padding-top: 12px;
         font-weight:  bold;
         letter-spacing: 1.69px;
     }
