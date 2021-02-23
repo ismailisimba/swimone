@@ -1146,6 +1146,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
   let myHref2 = document.createElement("a");
   myHref2.className = "idhref";
   myHref1.className = "testhref1";
+  myHref1.target = "blank";
   let myStyle = document.createElement("style");
   myStyle.innerHTML = `
     
@@ -1183,6 +1184,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
   tempDiv.querySelectorAll(".filetype")[0].innerHTML = "";
   let size = formatFileSize(fileObj.size);
   tempDiv.querySelectorAll(".filesize")[0].innerHTML = size;
+  myHref1.href = fileObj.url;
   myHref2.innerText = fileObj.name;
   tempDiv.appendChild(myHref1);
   tempDiv.appendChild(myHref2);
