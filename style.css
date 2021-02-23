@@ -116,7 +116,7 @@ html button {
     height: 45px;
     letter-spacing: 1.2px;
     box-sizing: border-box;
-    box-shadow: 1px 1px 5px 0.2px white;
+    
 }
 
 textarea {
@@ -205,7 +205,7 @@ html button:hover {
     border: 0.69px solid white;
     border-radius: 3px;
 
-    box-shadow: inset 1px 1.69px 1px white;
+    
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
@@ -242,14 +242,12 @@ html button:hover {
     font-weight: bold;
     letter-spacing: 1.3px;
     text-align: center;
-    box-shadow: 0 1px 6px white;
+    
     z-index: 1000;
 
 }
 
-.cpancontentcont .butts:hover{
-    box-shadow: none;
-}
+
 .setinset::-webkit-scrollbar { display: none; }
 .mycolumns:first-child{
 
@@ -1082,7 +1080,6 @@ overflow-y: scroll;
         min-height: 36px;
         background-color: white;
         color: black;
-        box-shadow: 0 1px 6px white;
         font-size: 18px;
         text-align: center;
         padding-top: 12px;
@@ -1123,7 +1120,7 @@ overflow-y: scroll;
         font-weight: bold;
         letter-spacing: 1.3px;
         text-align: center;
-        box-shadow: 0 1px 6px white;
+        border: 0.69 black solid;
     }
 
     .settcont{
@@ -1132,7 +1129,8 @@ overflow-y: scroll;
     }
 
     #temporarydiv{
-        width: 100%
+        width: 100%;
+        margin: 42px 0px;
     }
 
 
@@ -1352,10 +1350,7 @@ overflow-y: scroll;
         margin: 6px 0px 6px 18px;
     }
 
-    .featuredbox button{
-        box-shadow: 0 1px 6px white;
-        
-    }
+ 
 
 
 
