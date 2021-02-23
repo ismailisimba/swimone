@@ -1829,6 +1829,7 @@ function setupForStoryView() {
 }
 
 function showStoryReadPage() {
+  console.log(this);
   let storyid = this.querySelectorAll(".storyhref")[0].id;
   
   dePage.style.visibility = "visible";
