@@ -1159,6 +1159,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
         height: 100%;
         background-color: #e8dab2;
         color: #061826;
+        cursor:pointer;
         font-size: 24px;
         text-align: center;
         font-weight: bold;
