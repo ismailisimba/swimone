@@ -372,7 +372,7 @@ html button:hover {
     right: 0px;
     width: 33%;
     height: 1.69px;
-    background-color: #53f4ff;
+    background-color: black;
 }
 
 .mycolumnchildren:nth-child(3){
@@ -491,19 +491,19 @@ html button:hover {
   
 }
 
-.aboutdescrboxes:nth-child(5) .descricon{
+.aboutdescrboxes:nth-child(6) .descricon{
 
     background-image: url("https://ismailisimba.github.io/swimone/resources/icons/medals-icon1.png");
   
 }
 
-.aboutdescrboxes:nth-child(6) .descricon{
+.aboutdescrboxes:nth-child(5) .descricon{
 
     background-image: url("https://ismailisimba.github.io/swimone/resources/icons/calendar-icon1.png");
   
 }
 
-.aboutdescrboxes:nth-child(6){
+.aboutdescrboxes:nth-child(5){
     cursor: pointer;
 }
 
@@ -676,6 +676,8 @@ html button:hover {
 #ismizo{
 
     position: absolute;
+    text-decoration: none;
+    color: white;
     right: 69px;
     bottom: 69px;
 }
@@ -683,8 +685,9 @@ html button:hover {
 
 .logocontainer{
 
-    width: 230px;
-    height: 169px;
+    width: 169px;
+    min-height: 99px;
+    height: auto;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 0px;
@@ -692,9 +695,10 @@ html button:hover {
     background-color: transparent;
     color: transparent;
     box-sizing: border-box;
-    margin: 64px 0px 64px 0px;
+    margin-top: 36px;
+    margin-bottom: 36px;
 
-    background-image: url("https://ismailisimba.github.io/swimone/resources/testfiles/taliss-logo.png");
+    background-image: url("https://www.talissclub.com/img_ly/taliss-club-logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -711,7 +715,7 @@ html button:hover {
 
 .sidemenucontainer li {
     width: 169px;
-    margin-block-start: 36px;
+    margin-block-start: 16px;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 2.69px;
@@ -828,6 +832,7 @@ html button:hover {
   }
 
   .postscontainer{
+      visibility: collapse;
 
     background-color: transparent;
     display: flex;
@@ -1170,7 +1175,7 @@ overflow-y: scroll;
     .mycolumnchildren:nth-child(3), .mycolumnchildren:nth-child(4){
 
 
-        
+        letter-spacing: 1.69px;
         background-color: black;
         color: white;
     
@@ -1342,6 +1347,7 @@ overflow-y: scroll;
         font-weight: 500;
         letter-spacing: 3px;
         padding-right: 18px;
+        color: black;
         position: relative;
         right: -48%;
         top: 42px;
@@ -1364,7 +1370,7 @@ overflow-y: scroll;
         display: block;
         position: fixed;
         top: 0px;
-        right: -200px;
+        right: -214px;
 
         
 
@@ -1374,10 +1380,10 @@ overflow-y: scroll;
 
         transition: all;
 
-        -webkit-transition-duration: 1.5s;
-        -moz-transition-duration: 1.5s;
-        -o-transition-duration: 1.5s;
-        transition-duration: 1.5s;
+        -webkit-transition-duration: 0.69s;
+        -moz-transition-duration: 0.69s;
+        -o-transition-duration: 0.69s;
+        transition-duration: 0.69s;
     
     
         -webkit-transition-timing-function: ease-out;
@@ -1414,10 +1420,7 @@ overflow-y: scroll;
         align-items: center;
     }
 
-    .mobile-nav-items {
-
-        text-align: center;
-    }
+ 
 
     #mobile-nav-items{
         display: flex;
@@ -1428,7 +1431,7 @@ overflow-y: scroll;
         align-items: center;
     }
 
-    .mobile-nav-items:nth-child(1), .mobile-nav-items:nth-child(2), .mobile-nav-items:nth-child(3) {
+    .mobile-nav-items {
 
         background-color: #320e3b;
         color: #dbfcff;
@@ -1449,6 +1452,10 @@ overflow-y: scroll;
 
     }
 
+    .mobile-nav-items:hover {
+        box-shadow: none;
+    }
+
     #mobile-nav-close{
 
         width: 200px;
@@ -1463,6 +1470,12 @@ overflow-y: scroll;
         width: 69px; 
         height: 69px; 
         background-color: white;
+        color: black;
+        font-weight:bold;
+        font-size: 16px;
+        padding: 24px 0px 0px 9px;
+        box-sizing: border-box;
+        letter-spacing: 1.69px;
         position: absolute;
         left: -68px;
         top: 0px;

@@ -45,7 +45,8 @@ function myGenericPageFormatting (){
 
   dePage.remove()
   postsMomCont.remove();
-  mobNav.remove();
+  postsMomCont.style.visibility="visible";
+ 
 
     
 }
@@ -109,7 +110,9 @@ function checkTheURL () {
     
     initiateLogInSetup(backendMatch);
   }else{
+    fetcher({},"first",firstDisp);
     popUp.remove();
+    mobNav.remove();
     addMobMenu(window.screen.width);
     fillDeFrontEnd();
     
@@ -1713,9 +1716,10 @@ function  fillUpStories(responseObj,context) {
       deCont.appendChild(parent);
 
       let stories = parent.querySelectorAll(".postpreview");
-
+      
       stories.forEach(element => {
-       element.addEventListener("click",showStoryReadPage);
+        element.removeEventListener("click",anonyFunkyFukenFunck_idInsertionFrontendStoryPopulation,false);
+      element.addEventListener("click",anonyFunkyFukenFunck_idInsertionFrontendStoryPopulation);
      })
 
   }
@@ -1723,6 +1727,13 @@ function  fillUpStories(responseObj,context) {
   
 
 };
+
+function anonyFunkyFukenFunck_idInsertionFrontendStoryPopulation (){
+
+  let storyid = this.querySelectorAll(".storyhref")
+  storyid = storyid[storyid.length-1].id;
+  addNewHtmlFuncs(storyid);
+}
 
 
 
@@ -1808,7 +1819,11 @@ function setupForStoryView() {
 
 function showStoryReadPage() {
   let storyid = this.querySelectorAll(".storyhref")[0].id;
+  
   dePage.style.visibility = "visible";
+  console.log(storyid);
+
+  
 
   let deBut = dePage.querySelectorAll("button")[0];
 
@@ -1826,6 +1841,8 @@ function backToBackend (){
 
 
 function addNewHtmlFuncs(storyid) {
+
+
   let stories = localVar.cloudObj.contentObj.contentObj.published.stories
   let searchResponse = searchStory(stories,storyid);
 
@@ -1835,7 +1852,8 @@ function addNewHtmlFuncs(storyid) {
     alert("Ooops there's been an error reading your post. Please report to ismaili.a.simba@gmail.com");
   }
 
- 
+  
+
 };
 
 function searchStory(stories,storyid){
@@ -2066,7 +2084,7 @@ function addStoryPageShowFrontEnd(myObj){
   let butts = document.querySelectorAll(".mycolumnchildren")[1];
   butts = butts.querySelectorAll("button");
 
-  let aboutstorbox = document.querySelectorAll(".aboutdescrboxes")[5];
+  let aboutstorbox = document.querySelectorAll(".aboutdescrboxes")[4];
 
   aboutstorbox.addEventListener("click",toDeStoryPageFrontEnd)
 
@@ -2088,8 +2106,12 @@ function toDeStoryPageFrontEnd(){
 }
 
 function backToFrontEnd(){
+
   dePage.replaceWith(localVar.columnHtml);
-  dePage.removeEventListener("click",backToFrontEnd,false);
+  this.removeEventListener("click",backToFrontEnd,false);
+  //myResetFuncs();
+
+  
 }
 
 function  fillFeatured(myObj){
@@ -2209,9 +2231,12 @@ function custFunkyTempySempaiUwu(){
 
 function  fillStoryPageFrontEnd(id){
 
-  
+  let length = null;
+  if (id!==undefined){
+    length=id.length
+  }
 
-  if(id.length>3){
+  if(length>3){
 
     addNewHtmlFuncs(id)
 
@@ -2231,7 +2256,7 @@ function  fillStoryPageFrontEnd(id){
 
 /*Captcha Functions*/
 
-fetcher({},"first",firstDisp);
+
  
 
 
@@ -2383,6 +2408,18 @@ function addMobMenu(width){
 
   if(width<=1024){
     document.querySelectorAll(".mycolumns")[1].appendChild(mobNav);
+    mobNav.addEventListener("click",function(){
+
+      let compStyles = window.getComputedStyle(mobNav);
+      let ryt = compStyles.getPropertyValue("right");
+
+      if(ryt==="-214px"){
+        mobNav.style.right = "0px";
+      }else{
+        mobNav.style.right = "-214px";
+      }
+     
+    })
     console.log("dd");
   }
   

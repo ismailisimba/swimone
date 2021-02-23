@@ -23,10 +23,10 @@
       </div>
       <div class="sidemenucontainer">
         <ul class="sidemenuitem">
-          <li>Home</li>
-          <li>News and Stories</li>
+          <li onclick="window.location.href='./'">Home</li>
+          <li onclick="toDeStoryPageFrontEnd()">News and Stories</li>
           <li onclick="window.location.href='#abouttitdiv'">About Us</li>
-          <li>Contacts and Address</li>
+          <li onclick="window.location.href='#mycontacts'">Contacts and Address</li>
         </ul>
 
       </div>
@@ -48,16 +48,15 @@
         <div id="mobile-nav-back">
           <div id="mobile-nav-container">
             <div id="mobile-nav-close">
-                <div id="arrow-left-close"></div>
+                <div id="arrow-left-close">Menu</div>
             </div>
             <div id="mobile-nav-items">
-              <div class="mobile-nav-items"><a href="./pages/women.html">Women</a> </div>
-              <div class="mobile-nav-items"><a href="#">Men</a></div>
-              <div class="mobile-nav-items"><a href="#">Children</a></div>
+              <div class="mobile-nav-items" onclick="window.location.href='./'">Home</div>
+              <div class="mobile-nav-items" onclick="toDeStoryPageFrontEnd()">News and Stories</div>
+              <div class="mobile-nav-items" onclick="window.location.href='#abouttitdiv'">About Us</div>
+              <div class="mobile-nav-items" onclick="window.location.href='#mycontacts'">Contacts and Address</div>
+              <div class="mobile-nav-items" onclick="window.location.href='./backend'">Log In</div>
               
-              <div class="mobile-nav-items"> <div id="contact-us-container"> 
-                <a href="#">  <button>Ask Us Anything!</button></a>
-              </div></div>
             
             </div>
   
@@ -88,28 +87,28 @@
       </div>
       <div class="mycolumnchildren">
         <div class="featuredone">
-          <img src="https://ismailisimba.github.io/swimone/resources/images/1.jpg">
+          <img src="https://www.talissclub.com/img_ly/taliss-swim-event-medals-february-2020.jpg">
           <div class="featuredbox">
             <h1>TALISS</h1>
-            <p></p>
+            <p>Home of swimming!</p>
             <button>Learn More</button>
           </div>
           <div class="mylineone"></div>
         </div>
         <div class="featuredone">
-          <img src="https://ismailisimba.github.io/swimone/resources/images/2.jpg">
+          <img src="https://www.talissclub.com/img_ly/taliss-swimmer-pic1.jpg">
           <div class="featuredbox">
             <h1>TALISS</h1>
-            <p></p>
+            <p>Home of Champions!</p>
             <button>Learn More</button>
           </div>
           <div class="mylineone"></div>
         </div>
         <div class="featuredone">
-          <img src="https://ismailisimba.github.io/swimone/resources/images/3.jpg">
+          <img src="https://www.talissclub.com/img_ly/taliss-club-group.jpg">
           <div class="featuredbox">
             <h1>TALISS</h1>
-            <p></p>
+            <p>Swimming to the top!</p>
             <button>Learn More</button>
           </div>
           <div class="mylineone"></div>
@@ -118,38 +117,48 @@
       <div class="mycolumnchildren">
         <div class="abouttitdiv" id="abouttitdiv">
           <h1>About Us</h1>
-          <p>We are a very good and old and big and the best swimming people group! We are the besty best best swimming Island this side of this solar system. No kidding!</p>
+          <p>Started in 1989 as a club to promote swimming safety, TALISS has grown to become one of the biggest and most competitive swimming clubs in Tanzania. We have performed and won numerous medals in national and international competitions, including The Olympics!
+
+            TALISS also runs one of the oldest lifeguards training program in Tanzania. We have trained more than 10,000 lifeguards!</p>
         </div>
         <div class="aboutdescrdiv">
           <div class="aboutdescrboxes">
             <div class="descricon"></div>
-            <h2>The Club</h2>
-            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+            <h2>Coaches</h2>
+            <p>Our coaches are the best in their field, coming from various clubs and the national team; 
+              Coach John Belela,
+              Coach Alex Mwaipasi,
+              Coach Siki, 
+              Coach Ezekiel,
+              Coach Filex,
+              Coach Said,
+              Coach Crispin,
+              Coach Martin</p>
           </div>
           <div class="aboutdescrboxes">
             <div class="descricon"></div>
             <h2>National and International Competitions</h2>
-            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+            <p>TALISS participates and hosts national and international competitions. We have attended and collected medals in CANA Zone 3 and The Olympics.</p>
           </div>
           <div class="aboutdescrboxes">
             <div class="descricon"></div>
-            <h2>Training and Practice</h2>
-            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+            <h2>Membership, Training, and Practice</h2>
+            <p>Members are required to be proficient to some degree. Members participate in regular friendly competitions and training sessions. As TALISS is invitied to competitions, members volunteer to represent the club and Tanzania. Contact us for details on how to become a member.</p>
           </div>
           <div class="aboutdescrboxes">
             <div class="descricon"></div>
             <h2>Lifeguards</h2>
-            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+            <p>TALISS offers professional lifeguard training. Started to promote swimming safety across Tanzania, we have trained over 10,000 lifeguards over our lifetime!</p>
           </div>
-          <div class="aboutdescrboxes">
+        <!--  <div class="aboutdescrboxes">
             <div class="descricon"></div>
             <h2>Medals and Awards</h2>
             <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
-          </div>
+          </div>-->
           <div class="aboutdescrboxes">
             <div class="descricon"></div>
-            <h2>Upcoming Events/Announcements</h2>
-            <p>We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words. We are about this, but like in some really deep fancy words.</p>
+            <h2>Stories, Announcements, and Upcoming Events</h2>
+            <p>Click me to see!.</p>
           </div>
         </div>
       </div>
@@ -187,7 +196,7 @@
             </div>
 
           </div>
-          <div class="contactlistdiv">
+          <div class="contactlistdiv" id="mycontacts">
 
             <div class="addresslistitem">
               <h2>Address</h2>
@@ -229,8 +238,8 @@
     </div>
       <div class="mycolumnchildren">
         <footer>
-          <div>© Swim City!. All rights reserved</div>
-          <div id="ismizo">by Ismizo</div>
+          <div>© TALISS Swim Club. All rights reserved</div>
+          <a id="ismizo" href="https://www.github.com/ismailisimba/swimone" target="blank">by Ismizo</a>
         </footer>
       </div>
     </div>
@@ -240,7 +249,7 @@
 
   </div>
 
-  <div class="mygenericpage">
+  <div class="mygenericpage" >
     <button>Go Back</button>
     <h1>My Generic Title</h1>
     <div class="mystorycontainer" >My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription... My Generic Decription...</div>
