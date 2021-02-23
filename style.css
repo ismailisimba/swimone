@@ -10,6 +10,8 @@ html{
 
 .mobile-home-butt{
 
+    visibility: collapse;
+
     margin-top: 25px;
     min-height: 36px;
     color: white;
@@ -1069,6 +1071,20 @@ overflow-y: scroll;
 
 
 @media screen and (max-width: 1024px) {
+
+    .mobile-home-butt{
+
+        visibility: visible;
+    
+        margin-top: 25px;
+        min-height: 36px;
+        background-color: white;
+        color: black;
+        box-shadow: 0 1px 6px white;
+        font-size: 18px;
+        font-weight:  bold;
+        letter-spacing: 1.69px;
+    }
 
     .simplecaptchamom{
         background-color: black;
