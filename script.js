@@ -15,6 +15,7 @@ let cloudObj = {};
 
 
 
+
 window.onload = () => {
     myStartUpFunction();
     checkTheURL();
@@ -2246,9 +2247,6 @@ function sendAStrangersHail(){
   customPopUpFunc(popUp,"Sending to TALISS","fullsteamahead");
  startHailing(contextObject,"hollacomoestas",custFunkyTempySempaiUwu);
   
-
- 
-
 }
 
 function custFunkyTempySempaiUwu(){
