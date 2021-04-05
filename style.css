@@ -831,6 +831,7 @@ html button:hover {
       background-position: center;
       background-size: 100%;
       background-repeat: no-repeat;
+      background-color: transparent !important;
   }
 
 /*JS javascript items styles go here*/
