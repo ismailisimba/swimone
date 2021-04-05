@@ -824,6 +824,15 @@ html button:hover {
     
   }
 
+
+
+  .sitemappiccontainer{
+      background-image: url("https://www.talissclub.com/img_ly/taliss-sitemap-wide.png");
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+  }
+
 /*JS javascript items styles go here*/
 
 .postpreview{
@@ -1521,6 +1530,11 @@ overflow-y: scroll;
    #search-container {
        height: 80px;
    }
+
+
+   .sitemappiccontainer{
+    background-image: url("https://www.talissclub.com/img_ly/taliss-sitemap-short.png");
+}
 
  
     
