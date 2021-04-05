@@ -2094,6 +2094,7 @@ async function fillDeFrontEnd(){
     localVar.cloudObj = myObj;
     
     fillFeatured(myObj);
+    fillTit(myObj);
     fillAddress(myObj);
     addStoryPageShowFrontEnd(myObj);
   });
@@ -2187,6 +2188,18 @@ function getStoryTitAndDescr(id,myObj){
   return obj;
 
 }
+
+
+function  fillTit(myObj){
+
+  let titMom = document.querySelectorAll(".mycolumnchildren")[0];
+  let leTit = titMom.querySelectorAll("h1")[0];
+  let leCatch = titMom.querySelectorAll("p")[0];
+
+  leTit.innerHTML = myObj.settingsObj.title;
+  leCatch.innerHTML = myObj.settingsObj.catchphrase;
+
+};
 
 
 function  fillAddress(myObj){
