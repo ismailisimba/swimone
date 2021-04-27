@@ -1088,6 +1088,13 @@ overflow-y: scroll;
 
 @media screen and (max-width: 1024px) {
 
+    .custompopup{
+
+        width: 85%;
+        left: 15%;
+        
+    }
+
     .mobile-home-butt{
 
         visibility: visible;
