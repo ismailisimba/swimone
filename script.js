@@ -1159,7 +1159,7 @@ function fillTempFileDiv(tempDiv,fileObj) {
   let myHref2 = document.createElement("a");
   myHref2.className = "idhref";
   myHref1.className = "testhref1";
-  myHref1.target = "blank";
+  myHref1.target = "_blank";
   let myStyle = document.createElement("style");
   myStyle.innerHTML = `
     
