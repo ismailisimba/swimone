@@ -2101,6 +2101,8 @@ async function fillDeFrontEnd(){
     fillTit(myObj);
     fillAddress(myObj);
     addStoryPageShowFrontEnd(myObj);
+
+    document.querySelectorAll(".ducttape")[0].remove();
   });
 
 
