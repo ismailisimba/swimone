@@ -1305,6 +1305,8 @@ function addFileClicks(){
 
   myClickableFileHrefs.forEach(element => {
     element.addEventListener("click",toggleFileSelectStyle)
+    element.name = element.href;
+    element.href = "";
   })
 
 }
@@ -1379,7 +1381,9 @@ function removeFileSelectClicks () {
   let myClickableFileHrefs = document.querySelectorAll(".testhref1");
 
   myClickableFileHrefs.forEach(element => {
-    element.removeEventListener("click",toggleFileSelectStyle,false)
+    element.removeEventListener("click",toggleFileSelectStyle,false);
+    element.href = element.name;
+    element.name = "";
   })
 }
 
