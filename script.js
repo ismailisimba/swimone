@@ -1306,7 +1306,7 @@ function addFileClicks(){
   myClickableFileHrefs.forEach(element => {
     element.addEventListener("click",toggleFileSelectStyle)
     element.name = element.href;
-    element.href = "";
+    element.href = null;
   })
 
 }
