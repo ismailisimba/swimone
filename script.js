@@ -1,4 +1,5 @@
 
+
 let dePage = document.querySelectorAll(".mygenericpage")[0];
 let mobNav = document.getElementById("mobile-nav");
 let postsMomCont = document.querySelectorAll(".postscontainer")[0];
