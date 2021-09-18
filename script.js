@@ -2107,11 +2107,6 @@ async function fillDeFrontEnd(){
   });
 
 
- 
-
-
-
-
   
 }
 
