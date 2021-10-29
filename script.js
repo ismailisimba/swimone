@@ -16,7 +16,6 @@ let cloudObj = {};
 
 
 
-
 window.onload = () => {
     myStartUpFunction();
     checkTheURL();
